@@ -179,7 +179,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -323,14 +323,81 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="octodns-record-ds">
-<h1><code class="docutils literal notranslate"><span class="pre">octodns.record.ds</span></code><a class="headerlink" href="#octodns-record-ds" title="Link to this heading">¶</a></h1>
+          <section id="module-octodns.record.ds">
+<span id="octodns-record-ds"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.record.ds</span></code><a class="headerlink" href="#module-octodns.record.ds" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.ds.DsRecord">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.ds.</span></span><span class="sig-name descname"><span class="pre">DsRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/ds.html#DsRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.ds.DsRecord" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.record.base.html#octodns.record.base.ValuesMixin" title="octodns.record.base.ValuesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValuesMixin</span></code></a>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.ds.DsValue">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.ds.</span></span><span class="sig-name descname"><span class="pre">DsValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/ds.html#DsValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.ds.DsValue" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../octodns.equality.html#octodns.equality.EqualityTupleMixin" title="octodns.equality.EqualityTupleMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">EqualityTupleMixin</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.ds.DsValue.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/ds.html#DsValue.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.ds.DsValue.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.ds.DsValue.algorithm">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">algorithm</span></span><a class="headerlink" href="#octodns.record.ds.DsValue.algorithm" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.ds.DsValue.data">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#octodns.record.ds.DsValue.data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.ds.DsValue.digest">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">digest</span></span><a class="headerlink" href="#octodns.record.ds.DsValue.digest" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.ds.DsValue.digest_type">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">digest_type</span></span><a class="headerlink" href="#octodns.record.ds.DsValue.digest_type" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.ds.DsValue.key_tag">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">key_tag</span></span><a class="headerlink" href="#octodns.record.ds.DsValue.key_tag" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.ds.DsValue.log">
+<span class="sig-name descname"><span class="pre">log</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Logger</span> <span class="pre">DsValue</span> <span class="pre">(WARNING)&gt;</span></em><a class="headerlink" href="#octodns.record.ds.DsValue.log" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.ds.DsValue.parse_rdata_text">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_rdata_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/ds.html#DsValue.parse_rdata_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.ds.DsValue.parse_rdata_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.ds.DsValue.process">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/ds.html#DsValue.process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.ds.DsValue.process" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.ds.DsValue.rdata_text">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rdata_text</span></span><a class="headerlink" href="#octodns.record.ds.DsValue.rdata_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.ds.DsValue.validate">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/ds.html#DsValue.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.ds.DsValue.validate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -376,8 +443,41 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.record.ds</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.ds.DsRecord"><code class="docutils literal notranslate"><span class="pre">DsRecord</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.ds.DsValue"><code class="docutils literal notranslate"><span class="pre">DsValue</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.ds.DsValue.__init__"><code class="docutils literal notranslate"><span class="pre">DsValue.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.ds.DsValue.algorithm"><code class="docutils literal notranslate"><span class="pre">DsValue.algorithm</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.ds.DsValue.data"><code class="docutils literal notranslate"><span class="pre">DsValue.data</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.ds.DsValue.digest"><code class="docutils literal notranslate"><span class="pre">DsValue.digest</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.ds.DsValue.digest_type"><code class="docutils literal notranslate"><span class="pre">DsValue.digest_type</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.ds.DsValue.key_tag"><code class="docutils literal notranslate"><span class="pre">DsValue.key_tag</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.ds.DsValue.log"><code class="docutils literal notranslate"><span class="pre">DsValue.log</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.ds.DsValue.parse_rdata_text"><code class="docutils literal notranslate"><span class="pre">DsValue.parse_rdata_text()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.ds.DsValue.process"><code class="docutils literal notranslate"><span class="pre">DsValue.process()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.ds.DsValue.rdata_text"><code class="docutils literal notranslate"><span class="pre">DsValue.rdata_text</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.ds.DsValue.validate"><code class="docutils literal notranslate"><span class="pre">DsValue.validate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

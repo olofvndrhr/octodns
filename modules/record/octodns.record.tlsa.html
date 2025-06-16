@@ -179,7 +179,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -323,14 +323,71 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="octodns-record-tlsa">
-<h1><code class="docutils literal notranslate"><span class="pre">octodns.record.tlsa</span></code><a class="headerlink" href="#octodns-record-tlsa" title="Link to this heading">¶</a></h1>
+          <section id="module-octodns.record.tlsa">
+<span id="octodns-record-tlsa"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.record.tlsa</span></code><a class="headerlink" href="#module-octodns.record.tlsa" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.tlsa.TlsaRecord">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.tlsa.</span></span><span class="sig-name descname"><span class="pre">TlsaRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/tlsa.html#TlsaRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.tlsa.TlsaRecord" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.record.base.html#octodns.record.base.ValuesMixin" title="octodns.record.base.ValuesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValuesMixin</span></code></a>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.tlsa.TlsaValue">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.tlsa.</span></span><span class="sig-name descname"><span class="pre">TlsaValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/tlsa.html#TlsaValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.tlsa.TlsaValue" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../octodns.equality.html#octodns.equality.EqualityTupleMixin" title="octodns.equality.EqualityTupleMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">EqualityTupleMixin</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.tlsa.TlsaValue.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/tlsa.html#TlsaValue.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.tlsa.TlsaValue.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.tlsa.TlsaValue.certificate_association_data">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">certificate_association_data</span></span><a class="headerlink" href="#octodns.record.tlsa.TlsaValue.certificate_association_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.tlsa.TlsaValue.certificate_usage">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">certificate_usage</span></span><a class="headerlink" href="#octodns.record.tlsa.TlsaValue.certificate_usage" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.tlsa.TlsaValue.matching_type">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">matching_type</span></span><a class="headerlink" href="#octodns.record.tlsa.TlsaValue.matching_type" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.tlsa.TlsaValue.parse_rdata_text">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_rdata_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/tlsa.html#TlsaValue.parse_rdata_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.tlsa.TlsaValue.parse_rdata_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.tlsa.TlsaValue.process">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/tlsa.html#TlsaValue.process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.tlsa.TlsaValue.process" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.tlsa.TlsaValue.rdata_text">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rdata_text</span></span><a class="headerlink" href="#octodns.record.tlsa.TlsaValue.rdata_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.tlsa.TlsaValue.selector">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">selector</span></span><a class="headerlink" href="#octodns.record.tlsa.TlsaValue.selector" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.tlsa.TlsaValue.validate">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/tlsa.html#TlsaValue.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.tlsa.TlsaValue.validate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -376,8 +433,39 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.record.tlsa</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.tlsa.TlsaRecord"><code class="docutils literal notranslate"><span class="pre">TlsaRecord</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.tlsa.TlsaValue"><code class="docutils literal notranslate"><span class="pre">TlsaValue</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.tlsa.TlsaValue.__init__"><code class="docutils literal notranslate"><span class="pre">TlsaValue.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.tlsa.TlsaValue.certificate_association_data"><code class="docutils literal notranslate"><span class="pre">TlsaValue.certificate_association_data</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.tlsa.TlsaValue.certificate_usage"><code class="docutils literal notranslate"><span class="pre">TlsaValue.certificate_usage</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.tlsa.TlsaValue.matching_type"><code class="docutils literal notranslate"><span class="pre">TlsaValue.matching_type</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.tlsa.TlsaValue.parse_rdata_text"><code class="docutils literal notranslate"><span class="pre">TlsaValue.parse_rdata_text()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.tlsa.TlsaValue.process"><code class="docutils literal notranslate"><span class="pre">TlsaValue.process()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.tlsa.TlsaValue.rdata_text"><code class="docutils literal notranslate"><span class="pre">TlsaValue.rdata_text</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.tlsa.TlsaValue.selector"><code class="docutils literal notranslate"><span class="pre">TlsaValue.selector</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.tlsa.TlsaValue.validate"><code class="docutils literal notranslate"><span class="pre">TlsaValue.validate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

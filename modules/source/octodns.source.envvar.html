@@ -179,7 +179,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -323,14 +323,115 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="octodns-source-envvar">
-<h1><code class="docutils literal notranslate"><span class="pre">octodns.source.envvar</span></code><a class="headerlink" href="#octodns-source-envvar" title="Link to this heading">¶</a></h1>
+          <section id="module-octodns.source.envvar">
+<span id="octodns-source-envvar"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.source.envvar</span></code><a class="headerlink" href="#module-octodns.source.envvar" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.source.envvar.EnvVarSource">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.source.envvar.</span></span><span class="sig-name descname"><span class="pre">EnvVarSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/envvar.html#EnvVarSource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.envvar.EnvVarSource" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.source.base.html#octodns.source.base.BaseSource" title="octodns.source.base.BaseSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSource</span></code></a></p>
+<p>This source allows for environment variables to be embedded at octodns
+execution time into zones.  Intended to capture artifacts of deployment to
+facilitate operational objectives.</p>
+<p>The TXT record generated will only have a single value.</p>
+<p>The record name cannot conflict with any other co-existing sources.  If
+this occurs, an exception will be thrown.</p>
+<dl class="simple">
+<dt>Possible use cases include:</dt><dd><ul class="simple">
+<li><p>Embedding a version number into a TXT record to monitor update
+propagation across authoritative providers.</p></li>
+<li><p>Capturing identifying information about the deployment process to
+record where and when the zone was updated.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.source.envvar.EnvVarSource</span>
+<span class="w">    </span><span class="c1"># The environment variable in question, in this example the username</span>
+<span class="w">    </span><span class="c1"># currently executing octodns</span>
+<span class="w">    </span><span class="nt">variable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">USER</span>
+<span class="w">    </span><span class="c1"># The TXT record name to embed the value found at the above</span>
+<span class="w">    </span><span class="c1"># environment variable</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployuser</span>
+<span class="w">    </span><span class="c1"># The TTL of the TXT record (optional, default 60)</span>
+<span class="w">    </span><span class="nt">ttl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3600</span>
+</pre></div>
+</div>
+<p>This source is then combined with other sources in the octodns config
+file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">zones</span><span class="p">:</span>
+<span class="nt">netflix.com.</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yaml</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">version</span>
+<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ultra</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ns1</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.source.envvar.EnvVarSource.DEFAULT_TTL">
+<span class="sig-name descname"><span class="pre">DEFAULT_TTL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">60</span></em><a class="headerlink" href="#octodns.source.envvar.EnvVarSource.DEFAULT_TTL" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.source.envvar.EnvVarSource.SUPPORTS">
+<span class="sig-name descname"><span class="pre">SUPPORTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'T',</span> <span class="pre">'X'}</span></em><a class="headerlink" href="#octodns.source.envvar.EnvVarSource.SUPPORTS" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.source.envvar.EnvVarSource.SUPPORTS_DYNAMIC">
+<span class="sig-name descname"><span class="pre">SUPPORTS_DYNAMIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#octodns.source.envvar.EnvVarSource.SUPPORTS_DYNAMIC" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.source.envvar.EnvVarSource.SUPPORTS_GEO">
+<span class="sig-name descname"><span class="pre">SUPPORTS_GEO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#octodns.source.envvar.EnvVarSource.SUPPORTS_GEO" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.envvar.EnvVarSource.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/envvar.html#EnvVarSource.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.envvar.EnvVarSource.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.envvar.EnvVarSource.populate">
+<span class="sig-name descname"><span class="pre">populate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lenient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/envvar.html#EnvVarSource.populate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.envvar.EnvVarSource.populate" title="Link to this definition">¶</a></dt>
+<dd><p>Loads all records the provider knows about for the provided zone</p>
+<p>When <cite>target</cite> is <cite>True</cite> the populate call is being made to load the
+current state of the provider.</p>
+<p>When <cite>lenient</cite> is <cite>True</cite> the populate call may skip record validation and
+do a “best effort” load of data. That will allow through some common,
+but not best practices stuff that we otherwise would reject. E.g. no
+trailing . or missing escapes for ;.</p>
+<p>When target is <cite>True</cite> (loading current state) this method should return
+<cite>True</cite> if the zone exists or False if it does not.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="octodns.source.envvar.EnvVarSourceException">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.source.envvar.</span></span><span class="sig-name descname"><span class="pre">EnvVarSourceException</span></span><a class="reference internal" href="../../_modules/octodns/source/envvar.html#EnvVarSourceException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.envvar.EnvVarSourceException" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="octodns.source.envvar.EnvironmentVariableNotFoundException">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.source.envvar.</span></span><span class="sig-name descname"><span class="pre">EnvironmentVariableNotFoundException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/envvar.html#EnvironmentVariableNotFoundException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.envvar.EnvironmentVariableNotFoundException" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.source.envvar.EnvVarSourceException" title="octodns.source.envvar.EnvVarSourceException"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnvVarSourceException</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.envvar.EnvironmentVariableNotFoundException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/envvar.html#EnvironmentVariableNotFoundException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.envvar.EnvironmentVariableNotFoundException.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -376,8 +477,40 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.source.envvar</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.source.envvar.EnvVarSource"><code class="docutils literal notranslate"><span class="pre">EnvVarSource</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.source.envvar.EnvVarSource.DEFAULT_TTL"><code class="docutils literal notranslate"><span class="pre">EnvVarSource.DEFAULT_TTL</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.envvar.EnvVarSource.SUPPORTS"><code class="docutils literal notranslate"><span class="pre">EnvVarSource.SUPPORTS</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.envvar.EnvVarSource.SUPPORTS_DYNAMIC"><code class="docutils literal notranslate"><span class="pre">EnvVarSource.SUPPORTS_DYNAMIC</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.envvar.EnvVarSource.SUPPORTS_GEO"><code class="docutils literal notranslate"><span class="pre">EnvVarSource.SUPPORTS_GEO</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.envvar.EnvVarSource.__init__"><code class="docutils literal notranslate"><span class="pre">EnvVarSource.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.envvar.EnvVarSource.populate"><code class="docutils literal notranslate"><span class="pre">EnvVarSource.populate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.source.envvar.EnvVarSourceException"><code class="docutils literal notranslate"><span class="pre">EnvVarSourceException</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.envvar.EnvironmentVariableNotFoundException"><code class="docutils literal notranslate"><span class="pre">EnvironmentVariableNotFoundException</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.source.envvar.EnvironmentVariableNotFoundException.__init__"><code class="docutils literal notranslate"><span class="pre">EnvironmentVariableNotFoundException.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

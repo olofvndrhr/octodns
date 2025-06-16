@@ -179,7 +179,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -323,14 +323,88 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="octodns-source-tinydns">
-<h1><code class="docutils literal notranslate"><span class="pre">octodns.source.tinydns</span></code><a class="headerlink" href="#octodns-source-tinydns" title="Link to this heading">¶</a></h1>
+          <section id="module-octodns.source.tinydns">
+<span id="octodns-source-tinydns"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.source.tinydns</span></code><a class="headerlink" href="#module-octodns.source.tinydns" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.source.tinydns.</span></span><span class="sig-name descname"><span class="pre">TinyDnsBaseSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.source.base.html#octodns.source.base.BaseSource" title="octodns.source.base.BaseSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSource</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SUPPORTS</span></span><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS_DYNAMIC">
+<span class="sig-name descname"><span class="pre">SUPPORTS_DYNAMIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS_DYNAMIC" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS_GEO">
+<span class="sig-name descname"><span class="pre">SUPPORTS_GEO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS_GEO" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource.SYMBOL_MAP">
+<span class="sig-name descname"><span class="pre">SYMBOL_MAP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'&amp;':</span> <span class="pre">&lt;function</span> <span class="pre">TinyDnsBaseSource._records_for_dot&gt;,</span> <span class="pre">&quot;'&quot;:</span> <span class="pre">&lt;function</span> <span class="pre">TinyDnsBaseSource._records_for_quote&gt;,</span> <span class="pre">'+':</span> <span class="pre">&lt;function</span> <span class="pre">TinyDnsBaseSource._records_for_plus&gt;,</span> <span class="pre">'.':</span> <span class="pre">&lt;function</span> <span class="pre">TinyDnsBaseSource._records_for_dot&gt;,</span> <span class="pre">'3':</span> <span class="pre">&lt;function</span> <span class="pre">TinyDnsBaseSource._records_for_three&gt;,</span> <span class="pre">'6':</span> <span class="pre">&lt;function</span> <span class="pre">TinyDnsBaseSource._records_for_six&gt;,</span> <span class="pre">':':</span> <span class="pre">&lt;function</span> <span class="pre">TinyDnsBaseSource._records_for_colon&gt;,</span> <span class="pre">'=':</span> <span class="pre">&lt;function</span> <span class="pre">TinyDnsBaseSource._records_for_equal&gt;,</span> <span class="pre">'&#64;':</span> <span class="pre">&lt;function</span> <span class="pre">TinyDnsBaseSource._records_for_at&gt;,</span> <span class="pre">'C':</span> <span class="pre">&lt;function</span> <span class="pre">TinyDnsBaseSource._records_for_C&gt;,</span> <span class="pre">'S':</span> <span class="pre">&lt;function</span> <span class="pre">TinyDnsBaseSource._records_for_S&gt;,</span> <span class="pre">'^':</span> <span class="pre">&lt;function</span> <span class="pre">TinyDnsBaseSource._records_for_caret&gt;}</span></em><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource.SYMBOL_MAP" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource.populate">
+<span class="sig-name descname"><span class="pre">populate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lenient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource.populate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource.populate" title="Link to this definition">¶</a></dt>
+<dd><p>Loads all records the provider knows about for the provided zone</p>
+<p>When <cite>target</cite> is <cite>True</cite> the populate call is being made to load the
+current state of the provider.</p>
+<p>When <cite>lenient</cite> is <cite>True</cite> the populate call may skip record validation and
+do a “best effort” load of data. That will allow through some common,
+but not best practices stuff that we otherwise would reject. E.g. no
+trailing . or missing escapes for ;.</p>
+<p>When target is <cite>True</cite> (loading current state) this method should return
+<cite>True</cite> if the zone exists or False if it does not.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsFileSource">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.source.tinydns.</span></span><span class="sig-name descname"><span class="pre">TinyDnsFileSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsFileSource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsFileSource" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource" title="octodns.source.tinydns.TinyDnsBaseSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">TinyDnsBaseSource</span></code></a></p>
+<p>A basic TinyDNS zonefile importer created to import legacy data.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">tinydns</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.source.tinydns.TinyDnsFileSource</span>
+<span class="w">    </span><span class="c1"># The location of the TinyDNS zone files</span>
+<span class="w">    </span><span class="nt">directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./zones</span>
+<span class="w">    </span><span class="c1"># The ttl to use for records when not specified in the data</span>
+<span class="w">    </span><span class="c1"># (optional, default 3600)</span>
+<span class="w">    </span><span class="nt">default_ttl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3600</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>timestamps &amp; lo fields are ignored if present.</p>
+</div>
+<p>The source intends to conform to and fully support the official spec,
+<a class="reference external" href="https://cr.yp.to/djbdns/tinydns-data.html">https://cr.yp.to/djbdns/tinydns-data.html</a> and the common patch/extensions to
+support IPv6 and a few other record types,
+<a class="reference external" href="https://docs.bytemark.co.uk/article/tinydns-format/">https://docs.bytemark.co.uk/article/tinydns-format/</a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsFileSource.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsFileSource.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsFileSource.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -376,8 +450,39 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.source.tinydns</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource.SUPPORTS</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS_DYNAMIC"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource.SUPPORTS_DYNAMIC</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS_GEO"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource.SUPPORTS_GEO</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource.SYMBOL_MAP"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource.SYMBOL_MAP</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource.__init__"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource.populate"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource.populate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsFileSource"><code class="docutils literal notranslate"><span class="pre">TinyDnsFileSource</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsFileSource.__init__"><code class="docutils literal notranslate"><span class="pre">TinyDnsFileSource.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

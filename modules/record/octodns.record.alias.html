@@ -179,7 +179,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -323,14 +323,31 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="octodns-record-alias">
-<h1><code class="docutils literal notranslate"><span class="pre">octodns.record.alias</span></code><a class="headerlink" href="#octodns-record-alias" title="Link to this heading">¶</a></h1>
+          <section id="module-octodns.record.alias">
+<span id="octodns-record-alias"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.record.alias</span></code><a class="headerlink" href="#module-octodns.record.alias" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.alias.AliasRecord">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.alias.</span></span><span class="sig-name descname"><span class="pre">AliasRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/alias.html#AliasRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.alias.AliasRecord" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.record.base.html#octodns.record.base.ValueMixin" title="octodns.record.base.ValueMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueMixin</span></code></a>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.alias.AliasRecord.validate">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fqdn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/alias.html#AliasRecord.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.alias.AliasRecord.validate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.alias.AliasValue">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.alias.</span></span><span class="sig-name descname"><span class="pre">AliasValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/alias.html#AliasValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.alias.AliasValue" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_TargetValue</span></code></p>
+</dd></dl>
+
 </section>
 
         </article>
@@ -376,8 +393,31 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.record.alias</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.alias.AliasRecord"><code class="docutils literal notranslate"><span class="pre">AliasRecord</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.alias.AliasRecord.validate"><code class="docutils literal notranslate"><span class="pre">AliasRecord.validate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.record.alias.AliasValue"><code class="docutils literal notranslate"><span class="pre">AliasValue</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

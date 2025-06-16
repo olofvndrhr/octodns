@@ -179,7 +179,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -323,14 +323,125 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="octodns-processor-meta">
-<h1><code class="docutils literal notranslate"><span class="pre">octodns.processor.meta</span></code><a class="headerlink" href="#octodns-processor-meta" title="Link to this heading">¶</a></h1>
+          <section id="module-octodns.processor.meta">
+<span id="octodns-processor-meta"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.processor.meta</span></code><a class="headerlink" href="#module-octodns.processor.meta" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.meta.MetaProcessor">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.meta.</span></span><span class="sig-name descname"><span class="pre">MetaProcessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'meta'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_uuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_provider</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_extra</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/meta.html#MetaProcessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.meta.MetaProcessor" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.processor.base.html#octodns.processor.base.BaseProcessor" title="octodns.processor.base.BaseProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseProcessor</span></code></a></p>
+<p>Add a special metadata record with timestamps, UUIDs, versions, and/or
+provider name. Will only be updated when there are other changes being made.
+A useful tool to aid in debugging and monitoring of DNS infrastructure.</p>
+<p>Timestamps or UUIDs can be useful in checking whether changes are
+propagating, either from a provider’s backend to their servers or via AXFRs.</p>
+<p>Provider can be utilized to determine which DNS system responded to a query
+when things are operating in dual authority or split horizon setups.</p>
+<p>Creates a TXT record with the name configured with values based on processor
+settings. Values are in the form <cite>key=&lt;value&gt;</cite>, e.g.
+<cite>time=2023-09-10T05:49:04.246953</cite></p>
+<p class="rubric">Example</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
+<span class="nt">meta</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.meta.MetaProcessor</span>
+<span class="w">    </span><span class="c1"># The name to use for the meta record.</span>
+<span class="w">    </span><span class="c1"># (default: meta)</span>
+<span class="w">    </span><span class="nt">record_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta</span>
+<span class="w">    </span><span class="c1"># Include a timestamp with a UTC value indicating the timeframe when the</span>
+<span class="w">    </span><span class="c1"># last change was made.</span>
+<span class="w">    </span><span class="c1"># (default: true)</span>
+<span class="w">    </span><span class="nt">include_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="c1"># Include a UUID that can be utilized to uniquely identify the run</span>
+<span class="w">    </span><span class="c1"># pushing data</span>
+<span class="w">    </span><span class="c1"># (default: false)</span>
+<span class="w">    </span><span class="nt">include_uuid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="c1"># Include the provider id for the target where data is being pushed</span>
+<span class="w">    </span><span class="c1"># (default: false)</span>
+<span class="w">    </span><span class="nt">include_provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="c1"># Include the octoDNS version being used</span>
+<span class="w">    </span><span class="c1"># (default: false)</span>
+<span class="w">    </span><span class="nt">include_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="c1"># Extra values to set on the records</span>
+<span class="w">    </span><span class="c1"># (default: None)</span>
+<span class="w">    </span><span class="c1">#include_extra:</span>
+<span class="w">    </span><span class="c1">#  key: val</span>
+<span class="w">    </span><span class="c1">#  foo: env/BAR</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.meta.MetaProcessor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'meta'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_uuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_provider</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_extra</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/meta.html#MetaProcessor.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.meta.MetaProcessor.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.meta.MetaProcessor.get_time">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/meta.html#MetaProcessor.get_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.meta.MetaProcessor.get_time" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.meta.MetaProcessor.get_uuid">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_uuid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/meta.html#MetaProcessor.get_uuid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.meta.MetaProcessor.get_uuid" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.meta.MetaProcessor.process_plan">
+<span class="sig-name descname"><span class="pre">process_plan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/meta.html#MetaProcessor.process_plan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.meta.MetaProcessor.process_plan" title="Link to this definition">¶</a></dt>
+<dd><p>Called after the planning phase has completed. Provides an opportunity
+for the processors to modify the plan thus changing the actions that
+will be displayed and potentially applied.</p>
+<ul class="simple">
+<li><p><cite>plan</cite> may be None if no changes were detected, if so a <cite>Plan</cite> may
+still be created and returned.</p></li>
+<li><p>May modify <cite>plan.changes</cite> directly or create a new <cite>Plan</cite>.</p></li>
+<li><p>Does not have to modify <cite>plan.desired</cite> and/or <cite>plan.existing</cite> to line
+up with any modifications made to <cite>plan.changes</cite>.</p></li>
+<li><p>Should copy over <cite>plan.exists</cite>, <cite>plan.update_pcent_threshold</cite>, and
+<cite>plan.delete_pcent_threshold</cite> when creating a new <cite>Plan</cite>.</p></li>
+<li><p>Must return a <cite>Plan</cite> which may be <cite>plan</cite> or can be a newly created
+one <cite>plan.desired</cite> and <cite>plan.existing</cite> copied over as-is or modified.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.meta.MetaProcessor.process_source_and_target_zones">
+<span class="sig-name descname"><span class="pre">process_source_and_target_zones</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">desired</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">existing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/meta.html#MetaProcessor.process_source_and_target_zones"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.meta.MetaProcessor.process_source_and_target_zones" title="Link to this definition">¶</a></dt>
+<dd><p>Called just prior to computing changes for <cite>target</cite> between <cite>desired</cite>
+and <cite>existing</cite>. Provides an opportunity for the processor to modify
+either the desired or existing <a href="#id1"><span class="problematic" id="id2">`</span></a>Zone`s that will be used to compute the
+changes and create the initial plan.</p>
+<ul class="simple">
+<li><p>Will see <cite>desired</cite> after any modifications done by
+<cite>Provider._process_desired_zone</cite> and all processors via
+<cite>Processor.process_source_zone</cite></p></li>
+<li><p>Will see <cite>existing</cite> after any modifications done by all processors
+via <cite>Processor.process_target_zone</cite></p></li>
+<li><p>Will see both <cite>desired</cite> and <cite>existing</cite> after any modifications done by
+any processors configured to run before this one via
+<cite>Processor.process_source_and_target_zones</cite>.</p></li>
+<li><p>May modify <cite>desired</cite> directly.</p></li>
+<li><p>Must return <cite>desired</cite> which will normally be the <cite>desired</cite> param.</p></li>
+<li><p>May modify <cite>existing</cite> directly.</p></li>
+<li><p>Must return <cite>existing</cite> which will normally be the <cite>existing</cite> param.</p></li>
+<li><p>Must not modify records directly, <cite>record.copy</cite> should be called,
+the results of which can be modified, and then <cite>Zone.add_record</cite> may
+be used with <cite>replace=True</cite>.</p></li>
+<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>desired</cite>.</p></li>
+<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>existing</cite>.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.meta.MetaProcessor.values">
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/meta.html#MetaProcessor.values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.meta.MetaProcessor.values" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -376,8 +487,35 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.processor.meta</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.meta.MetaProcessor"><code class="docutils literal notranslate"><span class="pre">MetaProcessor</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.meta.MetaProcessor.__init__"><code class="docutils literal notranslate"><span class="pre">MetaProcessor.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.meta.MetaProcessor.get_time"><code class="docutils literal notranslate"><span class="pre">MetaProcessor.get_time()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.meta.MetaProcessor.get_uuid"><code class="docutils literal notranslate"><span class="pre">MetaProcessor.get_uuid()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.meta.MetaProcessor.process_plan"><code class="docutils literal notranslate"><span class="pre">MetaProcessor.process_plan()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.meta.MetaProcessor.process_source_and_target_zones"><code class="docutils literal notranslate"><span class="pre">MetaProcessor.process_source_and_target_zones()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.meta.MetaProcessor.values"><code class="docutils literal notranslate"><span class="pre">MetaProcessor.values()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

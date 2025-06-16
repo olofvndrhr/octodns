@@ -179,7 +179,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -323,14 +323,66 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="octodns-record-mx">
-<h1><code class="docutils literal notranslate"><span class="pre">octodns.record.mx</span></code><a class="headerlink" href="#octodns-record-mx" title="Link to this heading">¶</a></h1>
+          <section id="module-octodns.record.mx">
+<span id="octodns-record-mx"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.record.mx</span></code><a class="headerlink" href="#module-octodns.record.mx" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.mx.MxRecord">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.mx.</span></span><span class="sig-name descname"><span class="pre">MxRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/mx.html#MxRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.mx.MxRecord" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.record.base.html#octodns.record.base.ValuesMixin" title="octodns.record.base.ValuesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValuesMixin</span></code></a>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.mx.MxValue">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.mx.</span></span><span class="sig-name descname"><span class="pre">MxValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/mx.html#MxValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.mx.MxValue" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../octodns.equality.html#octodns.equality.EqualityTupleMixin" title="octodns.equality.EqualityTupleMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">EqualityTupleMixin</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.mx.MxValue.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/mx.html#MxValue.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.mx.MxValue.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.mx.MxValue.data">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#octodns.record.mx.MxValue.data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.mx.MxValue.exchange">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">exchange</span></span><a class="headerlink" href="#octodns.record.mx.MxValue.exchange" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.mx.MxValue.parse_rdata_text">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_rdata_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/mx.html#MxValue.parse_rdata_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.mx.MxValue.parse_rdata_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.mx.MxValue.preference">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">preference</span></span><a class="headerlink" href="#octodns.record.mx.MxValue.preference" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.mx.MxValue.process">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/mx.html#MxValue.process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.mx.MxValue.process" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.mx.MxValue.rdata_text">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rdata_text</span></span><a class="headerlink" href="#octodns.record.mx.MxValue.rdata_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.mx.MxValue.validate">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/mx.html#MxValue.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.mx.MxValue.validate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -376,8 +428,38 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.record.mx</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.mx.MxRecord"><code class="docutils literal notranslate"><span class="pre">MxRecord</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.mx.MxValue"><code class="docutils literal notranslate"><span class="pre">MxValue</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.mx.MxValue.__init__"><code class="docutils literal notranslate"><span class="pre">MxValue.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.mx.MxValue.data"><code class="docutils literal notranslate"><span class="pre">MxValue.data</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.mx.MxValue.exchange"><code class="docutils literal notranslate"><span class="pre">MxValue.exchange</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.mx.MxValue.parse_rdata_text"><code class="docutils literal notranslate"><span class="pre">MxValue.parse_rdata_text()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.mx.MxValue.preference"><code class="docutils literal notranslate"><span class="pre">MxValue.preference</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.mx.MxValue.process"><code class="docutils literal notranslate"><span class="pre">MxValue.process()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.mx.MxValue.rdata_text"><code class="docutils literal notranslate"><span class="pre">MxValue.rdata_text</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.mx.MxValue.validate"><code class="docutils literal notranslate"><span class="pre">MxValue.validate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
