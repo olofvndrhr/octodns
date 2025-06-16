@@ -1,0 +1,620 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="octodns.processor.acme" href="../modules/processor/octodns.processor.acme.html" /><link rel="prev" title="Quick-Start" href="quick-start.html" />
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+        <title>octoDNS records - octodns 1.11.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">octodns 1.11.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">octodns 1.11.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Guides:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="auto_arpa.html">Automatic PTR Generation With auto_arpa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamic_records.html">Dynamic Record Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geo_records.html">Geo Record Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migrating.html">Migrating to octodns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">octoDNS records</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Processors:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/processor/octodns.processor.acme.html"><code class="docutils literal notranslate"><span class="pre">octodns.processor.acme</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/processor/octodns.processor.arpa.html"><code class="docutils literal notranslate"><span class="pre">octodns.processor.arpa</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/processor/octodns.processor.base.html"><code class="docutils literal notranslate"><span class="pre">octodns.processor.base</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/processor/octodns.processor.filter.html"><code class="docutils literal notranslate"><span class="pre">octodns.processor.filter</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/processor/octodns.processor.meta.html"><code class="docutils literal notranslate"><span class="pre">octodns.processor.meta</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/processor/octodns.processor.ownership.html"><code class="docutils literal notranslate"><span class="pre">octodns.processor.ownership</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/processor/octodns.processor.restrict.html"><code class="docutils literal notranslate"><span class="pre">octodns.processor.restrict</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/processor/octodns.processor.spf.html"><code class="docutils literal notranslate"><span class="pre">octodns.processor.spf</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/processor/octodns.processor.trailing_dots.html"><code class="docutils literal notranslate"><span class="pre">octodns.processor.trailing_dots</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Providers:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/provider/octodns.provider.base.html"><code class="docutils literal notranslate"><span class="pre">octodns.provider.base</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/provider/octodns.provider.plan.html"><code class="docutils literal notranslate"><span class="pre">octodns.provider.plan</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/provider/octodns.provider.yaml.html"><code class="docutils literal notranslate"><span class="pre">octodns.provider.yaml</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/source/octodns.source.base.html"><code class="docutils literal notranslate"><span class="pre">octodns.source.base</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/source/octodns.source.envvar.html"><code class="docutils literal notranslate"><span class="pre">octodns.source.envvar</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/source/octodns.source.tinydns.html"><code class="docutils literal notranslate"><span class="pre">octodns.source.tinydns</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.a.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.a</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.aaaa.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.aaaa</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.alias.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.alias</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.base.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.base</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.caa.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.caa</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.change.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.change</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.chunked.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.chunked</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.cname.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.cname</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.dname.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.dname</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.ds.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.ds</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.dynamic.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.dynamic</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.exception.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.exception</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.geo.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.geo</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.geo_data.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.geo_data</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.https.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.https</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.ip.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.ip</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.loc.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.loc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.mx.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.mx</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.naptr.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.naptr</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.ns.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.ns</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.ptr.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.ptr</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.rr.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.rr</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.spf.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.spf</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.srv.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.srv</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.sshfp.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.sshfp</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.subnet.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.subnet</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.svcb.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.svcb</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.target.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.target</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.tlsa.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.tlsa</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.txt.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.txt</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/record/octodns.record.urlfwd.html"><code class="docutils literal notranslate"><span class="pre">octodns.record.urlfwd</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/octodns.context.html"><code class="docutils literal notranslate"><span class="pre">octodns.context</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/octodns.deprecation.html"><code class="docutils literal notranslate"><span class="pre">octodns.deprecation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/octodns.equality.html"><code class="docutils literal notranslate"><span class="pre">octodns.equality</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/octodns.idna.html"><code class="docutils literal notranslate"><span class="pre">octodns.idna</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/octodns.manager.html"><code class="docutils literal notranslate"><span class="pre">octodns.manager</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/octodns.yaml.html"><code class="docutils literal notranslate"><span class="pre">octodns.yaml</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/octodns.zone.html"><code class="docutils literal notranslate"><span class="pre">octodns.zone</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/cmds/octodns.cmds.args.html"><code class="docutils literal notranslate"><span class="pre">octodns.cmds.args</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/cmds/octodns.cmds.compare.html"><code class="docutils literal notranslate"><span class="pre">octodns.cmds.compare</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/cmds/octodns.cmds.dump.html"><code class="docutils literal notranslate"><span class="pre">octodns.cmds.dump</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/cmds/octodns.cmds.report.html"><code class="docutils literal notranslate"><span class="pre">octodns.cmds.report</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/cmds/octodns.cmds.sync.html"><code class="docutils literal notranslate"><span class="pre">octodns.cmds.sync</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/cmds/octodns.cmds.validate.html"><code class="docutils literal notranslate"><span class="pre">octodns.cmds.validate</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/cmds/octodns.cmds.versions.html"><code class="docutils literal notranslate"><span class="pre">octodns.cmds.versions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/secret/octodns.secret.base.html"><code class="docutils literal notranslate"><span class="pre">octodns.secret.base</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/secret/octodns.secret.environ.html"><code class="docutils literal notranslate"><span class="pre">octodns.secret.environ</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/secret/octodns.secret.exception.html"><code class="docutils literal notranslate"><span class="pre">octodns.secret.exception</span></code></a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://github.com/octodns/octodns/blob/main/docs/pages/records.md?plain=true" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div><div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/octodns/octodns/edit/main/docs/pages/records.md" title="Edit this page">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="octodns-records">
+<h1>octoDNS records<a class="headerlink" href="#octodns-records" title="Link to this heading">¶</a></h1>
+<section id="record-types">
+<h2>Record types<a class="headerlink" href="#record-types" title="Link to this heading">¶</a></h2>
+<p>octoDNS supports the following record types:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AAAA</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALIAS</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CAA</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CNAME</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DNAME</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DS</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LOC</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MX</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NAPTR</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NS</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PTR</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SPF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SRV</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SSHFP</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TLSA</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TXT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">URLFWD</span></code></p></li>
+</ul>
+<p>Underlying provider support for each of these varies and some providers have extra requirements or limitations. In cases where a record type is not supported by a provider octoDNS will ignore it there and continue to manage the record elsewhere. For example <code class="docutils literal notranslate"><span class="pre">SSHFP</span></code> is supported by Dyn, but not Route53. If your source data includes an SSHFP record octoDNS will keep it in sync on Dyn, but not consider it when evaluating the state of Route53. The best way to find out what types are supported by a provider is to look for its <code class="docutils literal notranslate"><span class="pre">supports</span></code> method. If that method exists the logic will drive which records are supported and which are ignored. If the provider does not implement the method it will fall back to <code class="docutils literal notranslate"><span class="pre">BaseProvider.supports</span></code> which indicates full support.</p>
+<p>Adding new record types to octoDNS is relatively straightforward, but will require careful evaluation of each provider to determine whether or not it will be supported and the addition of code in each to handle and test the new type.</p>
+</section>
+<section id="advanced-record-support-geodns-weighting">
+<h2>Advanced Record Support (GeoDNS, Weighting)<a class="headerlink" href="#advanced-record-support-geodns-weighting" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#/docs/dynamic_records.md"><span class="xref myst">Dynamic Records</span></a> - the preferred method for configuring geo-location, weights, and healthcheck based fallback between pools of services.</p></li>
+<li><p><a class="reference internal" href="#/docs/geo_records.md"><span class="xref myst">Geo Records</span></a> - the original implementation of geo-location based records, now superseded by Dynamic Records (above)</p></li>
+</ul>
+</section>
+<section id="config-yamlprovider">
+<h2>Config (<code class="docutils literal notranslate"><span class="pre">YamlProvider</span></code>)<a class="headerlink" href="#config-yamlprovider" title="Link to this heading">¶</a></h2>
+<p>octoDNS records and <code class="docutils literal notranslate"><span class="pre">YamlProvider</span></code>’s schema is essentially a 1:1 match. Properties on the objects will match keys in the config.</p>
+<section id="names">
+<h3>Names<a class="headerlink" href="#names" title="Link to this heading">¶</a></h3>
+<p>Each top-level key in the yaml file is a record name. Two common special cases are the root record <code class="docutils literal notranslate"><span class="pre">''</span></code>, and a wildcard <code class="docutils literal notranslate"><span class="pre">'*'</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="s">&#39;&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
+<span class="w">  </span><span class="nt">values</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.2.3.4</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.2.3.5</span>
+<span class="s">&#39;*&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CNAME</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www.example.com.</span>
+<span class="nt">www</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
+<span class="w">  </span><span class="nt">values</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.2.3.4</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.2.3.5</span>
+<span class="nt">www.sub</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
+<span class="w">  </span><span class="nt">values</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.2.3.6</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.2.3.7</span>
+</pre></div>
+</div>
+<p>The above config lays out 4 records, <code class="docutils literal notranslate"><span class="pre">A</span></code>s for <code class="docutils literal notranslate"><span class="pre">example.com.</span></code>, <code class="docutils literal notranslate"><span class="pre">www.example.com.</span></code>, and <code class="docutils literal notranslate"><span class="pre">www.sub.example.com</span></code> and a wildcard <code class="docutils literal notranslate"><span class="pre">CNAME</span></code> mapping <code class="docutils literal notranslate"><span class="pre">*.example.com.</span></code> to <code class="docutils literal notranslate"><span class="pre">www.example.com.</span></code>.</p>
+</section>
+<section id="multiple-records">
+<h3>Multiple records<a class="headerlink" href="#multiple-records" title="Link to this heading">¶</a></h3>
+<p>In the above example each name had a single record, but there are cases where a name will need to have multiple records associated with it. This can be accomplished by using a list.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="s">&#39;&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
+<span class="w">    </span><span class="nt">values</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.2.3.4</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.2.3.5</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MX</span>
+<span class="w">    </span><span class="nt">values</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">exchange</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mx1.example.com.</span>
+<span class="w">        </span><span class="nt">preference</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">exchange</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mx2.example.com.</span>
+<span class="w">        </span><span class="nt">preference</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+</pre></div>
+</div>
+</section>
+<section id="record-data">
+<h3>Record data<a class="headerlink" href="#record-data" title="Link to this heading">¶</a></h3>
+<p>Each record type has a corresponding set of required data. The easiest way to determine what’s required is probably to look at the record object in <a class="reference internal" href="#/octodns/record/__init__.py"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">octodns/record/__init__.py</span></code></span></a>. You may also utilize <code class="docutils literal notranslate"><span class="pre">octodns-validate</span></code> which will throw errors about what’s missing when run.</p>
+<p><code class="docutils literal notranslate"><span class="pre">type</span></code> is required for all records. <code class="docutils literal notranslate"><span class="pre">ttl</span></code> is optional. When TTL is not specified the <code class="docutils literal notranslate"><span class="pre">YamlProvider</span></code>’s default will be used. In any situation where an array of <code class="docutils literal notranslate"><span class="pre">values</span></code> can be used you can opt to go with <code class="docutils literal notranslate"><span class="pre">value</span></code> as a single item if there’s only one.</p>
+</section>
+<section id="lenience">
+<h3>Lenience<a class="headerlink" href="#lenience" title="Link to this heading">¶</a></h3>
+<p>octoDNS is fairly strict in terms of standards compliance and is opinionated in terms of best practices. Examples of the former include SRV record naming requirements and the latter that ALIAS records are constrained to the root of zones. The strictness and support of providers varies so you may encounter existing records that fail validation when you try to dump them or you may even have use cases for which you need to create or preserve records that don’t validate. octoDNS’s solution to this is the <code class="docutils literal notranslate"><span class="pre">lenient</span></code> flag.</p>
+<p>It’s best to think of the <code class="docutils literal notranslate"><span class="pre">lenient</span></code> flag as “I know what I’m doing and accept any problems I run across.” The main reason being is that some providers may allow the non-compliant setup and others may not. The behavior of the non-compliant records may even vary from one provider to another. Caveat emptor.</p>
+<section id="record-priority-for-autoarpa">
+<h4>Record priority for AutoArpa<a class="headerlink" href="#record-priority-for-autoarpa" title="Link to this heading">¶</a></h4>
+<p>When multiple A or AAAA records point to the same IP, it is possible to set an optional priority on each record. The records with the lowest priority will have the highest preference when being processed by AutoArpa. The AutoArpa provider will create PTR records in order of preference, up to a set limit defined by the <code class="docutils literal notranslate"><span class="pre">max_auto_arpa</span></code> option in the provider configuration.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.2.3.4</span>
+<span class="w">  </span><span class="nt">octodns</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">auto_arpa_priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</pre></div>
+</div>
+</section>
+<section id="octodns-dump">
+<h4>octodns-dump<a class="headerlink" href="#octodns-dump" title="Link to this heading">¶</a></h4>
+<p>If you’re trying to import a zone into octoDNS config file using <code class="docutils literal notranslate"><span class="pre">octodns-dump</span></code> which fails due to validation errors you can supply the <code class="docutils literal notranslate"><span class="pre">--lenient</span></code> argument to tell octoDNS that you acknowledge that things aren’t lining up with its expectations, but you’d like it to go ahead anyway. This will do its best to populate the zone and dump the results out into an octoDNS zone file and include the non-compliant bits. If you go to use that config file octoDNS will again complain about the validation problems. You can correct them in cases where that makes sense, but if you need to preserve the non-compliant records read on for options.</p>
+</section>
+<section id="record-level-lenience">
+<h4>Record level lenience<a class="headerlink" href="#record-level-lenience" title="Link to this heading">¶</a></h4>
+<p>When there are non-compliant records configured in Yaml you can add the following to tell octoDNS to do it’s best to proceed with them anyway. If you use <code class="docutils literal notranslate"><span class="pre">--lenient</span></code> above to dump a zone and you’d like to sync it as-is you can mark the problematic records this way.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="s">&#39;not-root&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="nt">octodns</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">lenient</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ALIAS</span>
+<span class="w">  </span><span class="nt">values</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">something.else.com.</span>
+</pre></div>
+</div>
+</section>
+<section id="zone-level-lenience">
+<h4>Zone level lenience<a class="headerlink" href="#zone-level-lenience" title="Link to this heading">¶</a></h4>
+<p>If you’d like to enable lenience for a whole zone you can do so with the following, thought it’s strongly encouraged to mark things at record level when possible. The most common case where things may need to be done at the zone level is when using something other than <code class="docutils literal notranslate"><span class="pre">YamlProvider</span></code> as a source, e.g. syncing from <code class="docutils literal notranslate"><span class="pre">Route53Provider</span></code> to <code class="docutils literal notranslate"><span class="pre">Ns1Provider</span></code> when there are non-compliant records in the zone in Route53.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">non-compliant-zone.com.</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">lenient</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
+<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ns1</span>
+</pre></div>
+</div>
+</section>
+<section id="restrict-record-manipulations">
+<h4>Restrict Record manipulations<a class="headerlink" href="#restrict-record-manipulations" title="Link to this heading">¶</a></h4>
+<p>octoDNS currently provides the ability to limit the number of updates/deletes on
+DNS records by configuring a percentage of allowed operations as a provider threshold.
+If left unconfigured, suitable defaults take over instead. In the below example,
+the Dyn provider is configured with limits of 40% on both update and
+delete operations over all the records present.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dyn</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.provider.dyn.DynProvider</span>
+<span class="w">    </span><span class="nt">update_pcent_threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.4</span>
+<span class="w">    </span><span class="nt">delete_pcent_threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.4</span>
+</pre></div>
+</div>
+<p>Additionally, thresholds can be configured at the zone level. Zone thresholds
+take precedence over any provider default or explicit configuration. Zone
+thresholds do not have a default.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">zones</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">example.com.</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">update_pcent_threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span>
+<span class="w">    </span><span class="nt">delete_pcent_threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="provider-specific-record-types">
+<h2>Provider specific record types<a class="headerlink" href="#provider-specific-record-types" title="Link to this heading">¶</a></h2>
+<section id="creating-and-registering">
+<h3>Creating and registering<a class="headerlink" href="#creating-and-registering" title="Link to this heading">¶</a></h3>
+<p>octoDNS has support for provider specific record types through a dynamic type registration system. This functionality is powered by <code class="docutils literal notranslate"><span class="pre">Route.register_type</span></code> and can be used as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">_SpecificValue</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="o">...</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SomeProviderSpecificRecord</span><span class="p">(</span><span class="n">ValuesMixin</span><span class="p">,</span> <span class="n">Record</span><span class="p">):</span>
+    <span class="n">_type</span> <span class="o">=</span> <span class="s1">&#39;SomeProvider/SPECIFIC&#39;</span>
+    <span class="n">_value_type</span> <span class="o">=</span> <span class="n">_SpecificValue</span>
+
+<span class="n">Record</span><span class="o">.</span><span class="n">register_type</span><span class="p">(</span><span class="n">SomeProviderSpecificRecord</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Have a look in <a class="reference internal" href="#/octodns/record/__init__.py"><span class="xref myst">octodns.record</span></a> for examples of how records are implemented. <code class="docutils literal notranslate"><span class="pre">NsRecord</span></code> and <code class="docutils literal notranslate"><span class="pre">_NsValue</span></code> are fairly simple examples to start with. You can also take a look at <a class="reference external" href="https://github.com/octodns/octodns-route53/blob/main/octodns_route53/record.py"><code class="docutils literal notranslate"><span class="pre">Route53Provider</span></code>’s <code class="docutils literal notranslate"><span class="pre">Route53Provider/ALIAS</span></code> type</a>.</p>
+<p>In general this support is intended for record types that only make sense for a single provider. If multiple providers have a similar record it may make sense to implement it in octoDNS core.</p>
+</section>
+<section id="naming">
+<h3>Naming<a class="headerlink" href="#naming" title="Link to this heading">¶</a></h3>
+<p>By convention the record type should be prefixed with the provider class, e.g. <code class="docutils literal notranslate"><span class="pre">Route53Provider</span></code> followed by a <code class="docutils literal notranslate"><span class="pre">/</span></code> and an all-caps record type name <code class="docutils literal notranslate"><span class="pre">ALIAS</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">Route53Provider/ALIAS</span></code>.</p>
+</section>
+<section id="yamlprovider-support">
+<h3>YamlProvider support<a class="headerlink" href="#yamlprovider-support" title="Link to this heading">¶</a></h3>
+<p>Once the type is registered <code class="docutils literal notranslate"><span class="pre">YamlProvider</span></code> will automatically gain support for it and they can be included in your zone yaml files.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">alias</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Route53Provider/ALIAS</span>
+<span class="w">  </span><span class="nt">values</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AAAA</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../modules/processor/octodns.processor.acme.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title"><code class="docutils literal notranslate"><span class="pre">octodns.processor.acme</span></code></div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="quick-start.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Quick-Start</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2017-present
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">octoDNS records</a><ul>
+<li><a class="reference internal" href="#record-types">Record types</a></li>
+<li><a class="reference internal" href="#advanced-record-support-geodns-weighting">Advanced Record Support (GeoDNS, Weighting)</a></li>
+<li><a class="reference internal" href="#config-yamlprovider">Config (<code class="docutils literal notranslate"><span class="pre">YamlProvider</span></code>)</a><ul>
+<li><a class="reference internal" href="#names">Names</a></li>
+<li><a class="reference internal" href="#multiple-records">Multiple records</a></li>
+<li><a class="reference internal" href="#record-data">Record data</a></li>
+<li><a class="reference internal" href="#lenience">Lenience</a><ul>
+<li><a class="reference internal" href="#record-priority-for-autoarpa">Record priority for AutoArpa</a></li>
+<li><a class="reference internal" href="#octodns-dump">octodns-dump</a></li>
+<li><a class="reference internal" href="#record-level-lenience">Record level lenience</a></li>
+<li><a class="reference internal" href="#zone-level-lenience">Zone level lenience</a></li>
+<li><a class="reference internal" href="#restrict-record-manipulations">Restrict Record manipulations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#provider-specific-record-types">Provider specific record types</a><ul>
+<li><a class="reference internal" href="#creating-and-registering">Creating and registering</a></li>
+<li><a class="reference internal" href="#naming">Naming</a></li>
+<li><a class="reference internal" href="#yamlprovider-support">YamlProvider support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=6cf1fb80"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>
