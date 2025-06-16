@@ -346,6 +346,11 @@
 <dd><p>Returns new if we have one, existing otherwise</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.change.Change._equality_tuple">
+<span class="sig-name descname"><span class="pre">_equality_tuple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/change.html#Change._equality_tuple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.change.Change._equality_tuple" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -366,6 +371,34 @@
 <dt class="sig sig-object py" id="octodns.record.change.Create.data">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#octodns.record.change.Create.data" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.change.Create.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">leader</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/change.html#Create.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.change.Create.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.change.Update">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.change.</span></span><span class="sig-name descname"><span class="pre">Update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">existing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/change.html#Update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.change.Update" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.record.change.Change" title="octodns.record.change.Change"><code class="xref py py-class docutils literal notranslate"><span class="pre">Change</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.change.Update.CLASS_ORDERING">
+<span class="sig-name descname"><span class="pre">CLASS_ORDERING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#octodns.record.change.Update.CLASS_ORDERING" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.change.Update.data">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#octodns.record.change.Update.data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.change.Update.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">leader</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/change.html#Update.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.change.Update.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -388,21 +421,11 @@
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#octodns.record.change.Delete.data" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.change.Delete.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">leader</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/change.html#Delete.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.change.Delete.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
 </dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.record.change.Update">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.change.</span></span><span class="sig-name descname"><span class="pre">Update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">existing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/change.html#Update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.change.Update" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#octodns.record.change.Change" title="octodns.record.change.Change"><code class="xref py py-class docutils literal notranslate"><span class="pre">Change</span></code></a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.record.change.Update.CLASS_ORDERING">
-<span class="sig-name descname"><span class="pre">CLASS_ORDERING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#octodns.record.change.Update.CLASS_ORDERING" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.change.Update.data">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#octodns.record.change.Update.data" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
 
 </dd></dl>
 
@@ -467,23 +490,27 @@
 <li><a class="reference internal" href="#octodns.record.change.Change"><code class="docutils literal notranslate"><span class="pre">Change</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.record.change.Change.__init__"><code class="docutils literal notranslate"><span class="pre">Change.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.change.Change.record"><code class="docutils literal notranslate"><span class="pre">Change.record</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.change.Change._equality_tuple"><code class="docutils literal notranslate"><span class="pre">Change._equality_tuple()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#octodns.record.change.Create"><code class="docutils literal notranslate"><span class="pre">Create</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.record.change.Create.CLASS_ORDERING"><code class="docutils literal notranslate"><span class="pre">Create.CLASS_ORDERING</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.change.Create.__init__"><code class="docutils literal notranslate"><span class="pre">Create.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.change.Create.data"><code class="docutils literal notranslate"><span class="pre">Create.data</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.change.Create.__repr__"><code class="docutils literal notranslate"><span class="pre">Create.__repr__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.record.change.Update"><code class="docutils literal notranslate"><span class="pre">Update</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.change.Update.CLASS_ORDERING"><code class="docutils literal notranslate"><span class="pre">Update.CLASS_ORDERING</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.change.Update.data"><code class="docutils literal notranslate"><span class="pre">Update.data</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.change.Update.__repr__"><code class="docutils literal notranslate"><span class="pre">Update.__repr__()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#octodns.record.change.Delete"><code class="docutils literal notranslate"><span class="pre">Delete</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.record.change.Delete.CLASS_ORDERING"><code class="docutils literal notranslate"><span class="pre">Delete.CLASS_ORDERING</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.change.Delete.__init__"><code class="docutils literal notranslate"><span class="pre">Delete.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.change.Delete.data"><code class="docutils literal notranslate"><span class="pre">Delete.data</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.record.change.Update"><code class="docutils literal notranslate"><span class="pre">Update</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.record.change.Update.CLASS_ORDERING"><code class="docutils literal notranslate"><span class="pre">Update.CLASS_ORDERING</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.change.Update.data"><code class="docutils literal notranslate"><span class="pre">Update.data</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.change.Delete.__repr__"><code class="docutils literal notranslate"><span class="pre">Delete.__repr__()</span></code></a></li>
 </ul>
 </li>
 </ul>

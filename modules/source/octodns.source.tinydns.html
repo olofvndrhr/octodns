@@ -331,13 +331,18 @@
         <article role="main" id="furo-main-content">
           <section id="module-octodns.source.tinydns">
 <span id="octodns-source-tinydns"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.source.tinydns</span></code><a class="headerlink" href="#module-octodns.source.tinydns" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="octodns.source.tinydns._unique">
+<span class="sig-prename descclassname"><span class="pre">octodns.source.tinydns.</span></span><span class="sig-name descname"><span class="pre">_unique</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#_unique"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns._unique" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.source.tinydns.</span></span><span class="sig-name descname"><span class="pre">TinyDnsBaseSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="octodns.source.base.html#octodns.source.base.BaseSource" title="octodns.source.base.BaseSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSource</span></code></a></p>
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SUPPORTS</span></span><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS" title="Link to this definition">¶</a></dt>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS_GEO">
+<span class="sig-name descname"><span class="pre">SUPPORTS_GEO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS_GEO" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -345,9 +350,79 @@
 <span class="sig-name descname"><span class="pre">SUPPORTS_DYNAMIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS_DYNAMIC" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS_GEO">
-<span class="sig-name descname"><span class="pre">SUPPORTS_GEO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS_GEO" title="Link to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SUPPORTS</span></span><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource._ttl_for">
+<span class="sig-name descname"><span class="pre">_ttl_for</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource._ttl_for"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource._ttl_for" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource._records_for_at">
+<span class="sig-name descname"><span class="pre">_records_for_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arpa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource._records_for_at"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_at" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource._records_for_C">
+<span class="sig-name descname"><span class="pre">_records_for_C</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arpa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource._records_for_C"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_C" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource._records_for_caret">
+<span class="sig-name descname"><span class="pre">_records_for_caret</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arpa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource._records_for_caret"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_caret" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource._records_for_equal">
+<span class="sig-name descname"><span class="pre">_records_for_equal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arpa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource._records_for_equal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_equal" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource._records_for_dot">
+<span class="sig-name descname"><span class="pre">_records_for_dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arpa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource._records_for_dot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_dot" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource._records_for_amp">
+<span class="sig-name descname"><span class="pre">_records_for_amp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arpa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_amp" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource._records_for_plus">
+<span class="sig-name descname"><span class="pre">_records_for_plus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arpa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource._records_for_plus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_plus" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource._records_for_quote">
+<span class="sig-name descname"><span class="pre">_records_for_quote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arpa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource._records_for_quote"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_quote" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource._records_for_three">
+<span class="sig-name descname"><span class="pre">_records_for_three</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arpa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource._records_for_three"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_three" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource._records_for_S">
+<span class="sig-name descname"><span class="pre">_records_for_S</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arpa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource._records_for_S"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_S" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource._records_for_colon">
+<span class="sig-name descname"><span class="pre">_records_for_colon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arpa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource._records_for_colon"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_colon" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource._records_for_six">
+<span class="sig-name descname"><span class="pre">_records_for_six</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arpa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource._records_for_six"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_six" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -356,8 +431,13 @@
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource.__init__" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource._process_lines">
+<span class="sig-name descname"><span class="pre">_process_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource._process_lines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource._process_lines" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsBaseSource._process_symbols">
+<span class="sig-name descname"><span class="pre">_process_symbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arpa</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsBaseSource._process_symbols"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsBaseSource._process_symbols" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -401,6 +481,11 @@ support IPv6 and a few other record types,
 <dl class="py method">
 <dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsFileSource.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsFileSource.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsFileSource.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.tinydns.TinyDnsFileSource._lines">
+<span class="sig-name descname"><span class="pre">_lines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/tinydns.html#TinyDnsFileSource._lines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.tinydns.TinyDnsFileSource._lines" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -463,17 +548,34 @@ support IPv6 and a few other record types,
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.source.tinydns</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.source.tinydns._unique"><code class="docutils literal notranslate"><span class="pre">_unique()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource.SUPPORTS</span></code></a></li>
-<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS_DYNAMIC"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource.SUPPORTS_DYNAMIC</span></code></a></li>
 <li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS_GEO"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource.SUPPORTS_GEO</span></code></a></li>
-<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource.SYMBOL_MAP"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource.SYMBOL_MAP</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS_DYNAMIC"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource.SUPPORTS_DYNAMIC</span></code></a></li>
 <li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource.__init__"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource.SUPPORTS"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource.SUPPORTS</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource._ttl_for"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource._ttl_for()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_at"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource._records_for_at()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_C"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource._records_for_C()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_caret"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource._records_for_caret()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_equal"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource._records_for_equal()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_dot"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource._records_for_dot()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_amp"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource._records_for_amp()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_plus"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource._records_for_plus()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_quote"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource._records_for_quote()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_three"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource._records_for_three()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_S"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource._records_for_S()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_colon"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource._records_for_colon()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource._records_for_six"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource._records_for_six()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource.SYMBOL_MAP"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource.SYMBOL_MAP</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource._process_lines"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource._process_lines()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource._process_symbols"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource._process_symbols()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsBaseSource.populate"><code class="docutils literal notranslate"><span class="pre">TinyDnsBaseSource.populate()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsFileSource"><code class="docutils literal notranslate"><span class="pre">TinyDnsFileSource</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsFileSource.__init__"><code class="docutils literal notranslate"><span class="pre">TinyDnsFileSource.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.tinydns.TinyDnsFileSource._lines"><code class="docutils literal notranslate"><span class="pre">TinyDnsFileSource._lines()</span></code></a></li>
 </ul>
 </li>
 </ul>

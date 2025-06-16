@@ -390,6 +390,8 @@
         <span class="k">return</span> <span class="n">desired</span></div>
 
 
+<div class="viewcode-block" id="AutoArpa._order_and_unique_fqdns">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.arpa.html#octodns.processor.arpa.AutoArpa._order_and_unique_fqdns">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_order_and_unique_fqdns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fqdns</span><span class="p">,</span> <span class="n">max_auto_arpa</span><span class="p">):</span>
         <span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="c1"># order the fqdns making a copy so we can reset the list below</span>
@@ -402,7 +404,8 @@
             <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">fqdn</span><span class="p">)</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">seen</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">max_auto_arpa</span><span class="p">:</span>
                 <span class="k">break</span>
-        <span class="k">return</span> <span class="n">fqdns</span>
+        <span class="k">return</span> <span class="n">fqdns</span></div>
+
 
 <div class="viewcode-block" id="AutoArpa.populate">
 <a class="viewcode-back" href="../../../modules/processor/octodns.processor.arpa.html#octodns.processor.arpa.AutoArpa.populate">[docs]</a>

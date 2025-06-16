@@ -331,6 +331,12 @@
         <article role="main" id="furo-main-content">
           <section id="module-octodns.processor.base">
 <span id="octodns-processor-base"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.processor.base</span></code><a class="headerlink" href="#module-octodns.processor.base" title="Link to this heading">¶</a></h1>
+<dl class="py exception">
+<dt class="sig sig-object py" id="octodns.processor.base.ProcessorException">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.base.</span></span><span class="sig-name descname"><span class="pre">ProcessorException</span></span><a class="reference internal" href="../../_modules/octodns/processor/base.html#ProcessorException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.base.ProcessorException" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="octodns.processor.base.BaseProcessor">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.base.</span></span><span class="sig-name descname"><span class="pre">BaseProcessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/base.html#BaseProcessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.base.BaseProcessor" title="Link to this definition">¶</a></dt>
@@ -339,53 +345,6 @@
 <dt class="sig sig-object py" id="octodns.processor.base.BaseProcessor.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/base.html#BaseProcessor.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.base.BaseProcessor.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.base.BaseProcessor.process_plan">
-<span class="sig-name descname"><span class="pre">process_plan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/base.html#BaseProcessor.process_plan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.base.BaseProcessor.process_plan" title="Link to this definition">¶</a></dt>
-<dd><p>Called after the planning phase has completed. Provides an opportunity
-for the processors to modify the plan thus changing the actions that
-will be displayed and potentially applied.</p>
-<ul class="simple">
-<li><p><cite>plan</cite> may be None if no changes were detected, if so a <cite>Plan</cite> may
-still be created and returned.</p></li>
-<li><p>May modify <cite>plan.changes</cite> directly or create a new <cite>Plan</cite>.</p></li>
-<li><p>Does not have to modify <cite>plan.desired</cite> and/or <cite>plan.existing</cite> to line
-up with any modifications made to <cite>plan.changes</cite>.</p></li>
-<li><p>Should copy over <cite>plan.exists</cite>, <cite>plan.update_pcent_threshold</cite>, and
-<cite>plan.delete_pcent_threshold</cite> when creating a new <cite>Plan</cite>.</p></li>
-<li><p>Must return a <cite>Plan</cite> which may be <cite>plan</cite> or can be a newly created
-one <cite>plan.desired</cite> and <cite>plan.existing</cite> copied over as-is or modified.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.base.BaseProcessor.process_source_and_target_zones">
-<span class="sig-name descname"><span class="pre">process_source_and_target_zones</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">desired</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">existing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/base.html#BaseProcessor.process_source_and_target_zones"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.base.BaseProcessor.process_source_and_target_zones" title="Link to this definition">¶</a></dt>
-<dd><p>Called just prior to computing changes for <cite>target</cite> between <cite>desired</cite>
-and <cite>existing</cite>. Provides an opportunity for the processor to modify
-either the desired or existing <a href="#id1"><span class="problematic" id="id2">`</span></a>Zone`s that will be used to compute the
-changes and create the initial plan.</p>
-<ul class="simple">
-<li><p>Will see <cite>desired</cite> after any modifications done by
-<cite>Provider._process_desired_zone</cite> and all processors via
-<cite>Processor.process_source_zone</cite></p></li>
-<li><p>Will see <cite>existing</cite> after any modifications done by all processors
-via <cite>Processor.process_target_zone</cite></p></li>
-<li><p>Will see both <cite>desired</cite> and <cite>existing</cite> after any modifications done by
-any processors configured to run before this one via
-<cite>Processor.process_source_and_target_zones</cite>.</p></li>
-<li><p>May modify <cite>desired</cite> directly.</p></li>
-<li><p>Must return <cite>desired</cite> which will normally be the <cite>desired</cite> param.</p></li>
-<li><p>May modify <cite>existing</cite> directly.</p></li>
-<li><p>Must return <cite>existing</cite> which will normally be the <cite>existing</cite> param.</p></li>
-<li><p>Must not modify records directly, <cite>record.copy</cite> should be called,
-the results of which can be modified, and then <cite>Zone.add_record</cite> may
-be used with <cite>replace=True</cite>.</p></li>
-<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>desired</cite>.</p></li>
-<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>existing</cite>.</p></li>
-</ul>
-</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="octodns.processor.base.BaseProcessor.process_source_zone">
@@ -425,12 +384,53 @@ be used with <cite>replace=True</cite>.</p></li>
 </ul>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.base.BaseProcessor.process_source_and_target_zones">
+<span class="sig-name descname"><span class="pre">process_source_and_target_zones</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">desired</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">existing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/base.html#BaseProcessor.process_source_and_target_zones"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.base.BaseProcessor.process_source_and_target_zones" title="Link to this definition">¶</a></dt>
+<dd><p>Called just prior to computing changes for <cite>target</cite> between <cite>desired</cite>
+and <cite>existing</cite>. Provides an opportunity for the processor to modify
+either the desired or existing <a href="#id1"><span class="problematic" id="id2">`</span></a>Zone`s that will be used to compute the
+changes and create the initial plan.</p>
+<ul class="simple">
+<li><p>Will see <cite>desired</cite> after any modifications done by
+<cite>Provider._process_desired_zone</cite> and all processors via
+<cite>Processor.process_source_zone</cite></p></li>
+<li><p>Will see <cite>existing</cite> after any modifications done by all processors
+via <cite>Processor.process_target_zone</cite></p></li>
+<li><p>Will see both <cite>desired</cite> and <cite>existing</cite> after any modifications done by
+any processors configured to run before this one via
+<cite>Processor.process_source_and_target_zones</cite>.</p></li>
+<li><p>May modify <cite>desired</cite> directly.</p></li>
+<li><p>Must return <cite>desired</cite> which will normally be the <cite>desired</cite> param.</p></li>
+<li><p>May modify <cite>existing</cite> directly.</p></li>
+<li><p>Must return <cite>existing</cite> which will normally be the <cite>existing</cite> param.</p></li>
+<li><p>Must not modify records directly, <cite>record.copy</cite> should be called,
+the results of which can be modified, and then <cite>Zone.add_record</cite> may
+be used with <cite>replace=True</cite>.</p></li>
+<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>desired</cite>.</p></li>
+<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>existing</cite>.</p></li>
+</ul>
 </dd></dl>
 
-<dl class="py exception">
-<dt class="sig sig-object py" id="octodns.processor.base.ProcessorException">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.base.</span></span><span class="sig-name descname"><span class="pre">ProcessorException</span></span><a class="reference internal" href="../../_modules/octodns/processor/base.html#ProcessorException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.base.ProcessorException" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.base.BaseProcessor.process_plan">
+<span class="sig-name descname"><span class="pre">process_plan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/base.html#BaseProcessor.process_plan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.base.BaseProcessor.process_plan" title="Link to this definition">¶</a></dt>
+<dd><p>Called after the planning phase has completed. Provides an opportunity
+for the processors to modify the plan thus changing the actions that
+will be displayed and potentially applied.</p>
+<ul class="simple">
+<li><p><cite>plan</cite> may be None if no changes were detected, if so a <cite>Plan</cite> may
+still be created and returned.</p></li>
+<li><p>May modify <cite>plan.changes</cite> directly or create a new <cite>Plan</cite>.</p></li>
+<li><p>Does not have to modify <cite>plan.desired</cite> and/or <cite>plan.existing</cite> to line
+up with any modifications made to <cite>plan.changes</cite>.</p></li>
+<li><p>Should copy over <cite>plan.exists</cite>, <cite>plan.update_pcent_threshold</cite>, and
+<cite>plan.delete_pcent_threshold</cite> when creating a new <cite>Plan</cite>.</p></li>
+<li><p>Must return a <cite>Plan</cite> which may be <cite>plan</cite> or can be a newly created
+one <cite>plan.desired</cite> and <cite>plan.existing</cite> copied over as-is or modified.</p></li>
+</ul>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -491,15 +491,15 @@ be used with <cite>replace=True</cite>.</p></li>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.processor.base</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.base.ProcessorException"><code class="docutils literal notranslate"><span class="pre">ProcessorException</span></code></a></li>
 <li><a class="reference internal" href="#octodns.processor.base.BaseProcessor"><code class="docutils literal notranslate"><span class="pre">BaseProcessor</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.processor.base.BaseProcessor.__init__"><code class="docutils literal notranslate"><span class="pre">BaseProcessor.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.processor.base.BaseProcessor.process_plan"><code class="docutils literal notranslate"><span class="pre">BaseProcessor.process_plan()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.processor.base.BaseProcessor.process_source_and_target_zones"><code class="docutils literal notranslate"><span class="pre">BaseProcessor.process_source_and_target_zones()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.processor.base.BaseProcessor.process_source_zone"><code class="docutils literal notranslate"><span class="pre">BaseProcessor.process_source_zone()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.processor.base.BaseProcessor.process_target_zone"><code class="docutils literal notranslate"><span class="pre">BaseProcessor.process_target_zone()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.base.BaseProcessor.process_source_and_target_zones"><code class="docutils literal notranslate"><span class="pre">BaseProcessor.process_source_and_target_zones()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.base.BaseProcessor.process_plan"><code class="docutils literal notranslate"><span class="pre">BaseProcessor.process_plan()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#octodns.processor.base.ProcessorException"><code class="docutils literal notranslate"><span class="pre">ProcessorException</span></code></a></li>
 </ul>
 </li>
 </ul>

@@ -341,16 +341,6 @@
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.arpa.AutoArpa.list_zones">
-<span class="sig-name descname"><span class="pre">list_zones</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/arpa.html#AutoArpa.list_zones"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.arpa.AutoArpa.list_zones" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.arpa.AutoArpa.populate">
-<span class="sig-name descname"><span class="pre">populate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lenient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/arpa.html#AutoArpa.populate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.arpa.AutoArpa.populate" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="octodns.processor.arpa.AutoArpa.process_source_zone">
 <span class="sig-name descname"><span class="pre">process_source_zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">desired</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/arpa.html#AutoArpa.process_source_zone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.arpa.AutoArpa.process_source_zone" title="Link to this definition">¶</a></dt>
 <dd><p>Called after all sources have completed populate. Provides an
@@ -369,6 +359,21 @@ be used with <cite>replace=True</cite>.</p></li>
 <li><p>Sources may be empty, as will be the case for aliased zones.</p></li>
 </ul>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.arpa.AutoArpa._order_and_unique_fqdns">
+<span class="sig-name descname"><span class="pre">_order_and_unique_fqdns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fqdns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_auto_arpa</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/arpa.html#AutoArpa._order_and_unique_fqdns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.arpa.AutoArpa._order_and_unique_fqdns" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.arpa.AutoArpa.populate">
+<span class="sig-name descname"><span class="pre">populate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lenient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/arpa.html#AutoArpa.populate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.arpa.AutoArpa.populate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.arpa.AutoArpa.list_zones">
+<span class="sig-name descname"><span class="pre">list_zones</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/arpa.html#AutoArpa.list_zones"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.arpa.AutoArpa.list_zones" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -432,9 +437,10 @@ be used with <cite>replace=True</cite>.</p></li>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.processor.arpa</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.processor.arpa.AutoArpa"><code class="docutils literal notranslate"><span class="pre">AutoArpa</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.processor.arpa.AutoArpa.__init__"><code class="docutils literal notranslate"><span class="pre">AutoArpa.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.processor.arpa.AutoArpa.list_zones"><code class="docutils literal notranslate"><span class="pre">AutoArpa.list_zones()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.processor.arpa.AutoArpa.populate"><code class="docutils literal notranslate"><span class="pre">AutoArpa.populate()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.processor.arpa.AutoArpa.process_source_zone"><code class="docutils literal notranslate"><span class="pre">AutoArpa.process_source_zone()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.arpa.AutoArpa._order_and_unique_fqdns"><code class="docutils literal notranslate"><span class="pre">AutoArpa._order_and_unique_fqdns()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.arpa.AutoArpa.populate"><code class="docutils literal notranslate"><span class="pre">AutoArpa.populate()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.arpa.AutoArpa.list_zones"><code class="docutils literal notranslate"><span class="pre">AutoArpa.list_zones()</span></code></a></li>
 </ul>
 </li>
 </ul>

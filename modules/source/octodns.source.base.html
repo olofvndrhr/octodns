@@ -335,16 +335,6 @@
 <dt class="sig sig-object py" id="octodns.source.base.BaseSource">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.source.base.</span></span><span class="sig-name descname"><span class="pre">BaseSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/base.html#BaseSource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.base.BaseSource" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.source.base.BaseSource.SUPPORTS_DYNAMIC">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SUPPORTS_DYNAMIC</span></span><a class="headerlink" href="#octodns.source.base.BaseSource.SUPPORTS_DYNAMIC" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.source.base.BaseSource.SUPPORTS_DYNAMIC_SUBNETS">
-<span class="sig-name descname"><span class="pre">SUPPORTS_DYNAMIC_SUBNETS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#octodns.source.base.BaseSource.SUPPORTS_DYNAMIC_SUBNETS" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="octodns.source.base.BaseSource.SUPPORTS_MULTIVALUE_PTR">
 <span class="sig-name descname"><span class="pre">SUPPORTS_MULTIVALUE_PTR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#octodns.source.base.BaseSource.SUPPORTS_MULTIVALUE_PTR" title="Link to this definition">¶</a></dt>
@@ -360,9 +350,19 @@
 <span class="sig-name descname"><span class="pre">SUPPORTS_ROOT_NS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#octodns.source.base.BaseSource.SUPPORTS_ROOT_NS" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.source.base.BaseSource.SUPPORTS_DYNAMIC_SUBNETS">
+<span class="sig-name descname"><span class="pre">SUPPORTS_DYNAMIC_SUBNETS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#octodns.source.base.BaseSource.SUPPORTS_DYNAMIC_SUBNETS" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="octodns.source.base.BaseSource.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/base.html#BaseSource.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.base.BaseSource.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.source.base.BaseSource.SUPPORTS_DYNAMIC">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SUPPORTS_DYNAMIC</span></span><a class="headerlink" href="#octodns.source.base.BaseSource.SUPPORTS_DYNAMIC" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -383,6 +383,12 @@ trailing . or missing escapes for ;.</p>
 <dt class="sig sig-object py" id="octodns.source.base.BaseSource.supports">
 <span class="sig-name descname"><span class="pre">supports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/base.html#BaseSource.supports"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.base.BaseSource.supports" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.source.base.BaseSource.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/source/base.html#BaseSource.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.source.base.BaseSource.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -445,14 +451,15 @@ trailing . or missing escapes for ;.</p>
             <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.source.base</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.source.base.BaseSource"><code class="docutils literal notranslate"><span class="pre">BaseSource</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.source.base.BaseSource.SUPPORTS_DYNAMIC"><code class="docutils literal notranslate"><span class="pre">BaseSource.SUPPORTS_DYNAMIC</span></code></a></li>
-<li><a class="reference internal" href="#octodns.source.base.BaseSource.SUPPORTS_DYNAMIC_SUBNETS"><code class="docutils literal notranslate"><span class="pre">BaseSource.SUPPORTS_DYNAMIC_SUBNETS</span></code></a></li>
 <li><a class="reference internal" href="#octodns.source.base.BaseSource.SUPPORTS_MULTIVALUE_PTR"><code class="docutils literal notranslate"><span class="pre">BaseSource.SUPPORTS_MULTIVALUE_PTR</span></code></a></li>
 <li><a class="reference internal" href="#octodns.source.base.BaseSource.SUPPORTS_POOL_VALUE_STATUS"><code class="docutils literal notranslate"><span class="pre">BaseSource.SUPPORTS_POOL_VALUE_STATUS</span></code></a></li>
 <li><a class="reference internal" href="#octodns.source.base.BaseSource.SUPPORTS_ROOT_NS"><code class="docutils literal notranslate"><span class="pre">BaseSource.SUPPORTS_ROOT_NS</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.base.BaseSource.SUPPORTS_DYNAMIC_SUBNETS"><code class="docutils literal notranslate"><span class="pre">BaseSource.SUPPORTS_DYNAMIC_SUBNETS</span></code></a></li>
 <li><a class="reference internal" href="#octodns.source.base.BaseSource.__init__"><code class="docutils literal notranslate"><span class="pre">BaseSource.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.base.BaseSource.SUPPORTS_DYNAMIC"><code class="docutils literal notranslate"><span class="pre">BaseSource.SUPPORTS_DYNAMIC</span></code></a></li>
 <li><a class="reference internal" href="#octodns.source.base.BaseSource.populate"><code class="docutils literal notranslate"><span class="pre">BaseSource.populate()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.source.base.BaseSource.supports"><code class="docutils literal notranslate"><span class="pre">BaseSource.supports()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.source.base.BaseSource.__repr__"><code class="docutils literal notranslate"><span class="pre">BaseSource.__repr__()</span></code></a></li>
 </ul>
 </li>
 </ul>

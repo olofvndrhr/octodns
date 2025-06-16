@@ -391,6 +391,8 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="SpfDnsLookupProcessor._get_spf_from_txt_values">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.spf.html#octodns.processor.spf.SpfDnsLookupProcessor._get_spf_from_txt_values">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_get_spf_from_txt_values</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="n">Record</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
@@ -411,8 +413,11 @@
                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">record</span><span class="o">.</span><span class="n">fqdn</span><span class="si">}</span><span class="s2"> has more than one SPF value in the TXT record&quot;</span>
             <span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">spf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">spf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
 
+
+<div class="viewcode-block" id="SpfDnsLookupProcessor._process_answer">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.spf.html#octodns.processor.spf.SpfDnsLookupProcessor._process_answer">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_process_answer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">answer</span><span class="p">:</span> <span class="n">Answer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
         <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -421,8 +426,11 @@
             <span class="n">processed_value</span> <span class="o">=</span> <span class="n">text_value</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&quot; &quot;&#39;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
             <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">processed_value</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">values</span>
+        <span class="k">return</span> <span class="n">values</span></div>
 
+
+<div class="viewcode-block" id="SpfDnsLookupProcessor._check_dns_lookups">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.spf.html#octodns.processor.spf.SpfDnsLookupProcessor._check_dns_lookups">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_check_dns_lookups</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="n">Record</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">lookups</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -461,7 +469,8 @@
                     <span class="n">record</span><span class="p">,</span> <span class="n">answer_values</span><span class="p">,</span> <span class="n">lookups</span>
                 <span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">lookups</span>
+        <span class="k">return</span> <span class="n">lookups</span></div>
+
 
 <div class="viewcode-block" id="SpfDnsLookupProcessor.process_source_zone">
 <a class="viewcode-back" href="../../../modules/processor/octodns.processor.spf.html#octodns.processor.spf.SpfDnsLookupProcessor.process_source_zone">[docs]</a>

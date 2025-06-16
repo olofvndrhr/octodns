@@ -179,7 +179,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -323,7 +323,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -331,6 +331,68 @@
         <article role="main" id="furo-main-content">
           <section id="module-octodns.record.chunked">
 <span id="octodns-record-chunked"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.record.chunked</span></code><a class="headerlink" href="#module-octodns.record.chunked" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.chunked._ChunkedValuesMixin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.chunked.</span></span><span class="sig-name descname"><span class="pre">_ChunkedValuesMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/chunked.html#_ChunkedValuesMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.chunked._ChunkedValuesMixin" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.record.base.html#octodns.record.base.ValuesMixin" title="octodns.record.base.ValuesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValuesMixin</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.chunked._ChunkedValuesMixin.CHUNK_SIZE">
+<span class="sig-name descname"><span class="pre">CHUNK_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">255</span></em><a class="headerlink" href="#octodns.record.chunked._ChunkedValuesMixin.CHUNK_SIZE" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.chunked._ChunkedValuesMixin._unescaped_semicolon_re">
+<span class="sig-name descname"><span class="pre">_unescaped_semicolon_re</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">re.compile('\\w;')</span></em><a class="headerlink" href="#octodns.record.chunked._ChunkedValuesMixin._unescaped_semicolon_re" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.chunked._ChunkedValuesMixin.chunked_value">
+<span class="sig-name descname"><span class="pre">chunked_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/chunked.html#_ChunkedValuesMixin.chunked_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.chunked._ChunkedValuesMixin.chunked_value" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.chunked._ChunkedValuesMixin.chunked_values">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">chunked_values</span></span><a class="headerlink" href="#octodns.record.chunked._ChunkedValuesMixin.chunked_values" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.chunked._ChunkedValuesMixin.rr_values">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rr_values</span></span><a class="headerlink" href="#octodns.record.chunked._ChunkedValuesMixin.rr_values" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.chunked._ChunkedValue">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.chunked.</span></span><span class="sig-name descname"><span class="pre">_ChunkedValue</span></span><a class="reference internal" href="../../_modules/octodns/record/chunked.html#_ChunkedValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.chunked._ChunkedValue" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.chunked._ChunkedValue._unescaped_semicolon_re">
+<span class="sig-name descname"><span class="pre">_unescaped_semicolon_re</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">re.compile('\\w;')</span></em><a class="headerlink" href="#octodns.record.chunked._ChunkedValue._unescaped_semicolon_re" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.chunked._ChunkedValue.parse_rdata_text">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_rdata_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/chunked.html#_ChunkedValue.parse_rdata_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.chunked._ChunkedValue.parse_rdata_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.chunked._ChunkedValue.validate">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/chunked.html#_ChunkedValue.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.chunked._ChunkedValue.validate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.chunked._ChunkedValue.process">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/chunked.html#_ChunkedValue.process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.chunked._ChunkedValue.process" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.chunked._ChunkedValue.rdata_text">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rdata_text</span></span><a class="headerlink" href="#octodns.record.chunked._ChunkedValue.rdata_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -376,8 +438,42 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.record.chunked</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.chunked._ChunkedValuesMixin"><code class="docutils literal notranslate"><span class="pre">_ChunkedValuesMixin</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.chunked._ChunkedValuesMixin.CHUNK_SIZE"><code class="docutils literal notranslate"><span class="pre">_ChunkedValuesMixin.CHUNK_SIZE</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.chunked._ChunkedValuesMixin._unescaped_semicolon_re"><code class="docutils literal notranslate"><span class="pre">_ChunkedValuesMixin._unescaped_semicolon_re</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.chunked._ChunkedValuesMixin.chunked_value"><code class="docutils literal notranslate"><span class="pre">_ChunkedValuesMixin.chunked_value()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.chunked._ChunkedValuesMixin.chunked_values"><code class="docutils literal notranslate"><span class="pre">_ChunkedValuesMixin.chunked_values</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.chunked._ChunkedValuesMixin.rr_values"><code class="docutils literal notranslate"><span class="pre">_ChunkedValuesMixin.rr_values</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.record.chunked._ChunkedValue"><code class="docutils literal notranslate"><span class="pre">_ChunkedValue</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.chunked._ChunkedValue._unescaped_semicolon_re"><code class="docutils literal notranslate"><span class="pre">_ChunkedValue._unescaped_semicolon_re</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.chunked._ChunkedValue.parse_rdata_text"><code class="docutils literal notranslate"><span class="pre">_ChunkedValue.parse_rdata_text()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.chunked._ChunkedValue.validate"><code class="docutils literal notranslate"><span class="pre">_ChunkedValue.validate()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.chunked._ChunkedValue.process"><code class="docutils literal notranslate"><span class="pre">_ChunkedValue.process()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.chunked._ChunkedValue.rdata_text"><code class="docutils literal notranslate"><span class="pre">_ChunkedValue.rdata_text</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

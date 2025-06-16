@@ -620,6 +620,8 @@
         <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">zones</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="YamlProvider._split_sources">
+<a class="viewcode-back" href="../../../modules/provider/octodns.provider.yaml.html#octodns.provider.yaml.YamlProvider._split_sources">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_split_sources</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">):</span>
         <span class="n">ext</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">split_extension</span>
         <span class="n">utf8</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">directory</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">zone</span><span class="o">.</span><span class="n">decoded_name</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -638,8 +640,11 @@
 
         <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">listdir</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.yaml&quot;</span><span class="p">):</span>
-                <span class="k">yield</span> <span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+                <span class="k">yield</span> <span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="YamlProvider._zone_sources">
+<a class="viewcode-back" href="../../../modules/provider/octodns.provider.yaml.html#octodns.provider.yaml.YamlProvider._zone_sources">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_zone_sources</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">):</span>
         <span class="n">utf8</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">directory</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">zone</span><span class="o">.</span><span class="n">decoded_name</span><span class="si">}</span><span class="s2">yaml&quot;</span><span class="p">)</span>
         <span class="n">idna</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">directory</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">zone</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">yaml&quot;</span><span class="p">)</span>
@@ -652,8 +657,11 @@
         <span class="k">elif</span> <span class="n">isfile</span><span class="p">(</span><span class="n">idna</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">idna</span>
 
-        <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
 
+
+<div class="viewcode-block" id="YamlProvider._populate_from_file">
+<a class="viewcode-back" href="../../../modules/provider/octodns.provider.yaml.html#octodns.provider.yaml.YamlProvider._populate_from_file">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_populate_from_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">lenient</span><span class="p">):</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
             <span class="n">yaml_data</span> <span class="o">=</span> <span class="n">safe_load</span><span class="p">(</span>
@@ -676,7 +684,8 @@
                         <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
                 <span class="s1">&#39;_populate_from_file: successfully loaded &quot;</span><span class="si">%s</span><span class="s1">&quot;&#39;</span><span class="p">,</span> <span class="n">filename</span>
-            <span class="p">)</span>
+            <span class="p">)</span></div>
+
 
 <div class="viewcode-block" id="YamlProvider.populate">
 <a class="viewcode-back" href="../../../modules/provider/octodns.provider.yaml.html#octodns.provider.yaml.YamlProvider.populate">[docs]</a>
@@ -722,6 +731,8 @@
         <span class="k">return</span> <span class="n">exists</span></div>
 
 
+<div class="viewcode-block" id="YamlProvider._apply">
+<a class="viewcode-back" href="../../../modules/provider/octodns.provider.yaml.html#octodns.provider.yaml.YamlProvider._apply">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plan</span><span class="p">):</span>
         <span class="c1"># make a copy of existing we can muck with</span>
         <span class="n">copy</span> <span class="o">=</span> <span class="n">plan</span><span class="o">.</span><span class="n">existing</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -798,6 +809,7 @@
                     <span class="n">allow_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                     <span class="n">order_mode</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">order_mode</span><span class="p">,</span>
                 <span class="p">)</span></div>
+</div>
 
 
 

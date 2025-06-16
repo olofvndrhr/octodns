@@ -472,6 +472,8 @@
             <span class="k">raise</span> <span class="n">RootNsChange</span><span class="p">()</span></div>
 
 
+<div class="viewcode-block" id="Plan.__repr__">
+<a class="viewcode-back" href="../../../modules/provider/octodns.provider.plan.html#octodns.provider.plan.Plan.__repr__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">creates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">change_counts</span><span class="p">[</span><span class="s1">&#39;Create&#39;</span><span class="p">]</span>
         <span class="n">updates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">change_counts</span><span class="p">[</span><span class="s1">&#39;Update&#39;</span><span class="p">]</span>
@@ -482,12 +484,19 @@
             <span class="n">existing</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">meta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Creates=</span><span class="si">{</span><span class="n">creates</span><span class="si">}</span><span class="s1">, Updates=</span><span class="si">{</span><span class="n">updates</span><span class="si">}</span><span class="s1">, Deletes=</span><span class="si">{</span><span class="n">deletes</span><span class="si">}</span><span class="s1">, Existing=</span><span class="si">{</span><span class="n">existing</span><span class="si">}</span><span class="s1">, Meta=</span><span class="si">{</span><span class="n">meta</span><span class="si">}</span><span class="s1">&#39;</span></div>
+</div>
 
 
 
+<div class="viewcode-block" id="_PlanOutput">
+<a class="viewcode-back" href="../../../modules/provider/octodns.provider.plan.html#octodns.provider.plan._PlanOutput">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">_PlanOutput</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="_PlanOutput.__init__">
+<a class="viewcode-back" href="../../../modules/provider/octodns.provider.plan.html#octodns.provider.plan._PlanOutput.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span></div>
+</div>
+
 
 
 <div class="viewcode-block" id="PlanLogger">
@@ -560,6 +569,8 @@
 
 
 
+<div class="viewcode-block" id="_value_stringifier">
+<a class="viewcode-back" href="../../../modules/provider/octodns.provider.plan.html#octodns.provider.plan._value_stringifier">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">_value_stringifier</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">sep</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
@@ -568,7 +579,8 @@
     <span class="k">for</span> <span class="n">code</span><span class="p">,</span> <span class="n">gv</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="s1">&#39;geo&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
         <span class="n">vs</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">gv</span><span class="o">.</span><span class="n">values</span><span class="p">])</span>
         <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">vs</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">values</span><span class="p">)</span></div>
+
 
 
 <div class="viewcode-block" id="PlanJson">

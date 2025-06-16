@@ -536,13 +536,16 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">octodns</span> <span class="o">=</span> <span class="n">val</span>
 
+<div class="viewcode-block" id="Record._data">
+<a class="viewcode-back" href="../../../modules/record/octodns.record.base.html#octodns.record.base.Record._data">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ttl&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">ttl</span><span class="p">}</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">octodns</span><span class="p">:</span>
             <span class="n">ret</span><span class="p">[</span><span class="s1">&#39;octodns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">octodns</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">ContextDict</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -646,12 +649,18 @@
     <span class="k">def</span><span class="w"> </span><span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="si">}</span><span class="s1">&#39;</span><span class="o">.</span><span class="fm">__hash__</span><span class="p">()</span>
 
+<div class="viewcode-block" id="Record._equality_tuple">
+<a class="viewcode-back" href="../../../modules/record/octodns.record.base.html#octodns.record.base.Record._equality_tuple">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_equality_tuple</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="Record.__repr__">
+<a class="viewcode-back" href="../../../modules/record/octodns.record.base.html#octodns.record.base.Record.__repr__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Make sure this is always overridden</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;Abstract base class, __repr__ required&#39;</span><span class="p">)</span></div>
+</div>
 
 
 
@@ -701,6 +710,8 @@
         <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">changes</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="ValuesMixin._data">
+<a class="viewcode-back" href="../../../modules/record/octodns.record.base.html#octodns.record.base.ValuesMixin._data">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_data</span><span class="p">()</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -714,7 +725,8 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">ret</span><span class="p">[</span><span class="s1">&#39;values&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span>
 
-        <span class="k">return</span> <span class="n">ret</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">rr_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -729,6 +741,8 @@
             <span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">rdata_text</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rr_values</span><span class="p">],</span>
         <span class="p">)</span>
 
+<div class="viewcode-block" id="ValuesMixin.__repr__">
+<a class="viewcode-back" href="../../../modules/record/octodns.record.base.html#octodns.record.base.ValuesMixin.__repr__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">values</span> <span class="o">=</span> <span class="s2">&quot;&#39;, &#39;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">])</span>
         <span class="n">klass</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
@@ -736,6 +750,7 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">octodns</span><span class="p">:</span>
             <span class="n">octodns</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">octodns</span><span class="si">}</span><span class="s1">&#39;</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="n">klass</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ttl</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">decoded_fqdn</span><span class="si">}</span><span class="s2">, [&#39;</span><span class="si">{</span><span class="n">values</span><span class="si">}</span><span class="s2">&#39;]</span><span class="si">{</span><span class="n">octodns</span><span class="si">}</span><span class="s2">&gt;&quot;</span></div>
+</div>
 
 
 
@@ -781,21 +796,27 @@
         <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">changes</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="ValueMixin._data">
+<a class="viewcode-back" href="../../../modules/record/octodns.record.base.html#octodns.record.base.ValueMixin._data">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_data</span><span class="p">()</span>
         <span class="n">ret</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">rrs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fqdn</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ttl</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">rdata_text</span><span class="p">]</span>
 
+<div class="viewcode-block" id="ValueMixin.__repr__">
+<a class="viewcode-back" href="../../../modules/record/octodns.record.base.html#octodns.record.base.ValueMixin.__repr__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">klass</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
         <span class="n">octodns</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">octodns</span><span class="p">:</span>
             <span class="n">octodns</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">octodns</span><span class="si">}</span><span class="s1">&#39;</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;&lt;</span><span class="si">{</span><span class="n">klass</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ttl</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">decoded_fqdn</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="si">}{</span><span class="n">octodns</span><span class="si">}</span><span class="s1">&gt;&#39;</span></div>
+</div>
 
 </pre></div>
         </article>

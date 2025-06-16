@@ -332,15 +332,26 @@
           <section id="module-octodns.record.dname">
 <span id="octodns-record-dname"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.record.dname</span></code><a class="headerlink" href="#module-octodns.record.dname" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="octodns.record.dname.DnameRecord">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.dname.</span></span><span class="sig-name descname"><span class="pre">DnameRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dname.html#DnameRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dname.DnameRecord" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_DynamicMixin</span></code>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.ValueMixin" title="octodns.record.base.ValueMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueMixin</span></code></a>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code></a></p>
+<dt class="sig sig-object py" id="octodns.record.dname.DnameValue">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.dname.</span></span><span class="sig-name descname"><span class="pre">DnameValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dname.html#DnameValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dname.DnameValue" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.record.target.html#octodns.record.target._TargetValue" title="octodns.record.target._TargetValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">_TargetValue</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="octodns.record.dname.DnameValue">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.dname.</span></span><span class="sig-name descname"><span class="pre">DnameValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dname.html#DnameValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dname.DnameValue" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_TargetValue</span></code></p>
+<dt class="sig sig-object py" id="octodns.record.dname.DnameRecord">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.dname.</span></span><span class="sig-name descname"><span class="pre">DnameRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dname.html#DnameRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dname.DnameRecord" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.record.dynamic.html#octodns.record.dynamic._DynamicMixin" title="octodns.record.dynamic._DynamicMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">_DynamicMixin</span></code></a>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.ValueMixin" title="octodns.record.base.ValueMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueMixin</span></code></a>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.dname.DnameRecord._type">
+<span class="sig-name descname"><span class="pre">_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'DNAME'</span></em><a class="headerlink" href="#octodns.record.dname.DnameRecord._type" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.dname.DnameRecord._value_type">
+<span class="sig-name descname"><span class="pre">_value_type</span></span><a class="headerlink" href="#octodns.record.dname.DnameRecord._value_type" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#octodns.record.dname.DnameValue" title="octodns.record.dname.DnameValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">DnameValue</span></code></a></p>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -401,8 +412,12 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.record.dname</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.record.dname.DnameRecord"><code class="docutils literal notranslate"><span class="pre">DnameRecord</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.dname.DnameValue"><code class="docutils literal notranslate"><span class="pre">DnameValue</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dname.DnameRecord"><code class="docutils literal notranslate"><span class="pre">DnameRecord</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.dname.DnameRecord._type"><code class="docutils literal notranslate"><span class="pre">DnameRecord._type</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dname.DnameRecord._value_type"><code class="docutils literal notranslate"><span class="pre">DnameRecord._value_type</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

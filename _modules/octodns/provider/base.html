@@ -358,6 +358,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">strict_supports</span> <span class="o">=</span> <span class="n">strict_supports</span></div>
 
 
+<div class="viewcode-block" id="BaseProvider._process_desired_zone">
+<a class="viewcode-back" href="../../../modules/provider/octodns.provider.base.html#octodns.provider.base.BaseProvider._process_desired_zone">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_process_desired_zone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desired</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        An opportunity for providers to modify the desired zone records before</span>
@@ -490,8 +492,11 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">supports_warn_or_except</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">fallback</span><span class="p">)</span>
                 <span class="n">desired</span><span class="o">.</span><span class="n">remove_record</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">desired</span>
+        <span class="k">return</span> <span class="n">desired</span></div>
 
+
+<div class="viewcode-block" id="BaseProvider._process_existing_zone">
+<a class="viewcode-back" href="../../../modules/provider/octodns.provider.base.html#octodns.provider.base.BaseProvider._process_existing_zone">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_process_existing_zone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">existing</span><span class="p">,</span> <span class="n">desired</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        An opportunity for providers to modify the existing zone records before</span>
@@ -522,23 +527,32 @@
             <span class="p">)</span>
             <span class="n">existing</span><span class="o">.</span><span class="n">remove_record</span><span class="p">(</span><span class="n">existing_root_ns</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">existing</span>
+        <span class="k">return</span> <span class="n">existing</span></div>
 
+
+<div class="viewcode-block" id="BaseProvider._include_change">
+<a class="viewcode-back" href="../../../modules/provider/octodns.provider.base.html#octodns.provider.base.BaseProvider._include_change">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_include_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">change</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        An opportunity for providers to filter out false positives due to</span>
 <span class="sd">        peculiarities in their implementation. E.g. minimum TTLs.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
 
+
+<div class="viewcode-block" id="BaseProvider._extra_changes">
+<a class="viewcode-back" href="../../../modules/provider/octodns.provider.base.html#octodns.provider.base.BaseProvider._extra_changes">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_extra_changes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">existing</span><span class="p">,</span> <span class="n">desired</span><span class="p">,</span> <span class="n">changes</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        An opportunity for providers to add extra changes to the plan that are</span>
 <span class="sd">        necessary to update ancillary record data or configure the zone. E.g.</span>
 <span class="sd">        base NS records.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">return</span> <span class="p">[]</span></div>
 
+
+<div class="viewcode-block" id="BaseProvider._plan_meta">
+<a class="viewcode-back" href="../../../modules/provider/octodns.provider.base.html#octodns.provider.base.BaseProvider._plan_meta">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_plan_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">existing</span><span class="p">,</span> <span class="n">desired</span><span class="p">,</span> <span class="n">changes</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        An opportunity for providers to indicate they have &quot;meta&quot; changes</span>
@@ -547,7 +561,8 @@
 <span class="sd">        arbitrary/opaque to octoDNS, with the only requirement being that</span>
 <span class="sd">        pprint.pformat can display it. A dict is recommended.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
 
 <div class="viewcode-block" id="BaseProvider.supports_warn_or_except">
 <a class="viewcode-back" href="../../../modules/provider/octodns.provider.base.html#octodns.provider.base.BaseProvider.supports_warn_or_except">[docs]</a>
@@ -647,8 +662,11 @@
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">plan</span><span class="o">.</span><span class="n">changes</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="BaseProvider._apply">
+<a class="viewcode-back" href="../../../modules/provider/octodns.provider.base.html#octodns.provider.base.BaseProvider._apply">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plan</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Abstract base class, _apply method missing&quot;</span><span class="p">)</span></div>
+</div>
 
 </pre></div>
         </article>

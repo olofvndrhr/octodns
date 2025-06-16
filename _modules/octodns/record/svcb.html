@@ -658,6 +658,8 @@
     <span class="k">def</span><span class="w"> </span><span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">())</span>
 
+<div class="viewcode-block" id="SvcbValue._equality_tuple">
+<a class="viewcode-back" href="../../../modules/record/octodns.record.svcb.html#octodns.record.svcb.SvcbValue._equality_tuple">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_equality_tuple</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">params</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">svcparamkey</span><span class="p">,</span> <span class="n">svcparamvalue</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">svcparams</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -668,10 +670,14 @@
                     <span class="n">params</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">svcparamkey</span><span class="si">}</span><span class="s1">=</span><span class="si">{</span><span class="n">svcparamvalue</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">params</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">svcparamkey</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">svcpriority</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">targetname</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">svcpriority</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">targetname</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="SvcbValue.__repr__">
+<a class="viewcode-back" href="../../../modules/record/octodns.record.svcb.html#octodns.record.svcb.SvcbValue.__repr__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">rdata_text</span><span class="si">}</span><span class="s2">&#39;&quot;</span></div>
+</div>
 
 
 

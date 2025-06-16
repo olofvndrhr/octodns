@@ -346,20 +346,28 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">.zone</span><span class="w"> </span><span class="kn">import</span> <span class="n">Zone</span>
 
 
+<div class="viewcode-block" id="_AggregateTarget">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager._AggregateTarget">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">_AggregateTarget</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="nb">id</span> <span class="o">=</span> <span class="s1">&#39;aggregate&#39;</span>
 
+<div class="viewcode-block" id="_AggregateTarget.__init__">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager._AggregateTarget.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">targets</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">targets</span> <span class="o">=</span> <span class="n">targets</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SUPPORTS</span> <span class="o">=</span> <span class="n">targets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SUPPORTS</span>
         <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">targets</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">SUPPORTS</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SUPPORTS</span> <span class="o">&amp;</span> <span class="n">target</span><span class="o">.</span><span class="n">SUPPORTS</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">SUPPORTS</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SUPPORTS</span> <span class="o">&amp;</span> <span class="n">target</span><span class="o">.</span><span class="n">SUPPORTS</span></div>
 
+
+<div class="viewcode-block" id="_AggregateTarget.supports">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager._AggregateTarget.supports">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">supports</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">targets</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">target</span><span class="o">.</span><span class="n">supports</span><span class="p">(</span><span class="n">record</span><span class="p">):</span>
                 <span class="k">return</span> <span class="kc">False</span>
-        <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;SUPPORTS_&#39;</span><span class="p">):</span>
@@ -371,7 +379,8 @@
                     <span class="k">return</span> <span class="kc">False</span>
             <span class="k">return</span> <span class="kc">True</span>
         <span class="n">klass</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
-        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">klass</span><span class="si">}</span><span class="s1"> object has no attribute </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">klass</span><span class="si">}</span><span class="s1"> object has no attribute </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span></div>
+
 
 
 <div class="viewcode-block" id="MakeThreadFuture">
@@ -425,10 +434,13 @@
     <span class="n">log</span> <span class="o">=</span> <span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;Manager&#39;</span><span class="p">)</span>
     <span class="n">plan_log</span> <span class="o">=</span> <span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;Plan&#39;</span><span class="p">)</span>
 
+<div class="viewcode-block" id="Manager._plan_keyer">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._plan_keyer">[docs]</a>
     <span class="nd">@classmethod</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">_plan_keyer</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
         <span class="n">plan</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">plan</span><span class="o">.</span><span class="n">changes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">record</span><span class="o">.</span><span class="n">zone</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="k">if</span> <span class="n">plan</span><span class="o">.</span><span class="n">changes</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">plan</span><span class="o">.</span><span class="n">changes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">record</span><span class="o">.</span><span class="n">zone</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="k">if</span> <span class="n">plan</span><span class="o">.</span><span class="n">changes</span> <span class="k">else</span> <span class="mi">0</span></div>
+
 
 <div class="viewcode-block" id="Manager.__init__">
 <a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager.__init__">[docs]</a>
@@ -523,6 +535,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">plan_outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config_plan_outputs</span><span class="p">(</span><span class="n">plan_outputs_config</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="Manager._config_zones">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._config_zones">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_config_zones</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zones</span><span class="p">):</span>
         <span class="c1"># record the set of configured zones we have as they are</span>
         <span class="n">configured_zones</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">z</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">zones</span><span class="o">.</span><span class="n">keys</span><span class="p">()])</span>
@@ -539,8 +553,11 @@
                 <span class="p">)</span>
 
         <span class="c1"># convert the zones portion of things into an IdnaDict</span>
-        <span class="k">return</span> <span class="n">IdnaDict</span><span class="p">(</span><span class="n">zones</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">IdnaDict</span><span class="p">(</span><span class="n">zones</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="Manager._config_executor">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._config_executor">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_config_executor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager_config</span><span class="p">,</span> <span class="n">max_workers</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">max_workers</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">manager_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;max_workers&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">1</span>
@@ -550,13 +567,19 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;_config_executor: max_workers=</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">max_workers</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">max_workers</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">MainThreadExecutor</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">MainThreadExecutor</span><span class="p">()</span></div>
 
+
+<div class="viewcode-block" id="Manager._config_include_meta">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._config_include_meta">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_config_include_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager_config</span><span class="p">,</span> <span class="n">include_meta</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="n">include_meta</span> <span class="o">=</span> <span class="n">include_meta</span> <span class="ow">or</span> <span class="n">manager_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;include_meta&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;_config_include_meta: include_meta=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">include_meta</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">include_meta</span>
+        <span class="k">return</span> <span class="n">include_meta</span></div>
 
+
+<div class="viewcode-block" id="Manager._config_enable_checksum">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._config_enable_checksum">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_config_enable_checksum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager_config</span><span class="p">,</span> <span class="n">enable_checksum</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="n">enable_checksum</span> <span class="o">=</span> <span class="n">enable_checksum</span> <span class="ow">or</span> <span class="n">manager_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
             <span class="s1">&#39;enable_checksum&#39;</span><span class="p">,</span> <span class="kc">False</span>
@@ -564,13 +587,19 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
             <span class="s1">&#39;_config_enable_checksum: enable_checksum=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">enable_checksum</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">enable_checksum</span>
+        <span class="k">return</span> <span class="n">enable_checksum</span></div>
 
+
+<div class="viewcode-block" id="Manager._config_auto_arpa">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._config_auto_arpa">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_config_auto_arpa</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager_config</span><span class="p">,</span> <span class="n">auto_arpa</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="n">auto_arpa</span> <span class="o">=</span> <span class="n">auto_arpa</span> <span class="ow">or</span> <span class="n">manager_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;auto_arpa&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;_config_auto_arpa: auto_arpa=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">auto_arpa</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">auto_arpa</span>
+        <span class="k">return</span> <span class="n">auto_arpa</span></div>
 
+
+<div class="viewcode-block" id="Manager._config_secret_handlers">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._config_secret_handlers">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_config_secret_handlers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">secret_handlers_config</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;_config_secret_handlers: configuring secret_handlers&#39;</span><span class="p">)</span>
         <span class="n">secret_handlers</span> <span class="o">=</span> <span class="p">{}</span>
@@ -601,8 +630,11 @@
                     <span class="sa">f</span><span class="s1">&#39;Incorrect secret handler config for </span><span class="si">{</span><span class="n">sh_name</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">sh_config</span><span class="o">.</span><span class="n">context</span><span class="si">}</span><span class="s1">&#39;</span>
                 <span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">secret_handlers</span>
+        <span class="k">return</span> <span class="n">secret_handlers</span></div>
 
+
+<div class="viewcode-block" id="Manager._config_providers">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._config_providers">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_config_providers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">providers_config</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;_config_providers: configuring providers&#39;</span><span class="p">)</span>
         <span class="n">providers</span> <span class="o">=</span> <span class="p">{}</span>
@@ -633,8 +665,11 @@
                     <span class="sa">f</span><span class="s1">&#39;Incorrect provider config for </span><span class="si">{</span><span class="n">provider_name</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">provider_config</span><span class="o">.</span><span class="n">context</span><span class="si">}</span><span class="s1">&#39;</span>
                 <span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">providers</span>
+        <span class="k">return</span> <span class="n">providers</span></div>
 
+
+<div class="viewcode-block" id="Manager._config_processors">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._config_processors">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_config_processors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">processors_config</span><span class="p">):</span>
         <span class="n">processors</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">processor_name</span><span class="p">,</span> <span class="n">processor_config</span> <span class="ow">in</span> <span class="n">processors_config</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -662,8 +697,11 @@
                 <span class="k">raise</span> <span class="n">ManagerException</span><span class="p">(</span>
                     <span class="sa">f</span><span class="s1">&#39;Incorrect processor config for </span><span class="si">{</span><span class="n">processor_name</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">processor_config</span><span class="o">.</span><span class="n">context</span><span class="si">}</span><span class="s1">&#39;</span>
                 <span class="p">)</span>
-        <span class="k">return</span> <span class="n">processors</span>
+        <span class="k">return</span> <span class="n">processors</span></div>
 
+
+<div class="viewcode-block" id="Manager._config_plan_outputs">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._config_plan_outputs">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_config_plan_outputs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plan_outputs_config</span><span class="p">):</span>
         <span class="n">plan_outputs</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">plan_output_name</span><span class="p">,</span> <span class="n">plan_output_config</span> <span class="ow">in</span> <span class="n">plan_outputs_config</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -697,8 +735,11 @@
                     <span class="sa">f</span><span class="s1">&#39;Incorrect plan_output config for </span><span class="si">{</span><span class="n">plan_output_name</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">context</span><span class="si">}</span><span class="s1">&#39;</span>
                 <span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">plan_outputs</span>
+        <span class="k">return</span> <span class="n">plan_outputs</span></div>
 
+
+<div class="viewcode-block" id="Manager._try_version">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._try_version">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_try_version</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module_name</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="c1"># Always try and use the official lookup first</span>
@@ -714,8 +755,11 @@
         <span class="c1"># TODO: remove the __VERSION__ fallback eventually?</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span>
             <span class="n">module</span><span class="p">,</span> <span class="s1">&#39;__version__&#39;</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s1">&#39;__VERSION__&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="Manager._import_module">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._import_module">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_import_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module_name</span><span class="p">):</span>
         <span class="n">current</span> <span class="o">=</span> <span class="n">module_name</span>
         <span class="n">_next</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -728,8 +772,11 @@
             <span class="n">current</span> <span class="o">=</span> <span class="n">_next</span>
             <span class="n">_next</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_try_version</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">module</span><span class="p">,</span> <span class="n">version</span> <span class="ow">or</span> <span class="s1">&#39;n/a&#39;</span>
+        <span class="k">return</span> <span class="n">module</span><span class="p">,</span> <span class="n">version</span> <span class="ow">or</span> <span class="s1">&#39;n/a&#39;</span></div>
 
+
+<div class="viewcode-block" id="Manager._get_named_class">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._get_named_class">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_get_named_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_type</span><span class="p">,</span> <span class="n">_class</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">module_name</span><span class="p">,</span> <span class="n">class_name</span> <span class="o">=</span> <span class="n">_class</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -752,8 +799,11 @@
             <span class="p">)</span>
             <span class="k">raise</span> <span class="n">ManagerException</span><span class="p">(</span>
                 <span class="sa">f</span><span class="s1">&#39;Unknown </span><span class="si">{</span><span class="n">_type</span><span class="si">}</span><span class="s1"> class: </span><span class="si">{</span><span class="n">_class</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">context</span><span class="si">}</span><span class="s1">&#39;</span>
-            <span class="p">)</span>
+            <span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="Manager._build_kwargs">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._build_kwargs">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_build_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
         <span class="c1"># Build up the arguments we need to pass to the provider</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{}</span>
@@ -780,7 +830,8 @@
 
             <span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
 
-        <span class="k">return</span> <span class="n">kwargs</span>
+        <span class="k">return</span> <span class="n">kwargs</span></div>
+
 
 <div class="viewcode-block" id="Manager.configured_sub_zones">
 <a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager.configured_sub_zones">[docs]</a>
@@ -828,6 +879,8 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configured_sub_zones</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">zone_name</span><span class="p">,</span> <span class="nb">set</span><span class="p">())</span></div>
 
 
+<div class="viewcode-block" id="Manager._populate_and_plan">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._populate_and_plan">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_populate_and_plan</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">zone_name</span><span class="p">,</span>
@@ -897,8 +950,11 @@
                 <span class="n">plans</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">target</span><span class="p">,</span> <span class="n">plan</span><span class="p">))</span>
 
         <span class="c1"># Return the zone as it&#39;s the desired state</span>
-        <span class="k">return</span> <span class="n">plans</span><span class="p">,</span> <span class="n">zone</span>
+        <span class="k">return</span> <span class="n">plans</span><span class="p">,</span> <span class="n">zone</span></div>
 
+
+<div class="viewcode-block" id="Manager._get_sources">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._get_sources">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_get_sources</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decoded_zone_name</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">eligible_sources</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">sources</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;sources&#39;</span><span class="p">]</span> <span class="ow">or</span> <span class="p">[]</span>
@@ -927,8 +983,11 @@
                 <span class="sa">f</span><span class="s1">&#39;Zone </span><span class="si">{</span><span class="n">decoded_zone_name</span><span class="si">}</span><span class="s1">, unknown source: </span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s1">&#39;</span>
             <span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">sources</span>
+        <span class="k">return</span> <span class="n">sources</span></div>
 
+
+<div class="viewcode-block" id="Manager._preprocess_zones">
+<a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager._preprocess_zones">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_preprocess_zones</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zones</span><span class="p">,</span> <span class="n">eligible_sources</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sources</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        This may modify the passed in zone object, it should be ignored after</span>
@@ -963,7 +1022,8 @@
             <span class="c1"># remove the dynamic config element so we don&#39;t try and populate it</span>
             <span class="k">del</span> <span class="n">zones</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
 
-        <span class="k">return</span> <span class="n">zones</span>
+        <span class="k">return</span> <span class="n">zones</span></div>
+
 
 <div class="viewcode-block" id="Manager.sync">
 <a class="viewcode-back" href="../../modules/octodns.manager.html#octodns.manager.Manager.sync">[docs]</a>

@@ -332,17 +332,22 @@
           <section id="module-octodns.manager">
 <span id="octodns-manager"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.manager</span></code><a class="headerlink" href="#module-octodns.manager" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="octodns.manager.MainThreadExecutor">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.manager.</span></span><span class="sig-name descname"><span class="pre">MainThreadExecutor</span></span><a class="reference internal" href="../_modules/octodns/manager.html#MainThreadExecutor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.MainThreadExecutor" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.manager._AggregateTarget">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.manager.</span></span><span class="sig-name descname"><span class="pre">_AggregateTarget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">targets</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#_AggregateTarget"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager._AggregateTarget" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>Dummy executor that runs things on the main thread during the invocation
-of submit, but still returns a future object with the result. This allows
-code to be written to handle async, even in the case where we don’t want to
-use multiple threads/workers and would prefer that things flow as if
-traditionally written.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.manager._AggregateTarget.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'aggregate'</span></em><a class="headerlink" href="#octodns.manager._AggregateTarget.id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.manager.MainThreadExecutor.submit">
-<span class="sig-name descname"><span class="pre">submit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#MainThreadExecutor.submit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.MainThreadExecutor.submit" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.manager._AggregateTarget.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">targets</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#_AggregateTarget.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager._AggregateTarget.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager._AggregateTarget.supports">
+<span class="sig-name descname"><span class="pre">supports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#_AggregateTarget.supports"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager._AggregateTarget.supports" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -364,20 +369,115 @@ traditionally written.</p>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="octodns.manager.MainThreadExecutor">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.manager.</span></span><span class="sig-name descname"><span class="pre">MainThreadExecutor</span></span><a class="reference internal" href="../_modules/octodns/manager.html#MainThreadExecutor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.MainThreadExecutor" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Dummy executor that runs things on the main thread during the invocation
+of submit, but still returns a future object with the result. This allows
+code to be written to handle async, even in the case where we don’t want to
+use multiple threads/workers and would prefer that things flow as if
+traditionally written.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.MainThreadExecutor.submit">
+<span class="sig-name descname"><span class="pre">submit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#MainThreadExecutor.submit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.MainThreadExecutor.submit" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="octodns.manager.ManagerException">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.manager.</span></span><span class="sig-name descname"><span class="pre">ManagerException</span></span><a class="reference internal" href="../_modules/octodns/manager.html#ManagerException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.ManagerException" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="octodns.manager.Manager">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.manager.</span></span><span class="sig-name descname"><span class="pre">Manager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_arpa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_checksum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.manager.Manager.log">
+<span class="sig-name descname"><span class="pre">log</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Logger</span> <span class="pre">Manager</span> <span class="pre">(WARNING)&gt;</span></em><a class="headerlink" href="#octodns.manager.Manager.log" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.manager.Manager.plan_log">
+<span class="sig-name descname"><span class="pre">plan_log</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Logger</span> <span class="pre">Plan</span> <span class="pre">(WARNING)&gt;</span></em><a class="headerlink" href="#octodns.manager.Manager.plan_log" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager._plan_keyer">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_plan_keyer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._plan_keyer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._plan_keyer" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="octodns.manager.Manager.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_arpa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_checksum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.manager.Manager.compare">
-<span class="sig-name descname"><span class="pre">compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zone</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager.compare"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager.compare" title="Link to this definition">¶</a></dt>
-<dd><p>Compare zone data between 2 sources.</p>
-<p>Note: only things supported by both sources will be considered</p>
-</dd></dl>
+<dt class="sig sig-object py" id="octodns.manager.Manager._config_zones">
+<span class="sig-name descname"><span class="pre">_config_zones</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zones</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._config_zones"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._config_zones" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager._config_executor">
+<span class="sig-name descname"><span class="pre">_config_executor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manager_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._config_executor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._config_executor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager._config_include_meta">
+<span class="sig-name descname"><span class="pre">_config_include_meta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manager_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._config_include_meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._config_include_meta" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager._config_enable_checksum">
+<span class="sig-name descname"><span class="pre">_config_enable_checksum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manager_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_checksum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._config_enable_checksum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._config_enable_checksum" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager._config_auto_arpa">
+<span class="sig-name descname"><span class="pre">_config_auto_arpa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manager_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_arpa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._config_auto_arpa"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._config_auto_arpa" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager._config_secret_handlers">
+<span class="sig-name descname"><span class="pre">_config_secret_handlers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">secret_handlers_config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._config_secret_handlers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._config_secret_handlers" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager._config_providers">
+<span class="sig-name descname"><span class="pre">_config_providers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">providers_config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._config_providers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._config_providers" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager._config_processors">
+<span class="sig-name descname"><span class="pre">_config_processors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">processors_config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._config_processors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._config_processors" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager._config_plan_outputs">
+<span class="sig-name descname"><span class="pre">_config_plan_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plan_outputs_config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._config_plan_outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._config_plan_outputs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager._try_version">
+<span class="sig-name descname"><span class="pre">_try_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._try_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._try_version" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager._import_module">
+<span class="sig-name descname"><span class="pre">_import_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._import_module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._import_module" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager._get_named_class">
+<span class="sig-name descname"><span class="pre">_get_named_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._get_named_class"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._get_named_class" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager._build_kwargs">
+<span class="sig-name descname"><span class="pre">_build_kwargs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._build_kwargs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._build_kwargs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="octodns.manager.Manager.configured_sub_zones">
@@ -398,25 +498,22 @@ deep.thing</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.manager.Manager.dump">
-<span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lenient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_provider</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager.dump"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager.dump" title="Link to this definition">¶</a></dt>
-<dd><p>Dump zone data from the specified source</p>
-</dd></dl>
+<dt class="sig sig-object py" id="octodns.manager.Manager._populate_and_plan">
+<span class="sig-name descname"><span class="pre">_populate_and_plan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lenient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._populate_and_plan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._populate_and_plan" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.manager.Manager.get_zone">
-<span class="sig-name descname"><span class="pre">get_zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager.get_zone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager.get_zone" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.manager.Manager._get_sources">
+<span class="sig-name descname"><span class="pre">_get_sources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">decoded_zone_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eligible_sources</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._get_sources"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._get_sources" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.manager.Manager.log">
-<span class="sig-name descname"><span class="pre">log</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Logger</span> <span class="pre">Manager</span> <span class="pre">(WARNING)&gt;</span></em><a class="headerlink" href="#octodns.manager.Manager.log" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.manager.Manager.plan_log">
-<span class="sig-name descname"><span class="pre">plan_log</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Logger</span> <span class="pre">Plan</span> <span class="pre">(WARNING)&gt;</span></em><a class="headerlink" href="#octodns.manager.Manager.plan_log" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager._preprocess_zones">
+<span class="sig-name descname"><span class="pre">_preprocess_zones</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zones</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eligible_sources</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager._preprocess_zones"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager._preprocess_zones" title="Link to this definition">¶</a></dt>
+<dd><p>This may modify the passed in zone object, it should be ignored after
+the call and the zones returned from this function should be used
+instead.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="octodns.manager.Manager.sync">
@@ -424,16 +521,28 @@ deep.thing</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager.compare">
+<span class="sig-name descname"><span class="pre">compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zone</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager.compare"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager.compare" title="Link to this definition">¶</a></dt>
+<dd><p>Compare zone data between 2 sources.</p>
+<p>Note: only things supported by both sources will be considered</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager.dump">
+<span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lenient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_provider</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager.dump"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager.dump" title="Link to this definition">¶</a></dt>
+<dd><p>Dump zone data from the specified source</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="octodns.manager.Manager.validate_configs">
 <span class="sig-name descname"><span class="pre">validate_configs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lenient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager.validate_configs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager.validate_configs" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.manager.Manager.get_zone">
+<span class="sig-name descname"><span class="pre">get_zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/manager.html#Manager.get_zone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.Manager.get_zone" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
-<dl class="py exception">
-<dt class="sig sig-object py" id="octodns.manager.ManagerException">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.manager.</span></span><span class="sig-name descname"><span class="pre">ManagerException</span></span><a class="reference internal" href="../_modules/octodns/manager.html#ManagerException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.manager.ManagerException" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
 </dd></dl>
 
 </section>
@@ -494,8 +603,10 @@ deep.thing</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.manager</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.manager.MainThreadExecutor"><code class="docutils literal notranslate"><span class="pre">MainThreadExecutor</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.manager.MainThreadExecutor.submit"><code class="docutils literal notranslate"><span class="pre">MainThreadExecutor.submit()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager._AggregateTarget"><code class="docutils literal notranslate"><span class="pre">_AggregateTarget</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.manager._AggregateTarget.id"><code class="docutils literal notranslate"><span class="pre">_AggregateTarget.id</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager._AggregateTarget.__init__"><code class="docutils literal notranslate"><span class="pre">_AggregateTarget.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager._AggregateTarget.supports"><code class="docutils literal notranslate"><span class="pre">_AggregateTarget.supports()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#octodns.manager.MakeThreadFuture"><code class="docutils literal notranslate"><span class="pre">MakeThreadFuture</span></code></a><ul>
@@ -503,19 +614,40 @@ deep.thing</p>
 <li><a class="reference internal" href="#octodns.manager.MakeThreadFuture.result"><code class="docutils literal notranslate"><span class="pre">MakeThreadFuture.result()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#octodns.manager.Manager"><code class="docutils literal notranslate"><span class="pre">Manager</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.manager.Manager.__init__"><code class="docutils literal notranslate"><span class="pre">Manager.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.manager.Manager.compare"><code class="docutils literal notranslate"><span class="pre">Manager.compare()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.manager.Manager.configured_sub_zones"><code class="docutils literal notranslate"><span class="pre">Manager.configured_sub_zones()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.manager.Manager.dump"><code class="docutils literal notranslate"><span class="pre">Manager.dump()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.manager.Manager.get_zone"><code class="docutils literal notranslate"><span class="pre">Manager.get_zone()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.manager.Manager.log"><code class="docutils literal notranslate"><span class="pre">Manager.log</span></code></a></li>
-<li><a class="reference internal" href="#octodns.manager.Manager.plan_log"><code class="docutils literal notranslate"><span class="pre">Manager.plan_log</span></code></a></li>
-<li><a class="reference internal" href="#octodns.manager.Manager.sync"><code class="docutils literal notranslate"><span class="pre">Manager.sync()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.manager.Manager.validate_configs"><code class="docutils literal notranslate"><span class="pre">Manager.validate_configs()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.MainThreadExecutor"><code class="docutils literal notranslate"><span class="pre">MainThreadExecutor</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.manager.MainThreadExecutor.submit"><code class="docutils literal notranslate"><span class="pre">MainThreadExecutor.submit()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#octodns.manager.ManagerException"><code class="docutils literal notranslate"><span class="pre">ManagerException</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager"><code class="docutils literal notranslate"><span class="pre">Manager</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.manager.Manager.log"><code class="docutils literal notranslate"><span class="pre">Manager.log</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager.plan_log"><code class="docutils literal notranslate"><span class="pre">Manager.plan_log</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._plan_keyer"><code class="docutils literal notranslate"><span class="pre">Manager._plan_keyer()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager.__init__"><code class="docutils literal notranslate"><span class="pre">Manager.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._config_zones"><code class="docutils literal notranslate"><span class="pre">Manager._config_zones()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._config_executor"><code class="docutils literal notranslate"><span class="pre">Manager._config_executor()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._config_include_meta"><code class="docutils literal notranslate"><span class="pre">Manager._config_include_meta()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._config_enable_checksum"><code class="docutils literal notranslate"><span class="pre">Manager._config_enable_checksum()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._config_auto_arpa"><code class="docutils literal notranslate"><span class="pre">Manager._config_auto_arpa()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._config_secret_handlers"><code class="docutils literal notranslate"><span class="pre">Manager._config_secret_handlers()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._config_providers"><code class="docutils literal notranslate"><span class="pre">Manager._config_providers()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._config_processors"><code class="docutils literal notranslate"><span class="pre">Manager._config_processors()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._config_plan_outputs"><code class="docutils literal notranslate"><span class="pre">Manager._config_plan_outputs()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._try_version"><code class="docutils literal notranslate"><span class="pre">Manager._try_version()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._import_module"><code class="docutils literal notranslate"><span class="pre">Manager._import_module()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._get_named_class"><code class="docutils literal notranslate"><span class="pre">Manager._get_named_class()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._build_kwargs"><code class="docutils literal notranslate"><span class="pre">Manager._build_kwargs()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager.configured_sub_zones"><code class="docutils literal notranslate"><span class="pre">Manager.configured_sub_zones()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._populate_and_plan"><code class="docutils literal notranslate"><span class="pre">Manager._populate_and_plan()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._get_sources"><code class="docutils literal notranslate"><span class="pre">Manager._get_sources()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager._preprocess_zones"><code class="docutils literal notranslate"><span class="pre">Manager._preprocess_zones()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager.sync"><code class="docutils literal notranslate"><span class="pre">Manager.sync()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager.compare"><code class="docutils literal notranslate"><span class="pre">Manager.compare()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager.dump"><code class="docutils literal notranslate"><span class="pre">Manager.dump()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager.validate_configs"><code class="docutils literal notranslate"><span class="pre">Manager.validate_configs()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.manager.Manager.get_zone"><code class="docutils literal notranslate"><span class="pre">Manager.get_zone()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

@@ -179,7 +179,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -323,7 +323,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -331,6 +331,38 @@
         <article role="main" id="furo-main-content">
           <section id="module-octodns.record.ip">
 <span id="octodns-record-ip"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.record.ip</span></code><a class="headerlink" href="#module-octodns.record.ip" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.ip._IpValue">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.ip.</span></span><span class="sig-name descname"><span class="pre">_IpValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/ip.html#_IpValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.ip._IpValue" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.ip._IpValue.parse_rdata_text">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_rdata_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/ip.html#_IpValue.parse_rdata_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.ip._IpValue.parse_rdata_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.ip._IpValue.validate">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/ip.html#_IpValue.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.ip._IpValue.validate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.ip._IpValue.process">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/ip.html#_IpValue.process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.ip._IpValue.process" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.ip._IpValue.rdata_text">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rdata_text</span></span><a class="headerlink" href="#octodns.record.ip._IpValue.rdata_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.ip._IpAddress">
+<span class="sig-prename descclassname"><span class="pre">octodns.record.ip.</span></span><span class="sig-name descname"><span class="pre">_IpAddress</span></span><a class="headerlink" href="#octodns.record.ip._IpAddress" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#octodns.record.ip._IpValue" title="octodns.record.ip._IpValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">_IpValue</span></code></a></p>
+</dd></dl>
+
 </section>
 
         </article>
@@ -376,8 +408,34 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.record.ip</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.ip._IpValue"><code class="docutils literal notranslate"><span class="pre">_IpValue</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.ip._IpValue.parse_rdata_text"><code class="docutils literal notranslate"><span class="pre">_IpValue.parse_rdata_text()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.ip._IpValue.validate"><code class="docutils literal notranslate"><span class="pre">_IpValue.validate()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.ip._IpValue.process"><code class="docutils literal notranslate"><span class="pre">_IpValue.process()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.ip._IpValue.rdata_text"><code class="docutils literal notranslate"><span class="pre">_IpValue.rdata_text</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.record.ip._IpAddress"><code class="docutils literal notranslate"><span class="pre">_IpAddress</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

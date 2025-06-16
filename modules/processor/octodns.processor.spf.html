@@ -332,6 +332,12 @@
           <section id="module-octodns.processor.spf">
 <span id="octodns-processor-spf"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.processor.spf</span></code><a class="headerlink" href="#module-octodns.processor.spf" title="Link to this heading">¶</a></h1>
 <dl class="py exception">
+<dt class="sig sig-object py" id="octodns.processor.spf.SpfValueException">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.spf.</span></span><span class="sig-name descname"><span class="pre">SpfValueException</span></span><a class="reference internal" href="../../_modules/octodns/processor/spf.html#SpfValueException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.spf.SpfValueException" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.processor.base.html#octodns.processor.base.ProcessorException" title="octodns.processor.base.ProcessorException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessorException</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
 <dt class="sig sig-object py" id="octodns.processor.spf.SpfDnsLookupException">
 <em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.spf.</span></span><span class="sig-name descname"><span class="pre">SpfDnsLookupException</span></span><a class="reference internal" href="../../_modules/octodns/processor/spf.html#SpfDnsLookupException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.spf.SpfDnsLookupException" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="octodns.processor.base.html#octodns.processor.base.ProcessorException" title="octodns.processor.base.ProcessorException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessorException</span></code></a></p>
@@ -367,15 +373,61 @@
 <span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v=spf1 ptr ~all</span>
 </pre></div>
 </div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.processor.spf.SpfDnsLookupProcessor.log">
+<span class="sig-name descname"><span class="pre">log</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Logger</span> <span class="pre">SpfDnsLookupProcessor</span> <span class="pre">(WARNING)&gt;</span></em><a class="headerlink" href="#octodns.processor.spf.SpfDnsLookupProcessor.log" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="octodns.processor.spf.SpfDnsLookupProcessor.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/spf.html#SpfDnsLookupProcessor.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.spf.SpfDnsLookupProcessor.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.processor.spf.SpfDnsLookupProcessor.log">
-<span class="sig-name descname"><span class="pre">log</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Logger</span> <span class="pre">SpfDnsLookupProcessor</span> <span class="pre">(WARNING)&gt;</span></em><a class="headerlink" href="#octodns.processor.spf.SpfDnsLookupProcessor.log" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.spf.SpfDnsLookupProcessor._get_spf_from_txt_values">
+<span class="sig-name descname"><span class="pre">_get_spf_from_txt_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../record/octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><span class="pre">Record</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/octodns/processor/spf.html#SpfDnsLookupProcessor._get_spf_from_txt_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.spf.SpfDnsLookupProcessor._get_spf_from_txt_values" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>record</strong> (<a class="reference internal" href="../record/octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><em>Record</em></a>)</p></li>
+<li><p><strong>values</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>]</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a> | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.spf.SpfDnsLookupProcessor._process_answer">
+<span class="sig-name descname"><span class="pre">_process_answer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">answer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://dnspython.readthedocs.io/en/stable/resolver-class.html#dns.resolver.Answer" title="(in dnspython v2.7)"><span class="pre">Answer</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/octodns/processor/spf.html#SpfDnsLookupProcessor._process_answer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.spf.SpfDnsLookupProcessor._process_answer" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>answer</strong> (<a class="reference external" href="https://dnspython.readthedocs.io/en/stable/resolver-class.html#dns.resolver.Answer" title="(in dnspython v2.7)"><em>Answer</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><em>List</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.spf.SpfDnsLookupProcessor._check_dns_lookups">
+<span class="sig-name descname"><span class="pre">_check_dns_lookups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../record/octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><span class="pre">Record</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lookups</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></span></span><a class="reference internal" href="../../_modules/octodns/processor/spf.html#SpfDnsLookupProcessor._check_dns_lookups"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.spf.SpfDnsLookupProcessor._check_dns_lookups" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>record</strong> (<a class="reference internal" href="../record/octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><em>Record</em></a>)</p></li>
+<li><p><strong>values</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>]</em>)</p></li>
+<li><p><strong>lookups</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="octodns.processor.spf.SpfDnsLookupProcessor.process_source_zone">
@@ -397,12 +449,6 @@ be used with <cite>replace=True</cite>.</p></li>
 </ul>
 </dd></dl>
 
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="octodns.processor.spf.SpfValueException">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.spf.</span></span><span class="sig-name descname"><span class="pre">SpfValueException</span></span><a class="reference internal" href="../../_modules/octodns/processor/spf.html#SpfValueException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.spf.SpfValueException" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="octodns.processor.base.html#octodns.processor.base.ProcessorException" title="octodns.processor.base.ProcessorException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessorException</span></code></a></p>
 </dd></dl>
 
 </section>
@@ -463,14 +509,17 @@ be used with <cite>replace=True</cite>.</p></li>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.processor.spf</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.spf.SpfValueException"><code class="docutils literal notranslate"><span class="pre">SpfValueException</span></code></a></li>
 <li><a class="reference internal" href="#octodns.processor.spf.SpfDnsLookupException"><code class="docutils literal notranslate"><span class="pre">SpfDnsLookupException</span></code></a></li>
 <li><a class="reference internal" href="#octodns.processor.spf.SpfDnsLookupProcessor"><code class="docutils literal notranslate"><span class="pre">SpfDnsLookupProcessor</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.processor.spf.SpfDnsLookupProcessor.__init__"><code class="docutils literal notranslate"><span class="pre">SpfDnsLookupProcessor.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.processor.spf.SpfDnsLookupProcessor.log"><code class="docutils literal notranslate"><span class="pre">SpfDnsLookupProcessor.log</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.spf.SpfDnsLookupProcessor.__init__"><code class="docutils literal notranslate"><span class="pre">SpfDnsLookupProcessor.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.spf.SpfDnsLookupProcessor._get_spf_from_txt_values"><code class="docutils literal notranslate"><span class="pre">SpfDnsLookupProcessor._get_spf_from_txt_values()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.spf.SpfDnsLookupProcessor._process_answer"><code class="docutils literal notranslate"><span class="pre">SpfDnsLookupProcessor._process_answer()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.spf.SpfDnsLookupProcessor._check_dns_lookups"><code class="docutils literal notranslate"><span class="pre">SpfDnsLookupProcessor._check_dns_lookups()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.processor.spf.SpfDnsLookupProcessor.process_source_zone"><code class="docutils literal notranslate"><span class="pre">SpfDnsLookupProcessor.process_source_zone()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#octodns.processor.spf.SpfValueException"><code class="docutils literal notranslate"><span class="pre">SpfValueException</span></code></a></li>
 </ul>
 </li>
 </ul>

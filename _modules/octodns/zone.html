@@ -577,12 +577,15 @@
 
 
     <span class="c1"># TODO: delete this at v2.0.0rc0</span>
+<div class="viewcode-block" id="Zone._remove_record">
+<a class="viewcode-back" href="../../modules/octodns.zone.html#octodns.zone.Zone._remove_record">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_remove_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
         <span class="n">deprecated</span><span class="p">(</span>
             <span class="s1">&#39;_remove_record has been deprecated, used remove_record instead.  Will be removed in 2.0&#39;</span><span class="p">,</span>
             <span class="n">stacklevel</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">remove_record</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">remove_record</span><span class="p">(</span><span class="n">record</span><span class="p">)</span></div>
+
 
 <div class="viewcode-block" id="Zone.changes">
 <a class="viewcode-back" href="../../modules/octodns.zone.html#octodns.zone.Zone.changes">[docs]</a>
@@ -763,8 +766,11 @@
         <span class="k">return</span> <span class="n">copy</span></div>
 
 
+<div class="viewcode-block" id="Zone.__repr__">
+<a class="viewcode-back" href="../../modules/octodns.zone.html#octodns.zone.Zone.__repr__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Zone&lt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">decoded_name</span><span class="si">}</span><span class="s1">&gt;&#39;</span></div>
+</div>
 
 </pre></div>
         </article>

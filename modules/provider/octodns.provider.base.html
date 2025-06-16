@@ -341,11 +341,77 @@
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.base.BaseProvider.apply">
-<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plan</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/base.html#BaseProvider.apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.base.BaseProvider.apply" title="Link to this definition">¶</a></dt>
-<dd><p>Submits actual planned changes to the provider. Returns the number of
-changes made</p>
+<dt class="sig sig-object py" id="octodns.provider.base.BaseProvider._process_desired_zone">
+<span class="sig-name descname"><span class="pre">_process_desired_zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">desired</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/base.html#BaseProvider._process_desired_zone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.base.BaseProvider._process_desired_zone" title="Link to this definition">¶</a></dt>
+<dd><p>An opportunity for providers to modify the desired zone records before
+planning. <cite>desired</cite> is a “shallow” copy, see <cite>Zone.copy</cite> for more
+information</p>
+<ul class="simple">
+<li><p>Must call <cite>super</cite> at an appropriate point for their work, generally
+that means as the final step of the method, returning the result of
+the <cite>super</cite> call.</p></li>
+<li><p>May modify <cite>desired</cite> directly.</p></li>
+<li><p>Must not modify records directly, <cite>record.copy</cite> should be called,
+the results of which can be modified, and then <cite>Zone.add_record</cite> may
+be used with <cite>replace=True</cite>.</p></li>
+<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>desired</cite>.</p></li>
+<li><p>Must call supports_warn_or_except with information about any changes
+that are made to have them logged or throw errors depending on the
+provider configuration.</p></li>
+</ul>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.base.BaseProvider._process_existing_zone">
+<span class="sig-name descname"><span class="pre">_process_existing_zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">existing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/base.html#BaseProvider._process_existing_zone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.base.BaseProvider._process_existing_zone" title="Link to this definition">¶</a></dt>
+<dd><p>An opportunity for providers to modify the existing zone records before
+planning. <cite>existing</cite> is a “shallow” copy, see <cite>Zone.copy</cite> for more
+information</p>
+<ul class="simple">
+<li><p><cite>desired</cite> must not be modified in anyway, it is only for reference</p></li>
+<li><p>Must call <cite>super</cite> at an appropriate point for their work, generally
+that means as the final step of the method, returning the result of
+the <cite>super</cite> call.</p></li>
+<li><p>May modify <cite>existing</cite> directly.</p></li>
+<li><p>Must not modify records directly, <cite>record.copy</cite> should be called,
+the results of which can be modified, and then <cite>Zone.add_record</cite> may
+be used with <cite>replace=True</cite>.</p></li>
+<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>existing</cite>.</p></li>
+<li><p>Must call supports_warn_or_except with information about any changes
+that are made to have them logged or throw errors depending on the
+provider configuration.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.base.BaseProvider._include_change">
+<span class="sig-name descname"><span class="pre">_include_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">change</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/base.html#BaseProvider._include_change"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.base.BaseProvider._include_change" title="Link to this definition">¶</a></dt>
+<dd><p>An opportunity for providers to filter out false positives due to
+peculiarities in their implementation. E.g. minimum TTLs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.base.BaseProvider._extra_changes">
+<span class="sig-name descname"><span class="pre">_extra_changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">existing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">changes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/base.html#BaseProvider._extra_changes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.base.BaseProvider._extra_changes" title="Link to this definition">¶</a></dt>
+<dd><p>An opportunity for providers to add extra changes to the plan that are
+necessary to update ancillary record data or configure the zone. E.g.
+base NS records.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.base.BaseProvider._plan_meta">
+<span class="sig-name descname"><span class="pre">_plan_meta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">existing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">changes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/base.html#BaseProvider._plan_meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.base.BaseProvider._plan_meta" title="Link to this definition">¶</a></dt>
+<dd><p>An opportunity for providers to indicate they have “meta” changes
+to the zone which are unrelated to records. Examples may include service
+plan changes, replication settings, and notes. The returned data is
+arbitrary/opaque to octoDNS, with the only requirement being that
+pprint.pformat can display it. A dict is recommended.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.base.BaseProvider.supports_warn_or_except">
+<span class="sig-name descname"><span class="pre">supports_warn_or_except</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/base.html#BaseProvider.supports_warn_or_except"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.base.BaseProvider.supports_warn_or_except" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="octodns.provider.base.BaseProvider.plan">
@@ -353,8 +419,15 @@ changes made</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.base.BaseProvider.supports_warn_or_except">
-<span class="sig-name descname"><span class="pre">supports_warn_or_except</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/base.html#BaseProvider.supports_warn_or_except"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.base.BaseProvider.supports_warn_or_except" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.provider.base.BaseProvider.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plan</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/base.html#BaseProvider.apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.base.BaseProvider.apply" title="Link to this definition">¶</a></dt>
+<dd><p>Submits actual planned changes to the provider. Returns the number of
+changes made</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.base.BaseProvider._apply">
+<span class="sig-name descname"><span class="pre">_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plan</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/base.html#BaseProvider._apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.base.BaseProvider._apply" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -419,9 +492,15 @@ changes made</p>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.provider.base</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.provider.base.BaseProvider"><code class="docutils literal notranslate"><span class="pre">BaseProvider</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.provider.base.BaseProvider.__init__"><code class="docutils literal notranslate"><span class="pre">BaseProvider.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.base.BaseProvider.apply"><code class="docutils literal notranslate"><span class="pre">BaseProvider.apply()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.base.BaseProvider.plan"><code class="docutils literal notranslate"><span class="pre">BaseProvider.plan()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.base.BaseProvider._process_desired_zone"><code class="docutils literal notranslate"><span class="pre">BaseProvider._process_desired_zone()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.base.BaseProvider._process_existing_zone"><code class="docutils literal notranslate"><span class="pre">BaseProvider._process_existing_zone()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.base.BaseProvider._include_change"><code class="docutils literal notranslate"><span class="pre">BaseProvider._include_change()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.base.BaseProvider._extra_changes"><code class="docutils literal notranslate"><span class="pre">BaseProvider._extra_changes()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.base.BaseProvider._plan_meta"><code class="docutils literal notranslate"><span class="pre">BaseProvider._plan_meta()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.provider.base.BaseProvider.supports_warn_or_except"><code class="docutils literal notranslate"><span class="pre">BaseProvider.supports_warn_or_except()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.base.BaseProvider.plan"><code class="docutils literal notranslate"><span class="pre">BaseProvider.plan()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.base.BaseProvider.apply"><code class="docutils literal notranslate"><span class="pre">BaseProvider.apply()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.base.BaseProvider._apply"><code class="docutils literal notranslate"><span class="pre">BaseProvider._apply()</span></code></a></li>
 </ul>
 </li>
 </ul>

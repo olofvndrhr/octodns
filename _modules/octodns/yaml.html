@@ -340,15 +340,21 @@
 <div class="viewcode-block" id="ContextLoader">
 <a class="viewcode-back" href="../../modules/octodns.yaml.html#octodns.yaml.ContextLoader">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">ContextLoader</span><span class="p">(</span><span class="n">SafeLoader</span><span class="p">):</span>
+<div class="viewcode-block" id="ContextLoader._pairs">
+<a class="viewcode-back" href="../../modules/octodns.yaml.html#octodns.yaml.ContextLoader._pairs">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_pairs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">flatten_mapping</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
         <span class="n">pairs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_pairs</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
         <span class="n">start_mark</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">start_mark</span>
         <span class="n">context</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">start_mark</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">, line </span><span class="si">{</span><span class="n">start_mark</span><span class="o">.</span><span class="n">line</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">, column </span><span class="si">{</span><span class="n">start_mark</span><span class="o">.</span><span class="n">column</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span>
-        <span class="k">return</span> <span class="n">ContextDict</span><span class="p">(</span><span class="n">pairs</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">),</span> <span class="n">pairs</span><span class="p">,</span> <span class="n">context</span>
+        <span class="k">return</span> <span class="n">ContextDict</span><span class="p">(</span><span class="n">pairs</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">),</span> <span class="n">pairs</span><span class="p">,</span> <span class="n">context</span></div>
 
+
+<div class="viewcode-block" id="ContextLoader._construct">
+<a class="viewcode-back" href="../../modules/octodns.yaml.html#octodns.yaml.ContextLoader._construct">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_construct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pairs</span><span class="p">(</span><span class="n">node</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pairs</span><span class="p">(</span><span class="n">node</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span></div>
+
 
 <div class="viewcode-block" id="ContextLoader.include">
 <a class="viewcode-back" href="../../modules/octodns.yaml.html#octodns.yaml.ContextLoader.include">[docs]</a>
@@ -376,6 +382,8 @@
 <a class="viewcode-back" href="../../modules/octodns.yaml.html#octodns.yaml.SortEnforcingLoader">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">SortEnforcingLoader</span><span class="p">(</span><span class="n">ContextLoader</span><span class="p">):</span>
 
+<div class="viewcode-block" id="SortEnforcingLoader._construct">
+<a class="viewcode-back" href="../../modules/octodns.yaml.html#octodns.yaml.SortEnforcingLoader._construct">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_construct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
         <span class="n">ret</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pairs</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
 
@@ -392,6 +400,7 @@
                 <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">ret</span></div>
+</div>
 
 
 
@@ -468,9 +477,12 @@
 <span class="sd">    more info</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
+<div class="viewcode-block" id="SortingDumper._representer">
+<a class="viewcode-back" href="../../modules/octodns.yaml.html#octodns.yaml.SortingDumper._representer">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_representer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="n">data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">KEYGEN</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">represent_mapping</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DEFAULT_MAPPING_TAG</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+</div>
 
 
 

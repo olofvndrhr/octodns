@@ -341,8 +341,11 @@
         <span class="s1">&#39;Returns new if we have one, existing otherwise&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">new</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">existing</span>
 
+<div class="viewcode-block" id="Change._equality_tuple">
+<a class="viewcode-back" href="../../../modules/record/octodns.record.change.html#octodns.record.change.Change._equality_tuple">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_equality_tuple</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">CLASS_ORDERING</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="o">.</span><span class="n">_type</span><span class="p">)</span></div>
+</div>
 
 
 
@@ -366,9 +369,12 @@
             <span class="s1">&#39;record_type&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span>
         <span class="p">}</span>
 
+<div class="viewcode-block" id="Create.__repr__">
+<a class="viewcode-back" href="../../../modules/record/octodns.record.change.html#octodns.record.change.Create.__repr__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">leader</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
         <span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">id</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">source</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Create </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">new</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s1">)&#39;</span></div>
+</div>
 
 
 
@@ -391,12 +397,15 @@
     <span class="c1"># in our output. When we call this from the Manager.sync plan summary</span>
     <span class="c1"># section we&#39;ll pass in a leader, otherwise we&#39;ll just let it default and</span>
     <span class="c1"># do nothing</span>
+<div class="viewcode-block" id="Update.__repr__">
+<a class="viewcode-back" href="../../../modules/record/octodns.record.change.html#octodns.record.change.Update.__repr__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">leader</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
         <span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">id</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">source</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="sa">f</span><span class="s1">&#39;Update</span><span class="se">\n</span><span class="si">{</span><span class="n">leader</span><span class="si">}</span><span class="s1">    </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">existing</span><span class="si">}</span><span class="s1"> -&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">leader</span><span class="si">}</span><span class="s1">    </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">new</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s1">)&#39;</span>
         <span class="p">)</span></div>
+</div>
 
 
 
@@ -420,8 +429,11 @@
             <span class="s1">&#39;record_type&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">existing</span><span class="o">.</span><span class="n">_type</span><span class="p">,</span>
         <span class="p">}</span>
 
+<div class="viewcode-block" id="Delete.__repr__">
+<a class="viewcode-back" href="../../../modules/record/octodns.record.change.html#octodns.record.change.Delete.__repr__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">leader</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Delete </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">existing</span><span class="si">}</span><span class="s1">&#39;</span></div>
+</div>
 
 </pre></div>
         </article>

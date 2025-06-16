@@ -332,20 +332,31 @@
           <section id="module-octodns.record.ptr">
 <span id="octodns-record-ptr"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.record.ptr</span></code><a class="headerlink" href="#module-octodns.record.ptr" title="Link to this heading">¶</a></h1>
 <dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.ptr.PtrValue">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.ptr.</span></span><span class="sig-name descname"><span class="pre">PtrValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/ptr.html#PtrValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.ptr.PtrValue" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.record.target.html#octodns.record.target._TargetsValue" title="octodns.record.target._TargetsValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">_TargetsValue</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="octodns.record.ptr.PtrRecord">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.ptr.</span></span><span class="sig-name descname"><span class="pre">PtrRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/ptr.html#PtrRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.ptr.PtrRecord" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="octodns.record.base.html#octodns.record.base.ValuesMixin" title="octodns.record.base.ValuesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValuesMixin</span></code></a>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.ptr.PtrRecord._type">
+<span class="sig-name descname"><span class="pre">_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PTR'</span></em><a class="headerlink" href="#octodns.record.ptr.PtrRecord._type" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.ptr.PtrRecord._value_type">
+<span class="sig-name descname"><span class="pre">_value_type</span></span><a class="headerlink" href="#octodns.record.ptr.PtrRecord._value_type" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#octodns.record.ptr.PtrValue" title="octodns.record.ptr.PtrValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">PtrValue</span></code></a></p>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="octodns.record.ptr.PtrRecord.value">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#octodns.record.ptr.PtrRecord.value" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.record.ptr.PtrValue">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.ptr.</span></span><span class="sig-name descname"><span class="pre">PtrValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/ptr.html#PtrValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.ptr.PtrValue" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_TargetsValue</span></code></p>
 </dd></dl>
 
 </section>
@@ -406,11 +417,13 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.record.ptr</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.ptr.PtrValue"><code class="docutils literal notranslate"><span class="pre">PtrValue</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.ptr.PtrRecord"><code class="docutils literal notranslate"><span class="pre">PtrRecord</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.ptr.PtrRecord._type"><code class="docutils literal notranslate"><span class="pre">PtrRecord._type</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.ptr.PtrRecord._value_type"><code class="docutils literal notranslate"><span class="pre">PtrRecord._value_type</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.ptr.PtrRecord.value"><code class="docutils literal notranslate"><span class="pre">PtrRecord.value</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#octodns.record.ptr.PtrValue"><code class="docutils literal notranslate"><span class="pre">PtrValue</span></code></a></li>
 </ul>
 </li>
 </ul>

@@ -331,99 +331,10 @@
         <article role="main" id="furo-main-content">
           <section id="module-octodns.provider.plan">
 <span id="octodns-provider-plan"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.provider.plan</span></code><a class="headerlink" href="#module-octodns.provider.plan" title="Link to this heading">¶</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.provider.plan.Plan">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.plan.</span></span><span class="sig-name descname"><span class="pre">Plan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">existing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">changes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exists</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delete_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#Plan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.Plan" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.provider.plan.Plan.MAX_SAFE_DELETE_PCENT">
-<span class="sig-name descname"><span class="pre">MAX_SAFE_DELETE_PCENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.3</span></em><a class="headerlink" href="#octodns.provider.plan.Plan.MAX_SAFE_DELETE_PCENT" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.provider.plan.Plan.MAX_SAFE_UPDATE_PCENT">
-<span class="sig-name descname"><span class="pre">MAX_SAFE_UPDATE_PCENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.3</span></em><a class="headerlink" href="#octodns.provider.plan.Plan.MAX_SAFE_UPDATE_PCENT" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.provider.plan.Plan.MIN_EXISTING_RECORDS">
-<span class="sig-name descname"><span class="pre">MIN_EXISTING_RECORDS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#octodns.provider.plan.Plan.MIN_EXISTING_RECORDS" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.plan.Plan.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">existing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">changes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exists</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delete_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#Plan.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.Plan.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.provider.plan.Plan.data">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#octodns.provider.plan.Plan.data" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.provider.plan.Plan.log">
-<span class="sig-name descname"><span class="pre">log</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Logger</span> <span class="pre">Plan</span> <span class="pre">(WARNING)&gt;</span></em><a class="headerlink" href="#octodns.provider.plan.Plan.log" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.plan.Plan.raise_if_unsafe">
-<span class="sig-name descname"><span class="pre">raise_if_unsafe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#Plan.raise_if_unsafe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.Plan.raise_if_unsafe" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.provider.plan.PlanHtml">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.plan.</span></span><span class="sig-name descname"><span class="pre">PlanHtml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanHtml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanHtml" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_PlanOutput</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.plan.PlanHtml.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plans</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fh=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdout&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanHtml.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanHtml.run" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.provider.plan.PlanJson">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.plan.</span></span><span class="sig-name descname"><span class="pre">PlanJson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanJson"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanJson" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_PlanOutput</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.plan.PlanJson.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanJson.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanJson.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.plan.PlanJson.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plans</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fh=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdout&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanJson.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanJson.run" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.provider.plan.PlanLogger">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.plan.</span></span><span class="sig-name descname"><span class="pre">PlanLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'info'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanLogger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanLogger" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_PlanOutput</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.plan.PlanLogger.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'info'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanLogger.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanLogger.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.plan.PlanLogger.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plans</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanLogger.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanLogger.run" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.provider.plan.PlanMarkdown">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.plan.</span></span><span class="sig-name descname"><span class="pre">PlanMarkdown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanMarkdown"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanMarkdown" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_PlanOutput</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.plan.PlanMarkdown.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plans</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fh=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdout&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanMarkdown.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanMarkdown.run" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<dl class="py exception">
+<dt class="sig sig-object py" id="octodns.provider.plan.UnsafePlan">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.plan.</span></span><span class="sig-name descname"><span class="pre">UnsafePlan</span></span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#UnsafePlan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.UnsafePlan" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
 </dd></dl>
 
 <dl class="py exception">
@@ -448,10 +359,121 @@
 
 </dd></dl>
 
-<dl class="py exception">
-<dt class="sig sig-object py" id="octodns.provider.plan.UnsafePlan">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.plan.</span></span><span class="sig-name descname"><span class="pre">UnsafePlan</span></span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#UnsafePlan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.UnsafePlan" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.provider.plan.Plan">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.plan.</span></span><span class="sig-name descname"><span class="pre">Plan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">existing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">changes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exists</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delete_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#Plan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.Plan" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.provider.plan.Plan.log">
+<span class="sig-name descname"><span class="pre">log</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Logger</span> <span class="pre">Plan</span> <span class="pre">(WARNING)&gt;</span></em><a class="headerlink" href="#octodns.provider.plan.Plan.log" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.provider.plan.Plan.MAX_SAFE_UPDATE_PCENT">
+<span class="sig-name descname"><span class="pre">MAX_SAFE_UPDATE_PCENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.3</span></em><a class="headerlink" href="#octodns.provider.plan.Plan.MAX_SAFE_UPDATE_PCENT" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.provider.plan.Plan.MAX_SAFE_DELETE_PCENT">
+<span class="sig-name descname"><span class="pre">MAX_SAFE_DELETE_PCENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.3</span></em><a class="headerlink" href="#octodns.provider.plan.Plan.MAX_SAFE_DELETE_PCENT" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.provider.plan.Plan.MIN_EXISTING_RECORDS">
+<span class="sig-name descname"><span class="pre">MIN_EXISTING_RECORDS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#octodns.provider.plan.Plan.MIN_EXISTING_RECORDS" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.plan.Plan.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">existing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">changes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exists</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delete_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#Plan.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.Plan.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.provider.plan.Plan.data">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#octodns.provider.plan.Plan.data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.plan.Plan.raise_if_unsafe">
+<span class="sig-name descname"><span class="pre">raise_if_unsafe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#Plan.raise_if_unsafe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.Plan.raise_if_unsafe" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.plan.Plan.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#Plan.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.Plan.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.provider.plan._PlanOutput">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.plan.</span></span><span class="sig-name descname"><span class="pre">_PlanOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#_PlanOutput"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan._PlanOutput" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.plan._PlanOutput.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#_PlanOutput.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan._PlanOutput.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.provider.plan.PlanLogger">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.plan.</span></span><span class="sig-name descname"><span class="pre">PlanLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'info'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanLogger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanLogger" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.provider.plan._PlanOutput" title="octodns.provider.plan._PlanOutput"><code class="xref py py-class docutils literal notranslate"><span class="pre">_PlanOutput</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.plan.PlanLogger.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'info'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanLogger.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanLogger.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.plan.PlanLogger.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plans</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanLogger.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanLogger.run" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="octodns.provider.plan._value_stringifier">
+<span class="sig-prename descclassname"><span class="pre">octodns.provider.plan.</span></span><span class="sig-name descname"><span class="pre">_value_stringifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#_value_stringifier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan._value_stringifier" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.provider.plan.PlanJson">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.plan.</span></span><span class="sig-name descname"><span class="pre">PlanJson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanJson"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanJson" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.provider.plan._PlanOutput" title="octodns.provider.plan._PlanOutput"><code class="xref py py-class docutils literal notranslate"><span class="pre">_PlanOutput</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.plan.PlanJson.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanJson.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanJson.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.plan.PlanJson.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plans</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fh=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdout&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanJson.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanJson.run" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.provider.plan.PlanMarkdown">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.plan.</span></span><span class="sig-name descname"><span class="pre">PlanMarkdown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanMarkdown"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanMarkdown" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.provider.plan._PlanOutput" title="octodns.provider.plan._PlanOutput"><code class="xref py py-class docutils literal notranslate"><span class="pre">_PlanOutput</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.plan.PlanMarkdown.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plans</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fh=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdout&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanMarkdown.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanMarkdown.run" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.provider.plan.PlanHtml">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.plan.</span></span><span class="sig-name descname"><span class="pre">PlanHtml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanHtml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanHtml" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.provider.plan._PlanOutput" title="octodns.provider.plan._PlanOutput"><code class="xref py py-class docutils literal notranslate"><span class="pre">_PlanOutput</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.plan.PlanHtml.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plans</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fh=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdout&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/plan.html#PlanHtml.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.plan.PlanHtml.run" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </section>
@@ -512,34 +534,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.provider.plan</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.provider.plan.Plan"><code class="docutils literal notranslate"><span class="pre">Plan</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.provider.plan.Plan.MAX_SAFE_DELETE_PCENT"><code class="docutils literal notranslate"><span class="pre">Plan.MAX_SAFE_DELETE_PCENT</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.plan.Plan.MAX_SAFE_UPDATE_PCENT"><code class="docutils literal notranslate"><span class="pre">Plan.MAX_SAFE_UPDATE_PCENT</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.plan.Plan.MIN_EXISTING_RECORDS"><code class="docutils literal notranslate"><span class="pre">Plan.MIN_EXISTING_RECORDS</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.plan.Plan.__init__"><code class="docutils literal notranslate"><span class="pre">Plan.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.plan.Plan.data"><code class="docutils literal notranslate"><span class="pre">Plan.data</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.plan.Plan.log"><code class="docutils literal notranslate"><span class="pre">Plan.log</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.plan.Plan.raise_if_unsafe"><code class="docutils literal notranslate"><span class="pre">Plan.raise_if_unsafe()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.provider.plan.PlanHtml"><code class="docutils literal notranslate"><span class="pre">PlanHtml</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.provider.plan.PlanHtml.run"><code class="docutils literal notranslate"><span class="pre">PlanHtml.run()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.provider.plan.PlanJson"><code class="docutils literal notranslate"><span class="pre">PlanJson</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.provider.plan.PlanJson.__init__"><code class="docutils literal notranslate"><span class="pre">PlanJson.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.plan.PlanJson.run"><code class="docutils literal notranslate"><span class="pre">PlanJson.run()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.provider.plan.PlanLogger"><code class="docutils literal notranslate"><span class="pre">PlanLogger</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.provider.plan.PlanLogger.__init__"><code class="docutils literal notranslate"><span class="pre">PlanLogger.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.plan.PlanLogger.run"><code class="docutils literal notranslate"><span class="pre">PlanLogger.run()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.provider.plan.PlanMarkdown"><code class="docutils literal notranslate"><span class="pre">PlanMarkdown</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.provider.plan.PlanMarkdown.run"><code class="docutils literal notranslate"><span class="pre">PlanMarkdown.run()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#octodns.provider.plan.UnsafePlan"><code class="docutils literal notranslate"><span class="pre">UnsafePlan</span></code></a></li>
 <li><a class="reference internal" href="#octodns.provider.plan.RootNsChange"><code class="docutils literal notranslate"><span class="pre">RootNsChange</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.provider.plan.RootNsChange.__init__"><code class="docutils literal notranslate"><span class="pre">RootNsChange.__init__()</span></code></a></li>
 </ul>
@@ -548,7 +543,40 @@
 <li><a class="reference internal" href="#octodns.provider.plan.TooMuchChange.__init__"><code class="docutils literal notranslate"><span class="pre">TooMuchChange.__init__()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#octodns.provider.plan.UnsafePlan"><code class="docutils literal notranslate"><span class="pre">UnsafePlan</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.plan.Plan"><code class="docutils literal notranslate"><span class="pre">Plan</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.provider.plan.Plan.log"><code class="docutils literal notranslate"><span class="pre">Plan.log</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.plan.Plan.MAX_SAFE_UPDATE_PCENT"><code class="docutils literal notranslate"><span class="pre">Plan.MAX_SAFE_UPDATE_PCENT</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.plan.Plan.MAX_SAFE_DELETE_PCENT"><code class="docutils literal notranslate"><span class="pre">Plan.MAX_SAFE_DELETE_PCENT</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.plan.Plan.MIN_EXISTING_RECORDS"><code class="docutils literal notranslate"><span class="pre">Plan.MIN_EXISTING_RECORDS</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.plan.Plan.__init__"><code class="docutils literal notranslate"><span class="pre">Plan.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.plan.Plan.data"><code class="docutils literal notranslate"><span class="pre">Plan.data</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.plan.Plan.raise_if_unsafe"><code class="docutils literal notranslate"><span class="pre">Plan.raise_if_unsafe()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.plan.Plan.__repr__"><code class="docutils literal notranslate"><span class="pre">Plan.__repr__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.provider.plan._PlanOutput"><code class="docutils literal notranslate"><span class="pre">_PlanOutput</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.provider.plan._PlanOutput.__init__"><code class="docutils literal notranslate"><span class="pre">_PlanOutput.__init__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.provider.plan.PlanLogger"><code class="docutils literal notranslate"><span class="pre">PlanLogger</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.provider.plan.PlanLogger.__init__"><code class="docutils literal notranslate"><span class="pre">PlanLogger.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.plan.PlanLogger.run"><code class="docutils literal notranslate"><span class="pre">PlanLogger.run()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.provider.plan._value_stringifier"><code class="docutils literal notranslate"><span class="pre">_value_stringifier()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.plan.PlanJson"><code class="docutils literal notranslate"><span class="pre">PlanJson</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.provider.plan.PlanJson.__init__"><code class="docutils literal notranslate"><span class="pre">PlanJson.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.plan.PlanJson.run"><code class="docutils literal notranslate"><span class="pre">PlanJson.run()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.provider.plan.PlanMarkdown"><code class="docutils literal notranslate"><span class="pre">PlanMarkdown</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.provider.plan.PlanMarkdown.run"><code class="docutils literal notranslate"><span class="pre">PlanMarkdown.run()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.provider.plan.PlanHtml"><code class="docutils literal notranslate"><span class="pre">PlanHtml</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.provider.plan.PlanHtml.run"><code class="docutils literal notranslate"><span class="pre">PlanHtml.run()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

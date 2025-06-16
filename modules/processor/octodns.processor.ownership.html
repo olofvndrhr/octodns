@@ -341,25 +341,6 @@
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.ownership.OwnershipProcessor.process_plan">
-<span class="sig-name descname"><span class="pre">process_plan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plan</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/ownership.html#OwnershipProcessor.process_plan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.ownership.OwnershipProcessor.process_plan" title="Link to this definition">¶</a></dt>
-<dd><p>Called after the planning phase has completed. Provides an opportunity
-for the processors to modify the plan thus changing the actions that
-will be displayed and potentially applied.</p>
-<ul class="simple">
-<li><p><cite>plan</cite> may be None if no changes were detected, if so a <cite>Plan</cite> may
-still be created and returned.</p></li>
-<li><p>May modify <cite>plan.changes</cite> directly or create a new <cite>Plan</cite>.</p></li>
-<li><p>Does not have to modify <cite>plan.desired</cite> and/or <cite>plan.existing</cite> to line
-up with any modifications made to <cite>plan.changes</cite>.</p></li>
-<li><p>Should copy over <cite>plan.exists</cite>, <cite>plan.update_pcent_threshold</cite>, and
-<cite>plan.delete_pcent_threshold</cite> when creating a new <cite>Plan</cite>.</p></li>
-<li><p>Must return a <cite>Plan</cite> which may be <cite>plan</cite> or can be a newly created
-one <cite>plan.desired</cite> and <cite>plan.existing</cite> copied over as-is or modified.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="octodns.processor.ownership.OwnershipProcessor.process_source_zone">
 <span class="sig-name descname"><span class="pre">process_source_zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">desired</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/ownership.html#OwnershipProcessor.process_source_zone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.ownership.OwnershipProcessor.process_source_zone" title="Link to this definition">¶</a></dt>
 <dd><p>Called after all sources have completed populate. Provides an
@@ -376,6 +357,30 @@ the results of which can be modified, and then <cite>Zone.add_record</cite> may
 be used with <cite>replace=True</cite>.</p></li>
 <li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>desired</cite>.</p></li>
 <li><p>Sources may be empty, as will be the case for aliased zones.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.ownership.OwnershipProcessor._is_ownership">
+<span class="sig-name descname"><span class="pre">_is_ownership</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/ownership.html#OwnershipProcessor._is_ownership"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.ownership.OwnershipProcessor._is_ownership" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.ownership.OwnershipProcessor.process_plan">
+<span class="sig-name descname"><span class="pre">process_plan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plan</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/ownership.html#OwnershipProcessor.process_plan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.ownership.OwnershipProcessor.process_plan" title="Link to this definition">¶</a></dt>
+<dd><p>Called after the planning phase has completed. Provides an opportunity
+for the processors to modify the plan thus changing the actions that
+will be displayed and potentially applied.</p>
+<ul class="simple">
+<li><p><cite>plan</cite> may be None if no changes were detected, if so a <cite>Plan</cite> may
+still be created and returned.</p></li>
+<li><p>May modify <cite>plan.changes</cite> directly or create a new <cite>Plan</cite>.</p></li>
+<li><p>Does not have to modify <cite>plan.desired</cite> and/or <cite>plan.existing</cite> to line
+up with any modifications made to <cite>plan.changes</cite>.</p></li>
+<li><p>Should copy over <cite>plan.exists</cite>, <cite>plan.update_pcent_threshold</cite>, and
+<cite>plan.delete_pcent_threshold</cite> when creating a new <cite>Plan</cite>.</p></li>
+<li><p>Must return a <cite>Plan</cite> which may be <cite>plan</cite> or can be a newly created
+one <cite>plan.desired</cite> and <cite>plan.existing</cite> copied over as-is or modified.</p></li>
 </ul>
 </dd></dl>
 
@@ -441,8 +446,9 @@ be used with <cite>replace=True</cite>.</p></li>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.processor.ownership</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.processor.ownership.OwnershipProcessor"><code class="docutils literal notranslate"><span class="pre">OwnershipProcessor</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.processor.ownership.OwnershipProcessor.__init__"><code class="docutils literal notranslate"><span class="pre">OwnershipProcessor.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.processor.ownership.OwnershipProcessor.process_plan"><code class="docutils literal notranslate"><span class="pre">OwnershipProcessor.process_plan()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.processor.ownership.OwnershipProcessor.process_source_zone"><code class="docutils literal notranslate"><span class="pre">OwnershipProcessor.process_source_zone()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.ownership.OwnershipProcessor._is_ownership"><code class="docutils literal notranslate"><span class="pre">OwnershipProcessor._is_ownership()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.ownership.OwnershipProcessor.process_plan"><code class="docutils literal notranslate"><span class="pre">OwnershipProcessor.process_plan()</span></code></a></li>
 </ul>
 </li>
 </ul>

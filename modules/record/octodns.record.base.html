@@ -331,98 +331,23 @@
         <article role="main" id="furo-main-content">
           <section id="module-octodns.record.base">
 <span id="octodns-record-base"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.record.base</span></code><a class="headerlink" href="#module-octodns.record.base" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="octodns.record.base.unquote">
+<span class="sig-prename descclassname"><span class="pre">octodns.record.base.</span></span><span class="sig-name descname"><span class="pre">unquote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#unquote"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.unquote" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="octodns.record.base.Record">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.base.</span></span><span class="sig-name descname"><span class="pre">Record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../octodns.equality.html#octodns.equality.EqualityTupleMixin" title="octodns.equality.EqualityTupleMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">EqualityTupleMixin</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.base.Record.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.base.Record.changes">
-<span class="sig-name descname"><span class="pre">changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.changes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.changes" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.base.Record.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.copy" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.base.Record.data">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#octodns.record.base.Record.data" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.base.Record.decoded_fqdn">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">decoded_fqdn</span></span><a class="headerlink" href="#octodns.record.base.Record.decoded_fqdn" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.base.Record.excluded">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">excluded</span></span><a class="headerlink" href="#octodns.record.base.Record.excluded" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.base.Record.fqdn">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fqdn</span></span><a class="headerlink" href="#octodns.record.base.Record.fqdn" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.base.Record.from_rrs">
-<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_rrs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rrs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lenient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.from_rrs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.from_rrs" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.base.Record.healthcheck_host">
-<span class="sig-name descname"><span class="pre">healthcheck_host</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.healthcheck_host"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.healthcheck_host" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.base.Record.healthcheck_path">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">healthcheck_path</span></span><a class="headerlink" href="#octodns.record.base.Record.healthcheck_path" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.base.Record.healthcheck_port">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">healthcheck_port</span></span><a class="headerlink" href="#octodns.record.base.Record.healthcheck_port" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.base.Record.healthcheck_protocol">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">healthcheck_protocol</span></span><a class="headerlink" href="#octodns.record.base.Record.healthcheck_protocol" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.base.Record.ignored">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ignored</span></span><a class="headerlink" href="#octodns.record.base.Record.ignored" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.base.Record.included">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">included</span></span><a class="headerlink" href="#octodns.record.base.Record.included" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.base.Record.lenient">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lenient</span></span><a class="headerlink" href="#octodns.record.base.Record.lenient" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="octodns.record.base.Record.log">
 <span class="sig-name descname"><span class="pre">log</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Logger</span> <span class="pre">Record</span> <span class="pre">(WARNING)&gt;</span></em><a class="headerlink" href="#octodns.record.base.Record.log" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.base.Record.new">
-<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lenient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.new"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.new" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.base.Record.parse_rdata_texts">
-<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_rdata_texts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rdatas</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.parse_rdata_texts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.parse_rdata_texts" title="Link to this definition">¶</a></dt>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.base.Record._CLASSES">
+<span class="sig-name descname"><span class="pre">_CLASSES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'A':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.a.ARecord'&gt;,</span> <span class="pre">'AAAA':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.aaaa.AaaaRecord'&gt;,</span> <span class="pre">'ALIAS':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.alias.AliasRecord'&gt;,</span> <span class="pre">'CAA':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.caa.CaaRecord'&gt;,</span> <span class="pre">'CNAME':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.cname.CnameRecord'&gt;,</span> <span class="pre">'DNAME':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.dname.DnameRecord'&gt;,</span> <span class="pre">'DS':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.ds.DsRecord'&gt;,</span> <span class="pre">'HTTPS':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.https.HttpsRecord'&gt;,</span> <span class="pre">'LOC':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.loc.LocRecord'&gt;,</span> <span class="pre">'MX':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.mx.MxRecord'&gt;,</span> <span class="pre">'NAPTR':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.naptr.NaptrRecord'&gt;,</span> <span class="pre">'NS':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.ns.NsRecord'&gt;,</span> <span class="pre">'PTR':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.ptr.PtrRecord'&gt;,</span> <span class="pre">'SPF':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.spf.SpfRecord'&gt;,</span> <span class="pre">'SRV':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.srv.SrvRecord'&gt;,</span> <span class="pre">'SSHFP':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.sshfp.SshfpRecord'&gt;,</span> <span class="pre">'SVCB':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.svcb.SvcbRecord'&gt;,</span> <span class="pre">'TLSA':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.tlsa.TlsaRecord'&gt;,</span> <span class="pre">'TXT':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.txt.TxtRecord'&gt;,</span> <span class="pre">'URLFWD':</span> <span class="pre">&lt;class</span> <span class="pre">'octodns.record.urlfwd.UrlfwdRecord'&gt;}</span></em><a class="headerlink" href="#octodns.record.base.Record._CLASSES" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -436,40 +361,115 @@
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.base.Record.new">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lenient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.new"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.new" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="octodns.record.base.Record.validate">
 <em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fqdn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.validate" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.record.base.ValueMixin">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.base.</span></span><span class="sig-name descname"><span class="pre">ValueMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValueMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValueMixin" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.base.ValueMixin.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValueMixin.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValueMixin.__init__" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.record.base.Record.from_rrs">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_rrs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rrs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lenient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.from_rrs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.from_rrs" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.base.ValueMixin.changes">
-<span class="sig-name descname"><span class="pre">changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValueMixin.changes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValueMixin.changes" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.record.base.Record.parse_rdata_texts">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_rdata_texts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rdatas</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.parse_rdata_texts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.parse_rdata_texts" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.base.ValueMixin.data_from_rrs">
-<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_from_rrs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rrs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValueMixin.data_from_rrs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValueMixin.data_from_rrs" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.record.base.Record.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.base.ValueMixin.rrs">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rrs</span></span><a class="headerlink" href="#octodns.record.base.ValueMixin.rrs" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.record.base.Record._octodns">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_octodns</span></span><a class="headerlink" href="#octodns.record.base.Record._octodns" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.base.ValueMixin.validate">
-<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fqdn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValueMixin.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValueMixin.validate" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.record.base.Record._data">
+<span class="sig-name descname"><span class="pre">_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record._data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record._data" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.base.Record.data">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#octodns.record.base.Record.data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.base.Record.fqdn">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fqdn</span></span><a class="headerlink" href="#octodns.record.base.Record.fqdn" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.base.Record.decoded_fqdn">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">decoded_fqdn</span></span><a class="headerlink" href="#octodns.record.base.Record.decoded_fqdn" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.base.Record.ignored">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ignored</span></span><a class="headerlink" href="#octodns.record.base.Record.ignored" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.base.Record.excluded">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">excluded</span></span><a class="headerlink" href="#octodns.record.base.Record.excluded" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.base.Record.included">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">included</span></span><a class="headerlink" href="#octodns.record.base.Record.included" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.base.Record.healthcheck_host">
+<span class="sig-name descname"><span class="pre">healthcheck_host</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.healthcheck_host"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.healthcheck_host" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.base.Record.healthcheck_path">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">healthcheck_path</span></span><a class="headerlink" href="#octodns.record.base.Record.healthcheck_path" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.base.Record.healthcheck_protocol">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">healthcheck_protocol</span></span><a class="headerlink" href="#octodns.record.base.Record.healthcheck_protocol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.base.Record.healthcheck_port">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">healthcheck_port</span></span><a class="headerlink" href="#octodns.record.base.Record.healthcheck_port" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.base.Record.lenient">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lenient</span></span><a class="headerlink" href="#octodns.record.base.Record.lenient" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.base.Record.changes">
+<span class="sig-name descname"><span class="pre">changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.changes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.changes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.base.Record.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.copy" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.base.Record._equality_tuple">
+<span class="sig-name descname"><span class="pre">_equality_tuple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record._equality_tuple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record._equality_tuple" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.base.Record.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#Record.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.Record.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -477,6 +477,16 @@
 <dt class="sig sig-object py" id="octodns.record.base.ValuesMixin">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.base.</span></span><span class="sig-name descname"><span class="pre">ValuesMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValuesMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValuesMixin" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.base.ValuesMixin.validate">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fqdn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValuesMixin.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValuesMixin.validate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.base.ValuesMixin.data_from_rrs">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_from_rrs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rrs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValuesMixin.data_from_rrs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValuesMixin.data_from_rrs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="octodns.record.base.ValuesMixin.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValuesMixin.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValuesMixin.__init__" title="Link to this definition">¶</a></dt>
@@ -488,8 +498,8 @@
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.base.ValuesMixin.data_from_rrs">
-<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_from_rrs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rrs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValuesMixin.data_from_rrs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValuesMixin.data_from_rrs" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.record.base.ValuesMixin._data">
+<span class="sig-name descname"><span class="pre">_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValuesMixin._data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValuesMixin._data" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -503,16 +513,54 @@
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.base.ValuesMixin.validate">
-<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fqdn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValuesMixin.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValuesMixin.validate" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="octodns.record.base.ValuesMixin.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValuesMixin.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValuesMixin.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
 
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="octodns.record.base.unquote">
-<span class="sig-prename descclassname"><span class="pre">octodns.record.base.</span></span><span class="sig-name descname"><span class="pre">unquote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#unquote"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.unquote" title="Link to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.base.ValueMixin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.base.</span></span><span class="sig-name descname"><span class="pre">ValueMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValueMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValueMixin" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.base.ValueMixin.validate">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fqdn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValueMixin.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValueMixin.validate" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.base.ValueMixin.data_from_rrs">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_from_rrs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rrs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValueMixin.data_from_rrs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValueMixin.data_from_rrs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.base.ValueMixin.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValueMixin.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValueMixin.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.base.ValueMixin.changes">
+<span class="sig-name descname"><span class="pre">changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValueMixin.changes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValueMixin.changes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.base.ValueMixin._data">
+<span class="sig-name descname"><span class="pre">_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValueMixin._data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValueMixin._data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.record.base.ValueMixin.rrs">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rrs</span></span><a class="headerlink" href="#octodns.record.base.ValueMixin.rrs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.base.ValueMixin.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/base.html#ValueMixin.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.base.ValueMixin.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+</dd></dl>
 
 </section>
 
@@ -572,48 +620,57 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.record.base</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.base.unquote"><code class="docutils literal notranslate"><span class="pre">unquote()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.base.Record"><code class="docutils literal notranslate"><span class="pre">Record</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.record.base.Record.__init__"><code class="docutils literal notranslate"><span class="pre">Record.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.changes"><code class="docutils literal notranslate"><span class="pre">Record.changes()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.copy"><code class="docutils literal notranslate"><span class="pre">Record.copy()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.data"><code class="docutils literal notranslate"><span class="pre">Record.data</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.decoded_fqdn"><code class="docutils literal notranslate"><span class="pre">Record.decoded_fqdn</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.excluded"><code class="docutils literal notranslate"><span class="pre">Record.excluded</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.fqdn"><code class="docutils literal notranslate"><span class="pre">Record.fqdn</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.from_rrs"><code class="docutils literal notranslate"><span class="pre">Record.from_rrs()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.healthcheck_host"><code class="docutils literal notranslate"><span class="pre">Record.healthcheck_host()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.healthcheck_path"><code class="docutils literal notranslate"><span class="pre">Record.healthcheck_path</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.healthcheck_port"><code class="docutils literal notranslate"><span class="pre">Record.healthcheck_port</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.healthcheck_protocol"><code class="docutils literal notranslate"><span class="pre">Record.healthcheck_protocol</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.ignored"><code class="docutils literal notranslate"><span class="pre">Record.ignored</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.included"><code class="docutils literal notranslate"><span class="pre">Record.included</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.lenient"><code class="docutils literal notranslate"><span class="pre">Record.lenient</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.base.Record.log"><code class="docutils literal notranslate"><span class="pre">Record.log</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.new"><code class="docutils literal notranslate"><span class="pre">Record.new()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.Record.parse_rdata_texts"><code class="docutils literal notranslate"><span class="pre">Record.parse_rdata_texts()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record._CLASSES"><code class="docutils literal notranslate"><span class="pre">Record._CLASSES</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.base.Record.register_type"><code class="docutils literal notranslate"><span class="pre">Record.register_type()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.base.Record.registered_types"><code class="docutils literal notranslate"><span class="pre">Record.registered_types()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.new"><code class="docutils literal notranslate"><span class="pre">Record.new()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.base.Record.validate"><code class="docutils literal notranslate"><span class="pre">Record.validate()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.record.base.ValueMixin"><code class="docutils literal notranslate"><span class="pre">ValueMixin</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.record.base.ValueMixin.__init__"><code class="docutils literal notranslate"><span class="pre">ValueMixin.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.ValueMixin.changes"><code class="docutils literal notranslate"><span class="pre">ValueMixin.changes()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.ValueMixin.data_from_rrs"><code class="docutils literal notranslate"><span class="pre">ValueMixin.data_from_rrs()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.ValueMixin.rrs"><code class="docutils literal notranslate"><span class="pre">ValueMixin.rrs</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.ValueMixin.validate"><code class="docutils literal notranslate"><span class="pre">ValueMixin.validate()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.from_rrs"><code class="docutils literal notranslate"><span class="pre">Record.from_rrs()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.parse_rdata_texts"><code class="docutils literal notranslate"><span class="pre">Record.parse_rdata_texts()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.__init__"><code class="docutils literal notranslate"><span class="pre">Record.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record._octodns"><code class="docutils literal notranslate"><span class="pre">Record._octodns</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record._data"><code class="docutils literal notranslate"><span class="pre">Record._data()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.data"><code class="docutils literal notranslate"><span class="pre">Record.data</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.fqdn"><code class="docutils literal notranslate"><span class="pre">Record.fqdn</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.decoded_fqdn"><code class="docutils literal notranslate"><span class="pre">Record.decoded_fqdn</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.ignored"><code class="docutils literal notranslate"><span class="pre">Record.ignored</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.excluded"><code class="docutils literal notranslate"><span class="pre">Record.excluded</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.included"><code class="docutils literal notranslate"><span class="pre">Record.included</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.healthcheck_host"><code class="docutils literal notranslate"><span class="pre">Record.healthcheck_host()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.healthcheck_path"><code class="docutils literal notranslate"><span class="pre">Record.healthcheck_path</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.healthcheck_protocol"><code class="docutils literal notranslate"><span class="pre">Record.healthcheck_protocol</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.healthcheck_port"><code class="docutils literal notranslate"><span class="pre">Record.healthcheck_port</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.lenient"><code class="docutils literal notranslate"><span class="pre">Record.lenient</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.changes"><code class="docutils literal notranslate"><span class="pre">Record.changes()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.copy"><code class="docutils literal notranslate"><span class="pre">Record.copy()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record._equality_tuple"><code class="docutils literal notranslate"><span class="pre">Record._equality_tuple()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.Record.__repr__"><code class="docutils literal notranslate"><span class="pre">Record.__repr__()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#octodns.record.base.ValuesMixin"><code class="docutils literal notranslate"><span class="pre">ValuesMixin</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.base.ValuesMixin.validate"><code class="docutils literal notranslate"><span class="pre">ValuesMixin.validate()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.ValuesMixin.data_from_rrs"><code class="docutils literal notranslate"><span class="pre">ValuesMixin.data_from_rrs()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.base.ValuesMixin.__init__"><code class="docutils literal notranslate"><span class="pre">ValuesMixin.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.base.ValuesMixin.changes"><code class="docutils literal notranslate"><span class="pre">ValuesMixin.changes()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.ValuesMixin.data_from_rrs"><code class="docutils literal notranslate"><span class="pre">ValuesMixin.data_from_rrs()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.ValuesMixin._data"><code class="docutils literal notranslate"><span class="pre">ValuesMixin._data()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.base.ValuesMixin.rr_values"><code class="docutils literal notranslate"><span class="pre">ValuesMixin.rr_values</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.base.ValuesMixin.rrs"><code class="docutils literal notranslate"><span class="pre">ValuesMixin.rrs</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.base.ValuesMixin.validate"><code class="docutils literal notranslate"><span class="pre">ValuesMixin.validate()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.ValuesMixin.__repr__"><code class="docutils literal notranslate"><span class="pre">ValuesMixin.__repr__()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#octodns.record.base.unquote"><code class="docutils literal notranslate"><span class="pre">unquote()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.ValueMixin"><code class="docutils literal notranslate"><span class="pre">ValueMixin</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.base.ValueMixin.validate"><code class="docutils literal notranslate"><span class="pre">ValueMixin.validate()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.ValueMixin.data_from_rrs"><code class="docutils literal notranslate"><span class="pre">ValueMixin.data_from_rrs()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.ValueMixin.__init__"><code class="docutils literal notranslate"><span class="pre">ValueMixin.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.ValueMixin.changes"><code class="docutils literal notranslate"><span class="pre">ValueMixin.changes()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.ValueMixin._data"><code class="docutils literal notranslate"><span class="pre">ValueMixin._data()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.ValueMixin.rrs"><code class="docutils literal notranslate"><span class="pre">ValueMixin.rrs</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.base.ValueMixin.__repr__"><code class="docutils literal notranslate"><span class="pre">ValueMixin.__repr__()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

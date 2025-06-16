@@ -332,15 +332,26 @@
           <section id="module-octodns.record.txt">
 <span id="octodns-record-txt"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.record.txt</span></code><a class="headerlink" href="#module-octodns.record.txt" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="octodns.record.txt.TxtRecord">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.txt.</span></span><span class="sig-name descname"><span class="pre">TxtRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/txt.html#TxtRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.txt.TxtRecord" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ChunkedValuesMixin</span></code>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code></a></p>
+<dt class="sig sig-object py" id="octodns.record.txt.TxtValue">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.txt.</span></span><span class="sig-name descname"><span class="pre">TxtValue</span></span><a class="reference internal" href="../../_modules/octodns/record/txt.html#TxtValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.txt.TxtValue" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.record.chunked.html#octodns.record.chunked._ChunkedValue" title="octodns.record.chunked._ChunkedValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ChunkedValue</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="octodns.record.txt.TxtValue">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.txt.</span></span><span class="sig-name descname"><span class="pre">TxtValue</span></span><a class="reference internal" href="../../_modules/octodns/record/txt.html#TxtValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.txt.TxtValue" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ChunkedValue</span></code></p>
+<dt class="sig sig-object py" id="octodns.record.txt.TxtRecord">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.txt.</span></span><span class="sig-name descname"><span class="pre">TxtRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/txt.html#TxtRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.txt.TxtRecord" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.record.chunked.html#octodns.record.chunked._ChunkedValuesMixin" title="octodns.record.chunked._ChunkedValuesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ChunkedValuesMixin</span></code></a>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.txt.TxtRecord._type">
+<span class="sig-name descname"><span class="pre">_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'TXT'</span></em><a class="headerlink" href="#octodns.record.txt.TxtRecord._type" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.txt.TxtRecord._value_type">
+<span class="sig-name descname"><span class="pre">_value_type</span></span><a class="headerlink" href="#octodns.record.txt.TxtRecord._value_type" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#octodns.record.txt.TxtValue" title="octodns.record.txt.TxtValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">TxtValue</span></code></a></p>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -401,8 +412,12 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.record.txt</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.record.txt.TxtRecord"><code class="docutils literal notranslate"><span class="pre">TxtRecord</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.txt.TxtValue"><code class="docutils literal notranslate"><span class="pre">TxtValue</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.txt.TxtRecord"><code class="docutils literal notranslate"><span class="pre">TxtRecord</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.txt.TxtRecord._type"><code class="docutils literal notranslate"><span class="pre">TxtRecord._type</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.txt.TxtRecord._value_type"><code class="docutils literal notranslate"><span class="pre">TxtRecord._value_type</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

@@ -331,28 +331,6 @@
         <article role="main" id="furo-main-content">
           <section id="module-octodns.idna">
 <span id="octodns-idna"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.idna</span></code><a class="headerlink" href="#module-octodns.idna" title="Link to this heading">¶</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.idna.IdnaDict">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.idna.</span></span><span class="sig-name descname"><span class="pre">IdnaDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/idna.html#IdnaDict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.idna.IdnaDict" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableMapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MutableMapping</span></code></a></p>
-<p>A dict type that is insensitive to case and utf-8/idna encoded strings</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.idna.IdnaDict.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/idna.html#IdnaDict.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.idna.IdnaDict.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.idna.IdnaDict.decoded_items">
-<span class="sig-name descname"><span class="pre">decoded_items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/idna.html#IdnaDict.decoded_items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.idna.IdnaDict.decoded_items" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.idna.IdnaDict.decoded_keys">
-<span class="sig-name descname"><span class="pre">decoded_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/idna.html#IdnaDict.decoded_keys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.idna.IdnaDict.decoded_keys" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
 <dl class="py exception">
 <dt class="sig sig-object py" id="octodns.idna.IdnaError">
 <em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.idna.</span></span><span class="sig-name descname"><span class="pre">IdnaError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idna_error</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/idna.html#IdnaError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.idna.IdnaError" title="Link to this definition">¶</a></dt>
@@ -365,14 +343,47 @@
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="octodns.idna.idna_encode">
+<span class="sig-prename descclassname"><span class="pre">octodns.idna.</span></span><span class="sig-name descname"><span class="pre">idna_encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/idna.html#idna_encode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.idna.idna_encode" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="octodns.idna.idna_decode">
 <span class="sig-prename descclassname"><span class="pre">octodns.idna.</span></span><span class="sig-name descname"><span class="pre">idna_decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/idna.html#idna_decode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.idna.idna_decode" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="octodns.idna.idna_encode">
-<span class="sig-prename descclassname"><span class="pre">octodns.idna.</span></span><span class="sig-name descname"><span class="pre">idna_encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/idna.html#idna_encode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.idna.idna_encode" title="Link to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.idna.IdnaDict">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.idna.</span></span><span class="sig-name descname"><span class="pre">IdnaDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/idna.html#IdnaDict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.idna.IdnaDict" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableMapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MutableMapping</span></code></a></p>
+<p>A dict type that is insensitive to case and utf-8/idna encoded strings</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.idna.IdnaDict.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/idna.html#IdnaDict.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.idna.IdnaDict.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.idna.IdnaDict.decoded_keys">
+<span class="sig-name descname"><span class="pre">decoded_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/idna.html#IdnaDict.decoded_keys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.idna.IdnaDict.decoded_keys" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.idna.IdnaDict.decoded_items">
+<span class="sig-name descname"><span class="pre">decoded_items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/idna.html#IdnaDict.decoded_items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.idna.IdnaDict.decoded_items" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.idna.IdnaDict.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/idna.html#IdnaDict.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.idna.IdnaDict.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.idna.IdnaDict._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#octodns.idna.IdnaDict._abc_impl" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
 
 </section>
 
@@ -432,18 +443,20 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.idna</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.idna.IdnaDict"><code class="docutils literal notranslate"><span class="pre">IdnaDict</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.idna.IdnaDict.__init__"><code class="docutils literal notranslate"><span class="pre">IdnaDict.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.idna.IdnaDict.decoded_items"><code class="docutils literal notranslate"><span class="pre">IdnaDict.decoded_items()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.idna.IdnaDict.decoded_keys"><code class="docutils literal notranslate"><span class="pre">IdnaDict.decoded_keys()</span></code></a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#octodns.idna.IdnaError"><code class="docutils literal notranslate"><span class="pre">IdnaError</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.idna.IdnaError.__init__"><code class="docutils literal notranslate"><span class="pre">IdnaError.__init__()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#octodns.idna.idna_decode"><code class="docutils literal notranslate"><span class="pre">idna_decode()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.idna.idna_encode"><code class="docutils literal notranslate"><span class="pre">idna_encode()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.idna.idna_decode"><code class="docutils literal notranslate"><span class="pre">idna_decode()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.idna.IdnaDict"><code class="docutils literal notranslate"><span class="pre">IdnaDict</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.idna.IdnaDict.__init__"><code class="docutils literal notranslate"><span class="pre">IdnaDict.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.idna.IdnaDict.decoded_keys"><code class="docutils literal notranslate"><span class="pre">IdnaDict.decoded_keys()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.idna.IdnaDict.decoded_items"><code class="docutils literal notranslate"><span class="pre">IdnaDict.decoded_items()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.idna.IdnaDict.__repr__"><code class="docutils literal notranslate"><span class="pre">IdnaDict.__repr__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.idna.IdnaDict._abc_impl"><code class="docutils literal notranslate"><span class="pre">IdnaDict._abc_impl</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

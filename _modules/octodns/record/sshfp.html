@@ -443,11 +443,17 @@
     <span class="k">def</span><span class="w"> </span><span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">())</span>
 
+<div class="viewcode-block" id="SshfpValue._equality_tuple">
+<a class="viewcode-back" href="../../../modules/record/octodns.record.sshfp.html#octodns.record.sshfp.SshfpValue._equality_tuple">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_equality_tuple</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">algorithm</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fingerprint_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fingerprint</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">algorithm</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fingerprint_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fingerprint</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="SshfpValue.__repr__">
+<a class="viewcode-back" href="../../../modules/record/octodns.record.sshfp.html#octodns.record.sshfp.SshfpValue.__repr__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">algorithm</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">fingerprint_type</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">fingerprint</span><span class="si">}</span><span class="s2">&#39;&quot;</span></div>
+</div>
 
 
 

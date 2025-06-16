@@ -415,6 +415,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">ttl</span> <span class="o">=</span> <span class="n">ttl</span></div>
 
 
+<div class="viewcode-block" id="EnvVarSource._read_variable">
+<a class="viewcode-back" href="../../../modules/source/octodns.source.envvar.html#octodns.source.envvar.EnvVarSource._read_variable">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_read_variable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">value</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">envvar</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -425,7 +427,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">envvar</span><span class="p">,</span>
             <span class="n">value</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">value</span>
+        <span class="k">return</span> <span class="n">value</span></div>
+
 
 <div class="viewcode-block" id="EnvVarSource.populate">
 <a class="viewcode-back" href="../../../modules/source/octodns.source.envvar.html#octodns.source.envvar.EnvVarSource.populate">[docs]</a>

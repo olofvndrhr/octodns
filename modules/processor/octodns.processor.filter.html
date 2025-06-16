@@ -332,18 +332,541 @@
           <section id="module-octodns.processor.filter">
 <span id="octodns-processor-filter"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.processor.filter</span></code><a class="headerlink" href="#module-octodns.processor.filter" title="Link to this heading">¶</a></h1>
 <dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.filter._FilterProcessor">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">_FilterProcessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_FilterProcessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._FilterProcessor" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.processor.base.html#octodns.processor.base.BaseProcessor" title="octodns.processor.base.BaseProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseProcessor</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter._FilterProcessor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_FilterProcessor.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._FilterProcessor.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter._FilterProcessor.process_source_zone">
+<span class="sig-name descname"><span class="pre">process_source_zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_FilterProcessor.process_source_zone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._FilterProcessor.process_source_zone" title="Link to this definition">¶</a></dt>
+<dd><p>Called after all sources have completed populate. Provides an
+opportunity for the processor to modify the desired <cite>Zone</cite> that targets
+will receive.</p>
+<ul class="simple">
+<li><p>Will see <cite>desired</cite> after any modifications done by
+<cite>Provider._process_desired_zone</cite> and processors configured to run
+before this one.</p></li>
+<li><p>May modify <cite>desired</cite> directly.</p></li>
+<li><p>Must return <cite>desired</cite> which will normally be the <cite>desired</cite> param.</p></li>
+<li><p>Must not modify records directly, <cite>record.copy</cite> should be called,
+the results of which can be modified, and then <cite>Zone.add_record</cite> may
+be used with <cite>replace=True</cite>.</p></li>
+<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>desired</cite>.</p></li>
+<li><p>Sources may be empty, as will be the case for aliased zones.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter._FilterProcessor.process_target_zone">
+<span class="sig-name descname"><span class="pre">process_target_zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">existing</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_FilterProcessor.process_target_zone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._FilterProcessor.process_target_zone" title="Link to this definition">¶</a></dt>
+<dd><p>Called after a target has completed <cite>populate</cite>, before changes are
+computed between <cite>existing</cite> and <cite>desired</cite>. This provides an opportunity
+to modify the <cite>existing</cite> <cite>Zone</cite>.</p>
+<ul class="simple">
+<li><p>Will see <cite>existing</cite> after any modifications done by processors
+configured to run before this one.</p></li>
+<li><p>May modify <cite>existing</cite> directly.</p></li>
+<li><p>Must return <cite>existing</cite> which will normally be the <cite>existing</cite> param.</p></li>
+<li><p>Must not modify records directly, <cite>record.copy</cite> should be called,
+the results of which can be modified, and then <cite>Zone.add_record</cite> may
+be used with <cite>replace=True</cite>.</p></li>
+<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>existing</cite>.</p></li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="octodns.processor.filter.AllowsMixin">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">AllowsMixin</span></span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#AllowsMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.AllowsMixin" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter.AllowsMixin.matches">
+<span class="sig-name descname"><span class="pre">matches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#AllowsMixin.matches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.AllowsMixin.matches" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="octodns.processor.filter.AllowsMixin.doesnt_match">
 <span class="sig-name descname"><span class="pre">doesnt_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#AllowsMixin.doesnt_match"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.AllowsMixin.doesnt_match" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.filter.RejectsMixin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">RejectsMixin</span></span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#RejectsMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.RejectsMixin" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.filter.AllowsMixin.matches">
-<span class="sig-name descname"><span class="pre">matches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#AllowsMixin.matches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.AllowsMixin.matches" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.processor.filter.RejectsMixin.matches">
+<span class="sig-name descname"><span class="pre">matches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#RejectsMixin.matches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.RejectsMixin.matches" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter.RejectsMixin.doesnt_match">
+<span class="sig-name descname"><span class="pre">doesnt_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#RejectsMixin.doesnt_match"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.RejectsMixin.doesnt_match" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.filter._TypeBaseFilter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">_TypeBaseFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_list</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_TypeBaseFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._TypeBaseFilter" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.processor.filter._FilterProcessor" title="octodns.processor.filter._FilterProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">_FilterProcessor</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter._TypeBaseFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_list</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_TypeBaseFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._TypeBaseFilter.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter._TypeBaseFilter._process">
+<span class="sig-name descname"><span class="pre">_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_TypeBaseFilter._process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._TypeBaseFilter._process" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.filter.TypeAllowlistFilter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">TypeAllowlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#TypeAllowlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.TypeAllowlistFilter" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.processor.filter._TypeBaseFilter" title="octodns.processor.filter._TypeBaseFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">_TypeBaseFilter</span></code></a>, <a class="reference internal" href="#octodns.processor.filter.AllowsMixin" title="octodns.processor.filter.AllowsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllowsMixin</span></code></a></p>
+<p>Only manage records of the specified type(s).</p>
+<p class="rubric">Example</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
+<span class="nt">only-a-and-aaaa</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.TypeAllowlistFilter</span>
+<span class="w">    </span><span class="nt">allowlist</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AAAA</span>
+<span class="w">    </span><span class="c1"># Optional param that can be set to False to leave the target zone</span>
+<span class="w">    </span><span class="c1"># alone, thus allowing deletion of existing records</span>
+<span class="w">    </span><span class="c1"># (default: true)</span>
+<span class="w">    </span><span class="c1"># include_target: True</span>
+
+<span class="nt">zones</span><span class="p">:</span>
+<span class="nt">exxampled.com.</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">only-a-and-aaaa</span>
+<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ns1</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter.TypeAllowlistFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#TypeAllowlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.TypeAllowlistFilter.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.filter.TypeRejectlistFilter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">TypeRejectlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#TypeRejectlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.TypeRejectlistFilter" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.processor.filter._TypeBaseFilter" title="octodns.processor.filter._TypeBaseFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">_TypeBaseFilter</span></code></a>, <a class="reference internal" href="#octodns.processor.filter.RejectsMixin" title="octodns.processor.filter.RejectsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">RejectsMixin</span></code></a></p>
+<p>Ignore records of the specified type(s).</p>
+<p class="rubric">Example</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
+<span class="nt">ignore-cnames</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.TypeRejectlistFilter</span>
+<span class="w">    </span><span class="nt">rejectlist</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CNAME</span>
+<span class="w">    </span><span class="c1"># Optional param that can be set to False to leave the target zone</span>
+<span class="w">    </span><span class="c1"># alone, thus allowing deletion of existing records</span>
+<span class="w">    </span><span class="c1"># (default: true)</span>
+<span class="w">    </span><span class="c1"># include_target: True</span>
+
+<span class="nt">zones</span><span class="p">:</span>
+<span class="nt">exxampled.com.</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ignore-cnames</span>
+<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter.TypeRejectlistFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#TypeRejectlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.TypeRejectlistFilter.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.filter._NameBaseFilter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">_NameBaseFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_list</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_NameBaseFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._NameBaseFilter" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.processor.filter._FilterProcessor" title="octodns.processor.filter._FilterProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">_FilterProcessor</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter._NameBaseFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_list</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_NameBaseFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._NameBaseFilter.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter._NameBaseFilter._process">
+<span class="sig-name descname"><span class="pre">_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_NameBaseFilter._process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._NameBaseFilter._process" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.filter.NameAllowlistFilter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">NameAllowlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NameAllowlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NameAllowlistFilter" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.processor.filter._NameBaseFilter" title="octodns.processor.filter._NameBaseFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">_NameBaseFilter</span></code></a>, <a class="reference internal" href="#octodns.processor.filter.AllowsMixin" title="octodns.processor.filter.AllowsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllowsMixin</span></code></a></p>
+<p>Only manage records with names that match the provider patterns</p>
+<p class="rubric">Example</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
+<span class="nt">only-these</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.NameAllowlistFilter</span>
+<span class="w">    </span><span class="nt">allowlist</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># exact string match</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www</span>
+<span class="w">    </span><span class="c1"># contains/substring match</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/substring/</span>
+<span class="w">    </span><span class="c1"># regex pattern match</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/some-pattern-\d\+/</span>
+<span class="w">    </span><span class="c1"># regex - anchored so has to match start to end</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/^start-.+-end$/</span>
+<span class="w">    </span><span class="c1"># Optional param that can be set to False to leave the target zone</span>
+<span class="w">    </span><span class="c1"># alone, thus allowing deletion of existing records</span>
+<span class="w">    </span><span class="c1"># (default: true)</span>
+<span class="w">    </span><span class="c1"># include_target: True</span>
+
+<span class="nt">zones</span><span class="p">:</span>
+<span class="nt">exxampled.com.</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">only-these</span>
+<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter.NameAllowlistFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NameAllowlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NameAllowlistFilter.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.filter.NameRejectlistFilter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">NameRejectlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NameRejectlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NameRejectlistFilter" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.processor.filter._NameBaseFilter" title="octodns.processor.filter._NameBaseFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">_NameBaseFilter</span></code></a>, <a class="reference internal" href="#octodns.processor.filter.RejectsMixin" title="octodns.processor.filter.RejectsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">RejectsMixin</span></code></a></p>
+<p>Reject managing records with names that match the provider patterns</p>
+<p class="rubric">Example</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
+<span class="nt">not-these</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.NameRejectlistFilter</span>
+<span class="w">    </span><span class="nt">rejectlist</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># exact string match</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www</span>
+<span class="w">    </span><span class="c1"># contains/substring match</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/substring/</span>
+<span class="w">    </span><span class="c1"># regex pattern match</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/some-pattern-\d\+/</span>
+<span class="w">    </span><span class="c1"># regex - anchored so has to match start to end</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/^start-.+-end$/</span>
+<span class="w">    </span><span class="c1"># Optional param that can be set to False to leave the target zone</span>
+<span class="w">    </span><span class="c1"># alone, thus allowing deletion of existing records</span>
+<span class="w">    </span><span class="c1"># (default: true)</span>
+<span class="w">    </span><span class="c1"># include_target: True</span>
+
+<span class="nt">zones</span><span class="p">:</span>
+<span class="nt">exxampled.com.</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">not-these</span>
+<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter.NameRejectlistFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NameRejectlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NameRejectlistFilter.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.filter._ValueBaseFilter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">_ValueBaseFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_list</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_ValueBaseFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._ValueBaseFilter" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.processor.filter._FilterProcessor" title="octodns.processor.filter._FilterProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">_FilterProcessor</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter._ValueBaseFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_list</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_ValueBaseFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._ValueBaseFilter.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter._ValueBaseFilter._process">
+<span class="sig-name descname"><span class="pre">_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_ValueBaseFilter._process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._ValueBaseFilter._process" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.filter.ValueAllowlistFilter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">ValueAllowlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#ValueAllowlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.ValueAllowlistFilter" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.processor.filter._ValueBaseFilter" title="octodns.processor.filter._ValueBaseFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ValueBaseFilter</span></code></a>, <a class="reference internal" href="#octodns.processor.filter.AllowsMixin" title="octodns.processor.filter.AllowsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllowsMixin</span></code></a></p>
+<p>Only manage records with values that match the provider patterns</p>
+<p class="rubric">Example</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
+<span class="nt">only-these</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.ValueAllowlistFilter</span>
+<span class="w">    </span><span class="nt">allowlist</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># exact string match</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www</span>
+<span class="w">    </span><span class="c1"># contains/substring match</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/substring/</span>
+<span class="w">    </span><span class="c1"># regex pattern match</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/some-pattern-\d\+/</span>
+<span class="w">    </span><span class="c1"># regex - anchored so has to match start to end</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/^start-.+-end$/</span>
+<span class="w">    </span><span class="c1"># Optional param that can be set to False to leave the target zone</span>
+<span class="w">    </span><span class="c1"># alone, thus allowing deletion of existing records</span>
+<span class="w">    </span><span class="c1"># (default: true)</span>
+<span class="w">    </span><span class="c1"># include_target: True</span>
+
+<span class="nt">zones</span><span class="p">:</span>
+<span class="nt">exxampled.com.</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">only-these</span>
+<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter.ValueAllowlistFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#ValueAllowlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.ValueAllowlistFilter.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.filter.ValueRejectlistFilter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">ValueRejectlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#ValueRejectlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.ValueRejectlistFilter" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.processor.filter._ValueBaseFilter" title="octodns.processor.filter._ValueBaseFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ValueBaseFilter</span></code></a>, <a class="reference internal" href="#octodns.processor.filter.RejectsMixin" title="octodns.processor.filter.RejectsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">RejectsMixin</span></code></a></p>
+<p>Reject managing records with names that match the provider patterns</p>
+<p class="rubric">Example</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
+<span class="nt">not-these</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.ValueRejectlistFilter</span>
+<span class="w">    </span><span class="nt">rejectlist</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># exact string match</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www</span>
+<span class="w">    </span><span class="c1"># contains/substring match</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/substring/</span>
+<span class="w">    </span><span class="c1"># regex pattern match</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/some-pattern-\d\+/</span>
+<span class="w">    </span><span class="c1"># regex - anchored so has to match start to end</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/^start-.+-end$/</span>
+<span class="w">    </span><span class="c1"># Optional param that can be set to False to leave the target zone</span>
+<span class="w">    </span><span class="c1"># alone, thus allowing deletion of existing records</span>
+<span class="w">    </span><span class="c1"># (default: true)</span>
+<span class="w">    </span><span class="c1"># include_target: True</span>
+
+<span class="nt">zones</span><span class="p">:</span>
+<span class="nt">exxampled.com.</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">not-these</span>
+<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter.ValueRejectlistFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#ValueRejectlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.ValueRejectlistFilter.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.filter._NetworkValueBaseFilter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">_NetworkValueBaseFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_NetworkValueBaseFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._NetworkValueBaseFilter" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.processor.base.html#octodns.processor.base.BaseProcessor" title="octodns.processor.base.BaseProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseProcessor</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter._NetworkValueBaseFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_NetworkValueBaseFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._NetworkValueBaseFilter.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter._NetworkValueBaseFilter._process">
+<span class="sig-name descname"><span class="pre">_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#_NetworkValueBaseFilter._process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter._NetworkValueBaseFilter._process" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter._NetworkValueBaseFilter.process_source_zone">
+<span class="sig-name descname"><span class="pre">process_source_zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#octodns.processor.filter._NetworkValueBaseFilter.process_source_zone" title="Link to this definition">¶</a></dt>
+<dd><p>Called after all sources have completed populate. Provides an
+opportunity for the processor to modify the desired <cite>Zone</cite> that targets
+will receive.</p>
+<ul class="simple">
+<li><p>Will see <cite>desired</cite> after any modifications done by
+<cite>Provider._process_desired_zone</cite> and processors configured to run
+before this one.</p></li>
+<li><p>May modify <cite>desired</cite> directly.</p></li>
+<li><p>Must return <cite>desired</cite> which will normally be the <cite>desired</cite> param.</p></li>
+<li><p>Must not modify records directly, <cite>record.copy</cite> should be called,
+the results of which can be modified, and then <cite>Zone.add_record</cite> may
+be used with <cite>replace=True</cite>.</p></li>
+<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>desired</cite>.</p></li>
+<li><p>Sources may be empty, as will be the case for aliased zones.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter._NetworkValueBaseFilter.process_target_zone">
+<span class="sig-name descname"><span class="pre">process_target_zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#octodns.processor.filter._NetworkValueBaseFilter.process_target_zone" title="Link to this definition">¶</a></dt>
+<dd><p>Called after a target has completed <cite>populate</cite>, before changes are
+computed between <cite>existing</cite> and <cite>desired</cite>. This provides an opportunity
+to modify the <cite>existing</cite> <cite>Zone</cite>.</p>
+<ul class="simple">
+<li><p>Will see <cite>existing</cite> after any modifications done by processors
+configured to run before this one.</p></li>
+<li><p>May modify <cite>existing</cite> directly.</p></li>
+<li><p>Must return <cite>existing</cite> which will normally be the <cite>existing</cite> param.</p></li>
+<li><p>Must not modify records directly, <cite>record.copy</cite> should be called,
+the results of which can be modified, and then <cite>Zone.add_record</cite> may
+be used with <cite>replace=True</cite>.</p></li>
+<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>existing</cite>.</p></li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.filter.NetworkValueAllowlistFilter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">NetworkValueAllowlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NetworkValueAllowlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NetworkValueAllowlistFilter" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.processor.filter._NetworkValueBaseFilter" title="octodns.processor.filter._NetworkValueBaseFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">_NetworkValueBaseFilter</span></code></a>, <a class="reference internal" href="#octodns.processor.filter.AllowsMixin" title="octodns.processor.filter.AllowsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllowsMixin</span></code></a></p>
+<p>Only manage A and AAAA records with values that match the provider patterns
+All other types will be left as-is.</p>
+<p class="rubric">Example</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
+<span class="nt">only-these</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.NetworkValueAllowlistFilter</span>
+<span class="w">    </span><span class="nt">allowlist</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1/32</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.0.0/16</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fd00::/8</span>
+
+<span class="nt">zones</span><span class="p">:</span>
+<span class="nt">exxampled.com.</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">only-these</span>
+<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter.NetworkValueAllowlistFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NetworkValueAllowlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NetworkValueAllowlistFilter.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.filter.NetworkValueRejectlistFilter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">NetworkValueRejectlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NetworkValueRejectlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NetworkValueRejectlistFilter" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.processor.filter._NetworkValueBaseFilter" title="octodns.processor.filter._NetworkValueBaseFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">_NetworkValueBaseFilter</span></code></a>, <a class="reference internal" href="#octodns.processor.filter.RejectsMixin" title="octodns.processor.filter.RejectsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">RejectsMixin</span></code></a></p>
+<p>Reject managing A and AAAA records with value matching a that match the provider patterns
+All other types will be left as-is.</p>
+<p class="rubric">Example</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
+<span class="nt">not-these</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.NetworkValueRejectlistFilter</span>
+<span class="w">    </span><span class="nt">rejectlist</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1/32</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.0.0/16</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fd00::/8</span>
+
+<span class="nt">zones</span><span class="p">:</span>
+<span class="nt">exxampled.com.</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">not-these</span>
+<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter.NetworkValueRejectlistFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NetworkValueRejectlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NetworkValueRejectlistFilter.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.processor.filter.IgnoreRootNsFilter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">IgnoreRootNsFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#IgnoreRootNsFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.IgnoreRootNsFilter" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.processor.base.html#octodns.processor.base.BaseProcessor" title="octodns.processor.base.BaseProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseProcessor</span></code></a></p>
+<p>Do not manage Root NS Records.</p>
+<p class="rubric">Example</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
+<span class="nt">no-root-ns</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.IgnoreRootNsFilter</span>
+
+<span class="nt">zones</span><span class="p">:</span>
+<span class="nt">exxampled.com.</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no-root-ns</span>
+<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ns1</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter.IgnoreRootNsFilter._process">
+<span class="sig-name descname"><span class="pre">_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#IgnoreRootNsFilter._process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.IgnoreRootNsFilter._process" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter.IgnoreRootNsFilter.process_source_zone">
+<span class="sig-name descname"><span class="pre">process_source_zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#octodns.processor.filter.IgnoreRootNsFilter.process_source_zone" title="Link to this definition">¶</a></dt>
+<dd><p>Called after all sources have completed populate. Provides an
+opportunity for the processor to modify the desired <cite>Zone</cite> that targets
+will receive.</p>
+<ul class="simple">
+<li><p>Will see <cite>desired</cite> after any modifications done by
+<cite>Provider._process_desired_zone</cite> and processors configured to run
+before this one.</p></li>
+<li><p>May modify <cite>desired</cite> directly.</p></li>
+<li><p>Must return <cite>desired</cite> which will normally be the <cite>desired</cite> param.</p></li>
+<li><p>Must not modify records directly, <cite>record.copy</cite> should be called,
+the results of which can be modified, and then <cite>Zone.add_record</cite> may
+be used with <cite>replace=True</cite>.</p></li>
+<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>desired</cite>.</p></li>
+<li><p>Sources may be empty, as will be the case for aliased zones.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter.IgnoreRootNsFilter.process_target_zone">
+<span class="sig-name descname"><span class="pre">process_target_zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#octodns.processor.filter.IgnoreRootNsFilter.process_target_zone" title="Link to this definition">¶</a></dt>
+<dd><p>Called after a target has completed <cite>populate</cite>, before changes are
+computed between <cite>existing</cite> and <cite>desired</cite>. This provides an opportunity
+to modify the <cite>existing</cite> <cite>Zone</cite>.</p>
+<ul class="simple">
+<li><p>Will see <cite>existing</cite> after any modifications done by processors
+configured to run before this one.</p></li>
+<li><p>May modify <cite>existing</cite> directly.</p></li>
+<li><p>Must return <cite>existing</cite> which will normally be the <cite>existing</cite> param.</p></li>
+<li><p>Must not modify records directly, <cite>record.copy</cite> should be called,
+the results of which can be modified, and then <cite>Zone.add_record</cite> may
+be used with <cite>replace=True</cite>.</p></li>
+<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>existing</cite>.</p></li>
+</ul>
+</dd></dl>
 
 </dd></dl>
 
@@ -399,376 +922,9 @@ one <cite>plan.desired</cite> and <cite>plan.existing</cite> copied over as-is o
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="octodns.processor.filter.IgnoreRootNsFilter">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">IgnoreRootNsFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#IgnoreRootNsFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.IgnoreRootNsFilter" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="octodns.processor.base.html#octodns.processor.base.BaseProcessor" title="octodns.processor.base.BaseProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseProcessor</span></code></a></p>
-<p>Do not manage Root NS Records.</p>
-<p class="rubric">Example</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
-<span class="nt">no-root-ns</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.IgnoreRootNsFilter</span>
-
-<span class="nt">zones</span><span class="p">:</span>
-<span class="nt">exxampled.com.</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
-<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no-root-ns</span>
-<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ns1</span>
-</pre></div>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.filter.IgnoreRootNsFilter.process_source_zone">
-<span class="sig-name descname"><span class="pre">process_source_zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#octodns.processor.filter.IgnoreRootNsFilter.process_source_zone" title="Link to this definition">¶</a></dt>
-<dd><p>Called after all sources have completed populate. Provides an
-opportunity for the processor to modify the desired <cite>Zone</cite> that targets
-will receive.</p>
-<ul class="simple">
-<li><p>Will see <cite>desired</cite> after any modifications done by
-<cite>Provider._process_desired_zone</cite> and processors configured to run
-before this one.</p></li>
-<li><p>May modify <cite>desired</cite> directly.</p></li>
-<li><p>Must return <cite>desired</cite> which will normally be the <cite>desired</cite> param.</p></li>
-<li><p>Must not modify records directly, <cite>record.copy</cite> should be called,
-the results of which can be modified, and then <cite>Zone.add_record</cite> may
-be used with <cite>replace=True</cite>.</p></li>
-<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>desired</cite>.</p></li>
-<li><p>Sources may be empty, as will be the case for aliased zones.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.filter.IgnoreRootNsFilter.process_target_zone">
-<span class="sig-name descname"><span class="pre">process_target_zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#octodns.processor.filter.IgnoreRootNsFilter.process_target_zone" title="Link to this definition">¶</a></dt>
-<dd><p>Called after a target has completed <cite>populate</cite>, before changes are
-computed between <cite>existing</cite> and <cite>desired</cite>. This provides an opportunity
-to modify the <cite>existing</cite> <cite>Zone</cite>.</p>
-<ul class="simple">
-<li><p>Will see <cite>existing</cite> after any modifications done by processors
-configured to run before this one.</p></li>
-<li><p>May modify <cite>existing</cite> directly.</p></li>
-<li><p>Must return <cite>existing</cite> which will normally be the <cite>existing</cite> param.</p></li>
-<li><p>Must not modify records directly, <cite>record.copy</cite> should be called,
-the results of which can be modified, and then <cite>Zone.add_record</cite> may
-be used with <cite>replace=True</cite>.</p></li>
-<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>existing</cite>.</p></li>
-</ul>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.processor.filter.NameAllowlistFilter">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">NameAllowlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NameAllowlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NameAllowlistFilter" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_NameBaseFilter</span></code>, <a class="reference internal" href="#octodns.processor.filter.AllowsMixin" title="octodns.processor.filter.AllowsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllowsMixin</span></code></a></p>
-<p>Only manage records with names that match the provider patterns</p>
-<p class="rubric">Example</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
-<span class="nt">only-these</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.NameAllowlistFilter</span>
-<span class="w">    </span><span class="nt">allowlist</span><span class="p">:</span>
-<span class="w">    </span><span class="c1"># exact string match</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www</span>
-<span class="w">    </span><span class="c1"># contains/substring match</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/substring/</span>
-<span class="w">    </span><span class="c1"># regex pattern match</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/some-pattern-\d\+/</span>
-<span class="w">    </span><span class="c1"># regex - anchored so has to match start to end</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/^start-.+-end$/</span>
-<span class="w">    </span><span class="c1"># Optional param that can be set to False to leave the target zone</span>
-<span class="w">    </span><span class="c1"># alone, thus allowing deletion of existing records</span>
-<span class="w">    </span><span class="c1"># (default: true)</span>
-<span class="w">    </span><span class="c1"># include_target: True</span>
-
-<span class="nt">zones</span><span class="p">:</span>
-<span class="nt">exxampled.com.</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
-<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">only-these</span>
-<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
-</pre></div>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.filter.NameAllowlistFilter.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NameAllowlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NameAllowlistFilter.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.processor.filter.NameRejectlistFilter">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">NameRejectlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NameRejectlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NameRejectlistFilter" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_NameBaseFilter</span></code>, <a class="reference internal" href="#octodns.processor.filter.RejectsMixin" title="octodns.processor.filter.RejectsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">RejectsMixin</span></code></a></p>
-<p>Reject managing records with names that match the provider patterns</p>
-<p class="rubric">Example</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
-<span class="nt">not-these</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.NameRejectlistFilter</span>
-<span class="w">    </span><span class="nt">rejectlist</span><span class="p">:</span>
-<span class="w">    </span><span class="c1"># exact string match</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www</span>
-<span class="w">    </span><span class="c1"># contains/substring match</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/substring/</span>
-<span class="w">    </span><span class="c1"># regex pattern match</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/some-pattern-\d\+/</span>
-<span class="w">    </span><span class="c1"># regex - anchored so has to match start to end</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/^start-.+-end$/</span>
-<span class="w">    </span><span class="c1"># Optional param that can be set to False to leave the target zone</span>
-<span class="w">    </span><span class="c1"># alone, thus allowing deletion of existing records</span>
-<span class="w">    </span><span class="c1"># (default: true)</span>
-<span class="w">    </span><span class="c1"># include_target: True</span>
-
-<span class="nt">zones</span><span class="p">:</span>
-<span class="nt">exxampled.com.</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
-<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">not-these</span>
-<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
-</pre></div>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.filter.NameRejectlistFilter.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NameRejectlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NameRejectlistFilter.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.processor.filter.NetworkValueAllowlistFilter">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">NetworkValueAllowlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NetworkValueAllowlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NetworkValueAllowlistFilter" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_NetworkValueBaseFilter</span></code>, <a class="reference internal" href="#octodns.processor.filter.AllowsMixin" title="octodns.processor.filter.AllowsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllowsMixin</span></code></a></p>
-<p>Only manage A and AAAA records with values that match the provider patterns
-All other types will be left as-is.</p>
-<p class="rubric">Example</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
-<span class="nt">only-these</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.NetworkValueAllowlistFilter</span>
-<span class="w">    </span><span class="nt">allowlist</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1/32</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.0.0/16</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fd00::/8</span>
-
-<span class="nt">zones</span><span class="p">:</span>
-<span class="nt">exxampled.com.</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
-<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">only-these</span>
-<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
-</pre></div>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.filter.NetworkValueAllowlistFilter.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NetworkValueAllowlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NetworkValueAllowlistFilter.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.processor.filter.NetworkValueRejectlistFilter">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">NetworkValueRejectlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NetworkValueRejectlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NetworkValueRejectlistFilter" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_NetworkValueBaseFilter</span></code>, <a class="reference internal" href="#octodns.processor.filter.RejectsMixin" title="octodns.processor.filter.RejectsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">RejectsMixin</span></code></a></p>
-<p>Reject managing A and AAAA records with value matching a that match the provider patterns
-All other types will be left as-is.</p>
-<p class="rubric">Example</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
-<span class="nt">not-these</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.NetworkValueRejectlistFilter</span>
-<span class="w">    </span><span class="nt">rejectlist</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1/32</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.0.0/16</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fd00::/8</span>
-
-<span class="nt">zones</span><span class="p">:</span>
-<span class="nt">exxampled.com.</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
-<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">not-these</span>
-<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
-</pre></div>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.filter.NetworkValueRejectlistFilter.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#NetworkValueRejectlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.NetworkValueRejectlistFilter.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.processor.filter.RejectsMixin">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">RejectsMixin</span></span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#RejectsMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.RejectsMixin" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.filter.RejectsMixin.doesnt_match">
-<span class="sig-name descname"><span class="pre">doesnt_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#RejectsMixin.doesnt_match"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.RejectsMixin.doesnt_match" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.filter.RejectsMixin.matches">
-<span class="sig-name descname"><span class="pre">matches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#RejectsMixin.matches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.RejectsMixin.matches" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.processor.filter.TypeAllowlistFilter">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">TypeAllowlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#TypeAllowlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.TypeAllowlistFilter" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_TypeBaseFilter</span></code>, <a class="reference internal" href="#octodns.processor.filter.AllowsMixin" title="octodns.processor.filter.AllowsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllowsMixin</span></code></a></p>
-<p>Only manage records of the specified type(s).</p>
-<p class="rubric">Example</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
-<span class="nt">only-a-and-aaaa</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.TypeAllowlistFilter</span>
-<span class="w">    </span><span class="nt">allowlist</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AAAA</span>
-<span class="w">    </span><span class="c1"># Optional param that can be set to False to leave the target zone</span>
-<span class="w">    </span><span class="c1"># alone, thus allowing deletion of existing records</span>
-<span class="w">    </span><span class="c1"># (default: true)</span>
-<span class="w">    </span><span class="c1"># include_target: True</span>
-
-<span class="nt">zones</span><span class="p">:</span>
-<span class="nt">exxampled.com.</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
-<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">only-a-and-aaaa</span>
-<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ns1</span>
-</pre></div>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.filter.TypeAllowlistFilter.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#TypeAllowlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.TypeAllowlistFilter.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.processor.filter.TypeRejectlistFilter">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">TypeRejectlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#TypeRejectlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.TypeRejectlistFilter" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_TypeBaseFilter</span></code>, <a class="reference internal" href="#octodns.processor.filter.RejectsMixin" title="octodns.processor.filter.RejectsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">RejectsMixin</span></code></a></p>
-<p>Ignore records of the specified type(s).</p>
-<p class="rubric">Example</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
-<span class="nt">ignore-cnames</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.TypeRejectlistFilter</span>
-<span class="w">    </span><span class="nt">rejectlist</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CNAME</span>
-<span class="w">    </span><span class="c1"># Optional param that can be set to False to leave the target zone</span>
-<span class="w">    </span><span class="c1"># alone, thus allowing deletion of existing records</span>
-<span class="w">    </span><span class="c1"># (default: true)</span>
-<span class="w">    </span><span class="c1"># include_target: True</span>
-
-<span class="nt">zones</span><span class="p">:</span>
-<span class="nt">exxampled.com.</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
-<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ignore-cnames</span>
-<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
-</pre></div>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.filter.TypeRejectlistFilter.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#TypeRejectlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.TypeRejectlistFilter.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.processor.filter.ValueAllowlistFilter">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">ValueAllowlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#ValueAllowlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.ValueAllowlistFilter" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ValueBaseFilter</span></code>, <a class="reference internal" href="#octodns.processor.filter.AllowsMixin" title="octodns.processor.filter.AllowsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllowsMixin</span></code></a></p>
-<p>Only manage records with values that match the provider patterns</p>
-<p class="rubric">Example</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
-<span class="nt">only-these</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.ValueAllowlistFilter</span>
-<span class="w">    </span><span class="nt">allowlist</span><span class="p">:</span>
-<span class="w">    </span><span class="c1"># exact string match</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www</span>
-<span class="w">    </span><span class="c1"># contains/substring match</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/substring/</span>
-<span class="w">    </span><span class="c1"># regex pattern match</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/some-pattern-\d\+/</span>
-<span class="w">    </span><span class="c1"># regex - anchored so has to match start to end</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/^start-.+-end$/</span>
-<span class="w">    </span><span class="c1"># Optional param that can be set to False to leave the target zone</span>
-<span class="w">    </span><span class="c1"># alone, thus allowing deletion of existing records</span>
-<span class="w">    </span><span class="c1"># (default: true)</span>
-<span class="w">    </span><span class="c1"># include_target: True</span>
-
-<span class="nt">zones</span><span class="p">:</span>
-<span class="nt">exxampled.com.</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
-<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">only-these</span>
-<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
-</pre></div>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.filter.ValueAllowlistFilter.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#ValueAllowlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.ValueAllowlistFilter.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.processor.filter.ValueRejectlistFilter">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">ValueRejectlistFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#ValueRejectlistFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.ValueRejectlistFilter" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ValueBaseFilter</span></code>, <a class="reference internal" href="#octodns.processor.filter.RejectsMixin" title="octodns.processor.filter.RejectsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">RejectsMixin</span></code></a></p>
-<p>Reject managing records with names that match the provider patterns</p>
-<p class="rubric">Example</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
-<span class="nt">not-these</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.filter.ValueRejectlistFilter</span>
-<span class="w">    </span><span class="nt">rejectlist</span><span class="p">:</span>
-<span class="w">    </span><span class="c1"># exact string match</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www</span>
-<span class="w">    </span><span class="c1"># contains/substring match</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/substring/</span>
-<span class="w">    </span><span class="c1"># regex pattern match</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/some-pattern-\d\+/</span>
-<span class="w">    </span><span class="c1"># regex - anchored so has to match start to end</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/^start-.+-end$/</span>
-<span class="w">    </span><span class="c1"># Optional param that can be set to False to leave the target zone</span>
-<span class="w">    </span><span class="c1"># alone, thus allowing deletion of existing records</span>
-<span class="w">    </span><span class="c1"># (default: true)</span>
-<span class="w">    </span><span class="c1"># include_target: True</span>
-
-<span class="nt">zones</span><span class="p">:</span>
-<span class="nt">exxampled.com.</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
-<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">not-these</span>
-<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
-</pre></div>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.filter.ValueRejectlistFilter.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rejectlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#ValueRejectlistFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.ValueRejectlistFilter.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="octodns.processor.filter.ZoneNameFilter">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.filter.</span></span><span class="sig-name descname"><span class="pre">ZoneNameFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#ZoneNameFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.ZoneNameFilter" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_FilterProcessor</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#octodns.processor.filter._FilterProcessor" title="octodns.processor.filter._FilterProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">_FilterProcessor</span></code></a></p>
 <p>Filter or error on record names that contain the zone name</p>
 <p class="rubric">Example</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
@@ -795,6 +951,11 @@ All other types will be left as-is.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="octodns.processor.filter.ZoneNameFilter.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#ZoneNameFilter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.ZoneNameFilter.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.processor.filter.ZoneNameFilter._process">
+<span class="sig-name descname"><span class="pre">_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/filter.html#ZoneNameFilter._process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.filter.ZoneNameFilter._process" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -857,40 +1018,25 @@ All other types will be left as-is.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.processor.filter</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.filter._FilterProcessor"><code class="docutils literal notranslate"><span class="pre">_FilterProcessor</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.filter._FilterProcessor.__init__"><code class="docutils literal notranslate"><span class="pre">_FilterProcessor.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.filter._FilterProcessor.process_source_zone"><code class="docutils literal notranslate"><span class="pre">_FilterProcessor.process_source_zone()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.filter._FilterProcessor.process_target_zone"><code class="docutils literal notranslate"><span class="pre">_FilterProcessor.process_target_zone()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#octodns.processor.filter.AllowsMixin"><code class="docutils literal notranslate"><span class="pre">AllowsMixin</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.processor.filter.AllowsMixin.doesnt_match"><code class="docutils literal notranslate"><span class="pre">AllowsMixin.doesnt_match()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.processor.filter.AllowsMixin.matches"><code class="docutils literal notranslate"><span class="pre">AllowsMixin.matches()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.processor.filter.ExcludeRootNsChanges"><code class="docutils literal notranslate"><span class="pre">ExcludeRootNsChanges</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.processor.filter.ExcludeRootNsChanges.__init__"><code class="docutils literal notranslate"><span class="pre">ExcludeRootNsChanges.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.processor.filter.ExcludeRootNsChanges.process_plan"><code class="docutils literal notranslate"><span class="pre">ExcludeRootNsChanges.process_plan()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.processor.filter.IgnoreRootNsFilter"><code class="docutils literal notranslate"><span class="pre">IgnoreRootNsFilter</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.processor.filter.IgnoreRootNsFilter.process_source_zone"><code class="docutils literal notranslate"><span class="pre">IgnoreRootNsFilter.process_source_zone()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.processor.filter.IgnoreRootNsFilter.process_target_zone"><code class="docutils literal notranslate"><span class="pre">IgnoreRootNsFilter.process_target_zone()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.processor.filter.NameAllowlistFilter"><code class="docutils literal notranslate"><span class="pre">NameAllowlistFilter</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.processor.filter.NameAllowlistFilter.__init__"><code class="docutils literal notranslate"><span class="pre">NameAllowlistFilter.__init__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.processor.filter.NameRejectlistFilter"><code class="docutils literal notranslate"><span class="pre">NameRejectlistFilter</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.processor.filter.NameRejectlistFilter.__init__"><code class="docutils literal notranslate"><span class="pre">NameRejectlistFilter.__init__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.processor.filter.NetworkValueAllowlistFilter"><code class="docutils literal notranslate"><span class="pre">NetworkValueAllowlistFilter</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.processor.filter.NetworkValueAllowlistFilter.__init__"><code class="docutils literal notranslate"><span class="pre">NetworkValueAllowlistFilter.__init__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.processor.filter.NetworkValueRejectlistFilter"><code class="docutils literal notranslate"><span class="pre">NetworkValueRejectlistFilter</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.processor.filter.NetworkValueRejectlistFilter.__init__"><code class="docutils literal notranslate"><span class="pre">NetworkValueRejectlistFilter.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.filter.AllowsMixin.doesnt_match"><code class="docutils literal notranslate"><span class="pre">AllowsMixin.doesnt_match()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#octodns.processor.filter.RejectsMixin"><code class="docutils literal notranslate"><span class="pre">RejectsMixin</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.processor.filter.RejectsMixin.doesnt_match"><code class="docutils literal notranslate"><span class="pre">RejectsMixin.doesnt_match()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.processor.filter.RejectsMixin.matches"><code class="docutils literal notranslate"><span class="pre">RejectsMixin.matches()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.filter.RejectsMixin.doesnt_match"><code class="docutils literal notranslate"><span class="pre">RejectsMixin.doesnt_match()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.processor.filter._TypeBaseFilter"><code class="docutils literal notranslate"><span class="pre">_TypeBaseFilter</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.filter._TypeBaseFilter.__init__"><code class="docutils literal notranslate"><span class="pre">_TypeBaseFilter.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.filter._TypeBaseFilter._process"><code class="docutils literal notranslate"><span class="pre">_TypeBaseFilter._process()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#octodns.processor.filter.TypeAllowlistFilter"><code class="docutils literal notranslate"><span class="pre">TypeAllowlistFilter</span></code></a><ul>
@@ -901,6 +1047,24 @@ All other types will be left as-is.</p>
 <li><a class="reference internal" href="#octodns.processor.filter.TypeRejectlistFilter.__init__"><code class="docutils literal notranslate"><span class="pre">TypeRejectlistFilter.__init__()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#octodns.processor.filter._NameBaseFilter"><code class="docutils literal notranslate"><span class="pre">_NameBaseFilter</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.filter._NameBaseFilter.__init__"><code class="docutils literal notranslate"><span class="pre">_NameBaseFilter.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.filter._NameBaseFilter._process"><code class="docutils literal notranslate"><span class="pre">_NameBaseFilter._process()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.processor.filter.NameAllowlistFilter"><code class="docutils literal notranslate"><span class="pre">NameAllowlistFilter</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.filter.NameAllowlistFilter.__init__"><code class="docutils literal notranslate"><span class="pre">NameAllowlistFilter.__init__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.processor.filter.NameRejectlistFilter"><code class="docutils literal notranslate"><span class="pre">NameRejectlistFilter</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.filter.NameRejectlistFilter.__init__"><code class="docutils literal notranslate"><span class="pre">NameRejectlistFilter.__init__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.processor.filter._ValueBaseFilter"><code class="docutils literal notranslate"><span class="pre">_ValueBaseFilter</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.filter._ValueBaseFilter.__init__"><code class="docutils literal notranslate"><span class="pre">_ValueBaseFilter.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.filter._ValueBaseFilter._process"><code class="docutils literal notranslate"><span class="pre">_ValueBaseFilter._process()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#octodns.processor.filter.ValueAllowlistFilter"><code class="docutils literal notranslate"><span class="pre">ValueAllowlistFilter</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.processor.filter.ValueAllowlistFilter.__init__"><code class="docutils literal notranslate"><span class="pre">ValueAllowlistFilter.__init__()</span></code></a></li>
 </ul>
@@ -909,8 +1073,35 @@ All other types will be left as-is.</p>
 <li><a class="reference internal" href="#octodns.processor.filter.ValueRejectlistFilter.__init__"><code class="docutils literal notranslate"><span class="pre">ValueRejectlistFilter.__init__()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#octodns.processor.filter._NetworkValueBaseFilter"><code class="docutils literal notranslate"><span class="pre">_NetworkValueBaseFilter</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.filter._NetworkValueBaseFilter.__init__"><code class="docutils literal notranslate"><span class="pre">_NetworkValueBaseFilter.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.filter._NetworkValueBaseFilter._process"><code class="docutils literal notranslate"><span class="pre">_NetworkValueBaseFilter._process()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.filter._NetworkValueBaseFilter.process_source_zone"><code class="docutils literal notranslate"><span class="pre">_NetworkValueBaseFilter.process_source_zone()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.filter._NetworkValueBaseFilter.process_target_zone"><code class="docutils literal notranslate"><span class="pre">_NetworkValueBaseFilter.process_target_zone()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.processor.filter.NetworkValueAllowlistFilter"><code class="docutils literal notranslate"><span class="pre">NetworkValueAllowlistFilter</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.filter.NetworkValueAllowlistFilter.__init__"><code class="docutils literal notranslate"><span class="pre">NetworkValueAllowlistFilter.__init__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.processor.filter.NetworkValueRejectlistFilter"><code class="docutils literal notranslate"><span class="pre">NetworkValueRejectlistFilter</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.filter.NetworkValueRejectlistFilter.__init__"><code class="docutils literal notranslate"><span class="pre">NetworkValueRejectlistFilter.__init__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.processor.filter.IgnoreRootNsFilter"><code class="docutils literal notranslate"><span class="pre">IgnoreRootNsFilter</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.filter.IgnoreRootNsFilter._process"><code class="docutils literal notranslate"><span class="pre">IgnoreRootNsFilter._process()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.filter.IgnoreRootNsFilter.process_source_zone"><code class="docutils literal notranslate"><span class="pre">IgnoreRootNsFilter.process_source_zone()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.filter.IgnoreRootNsFilter.process_target_zone"><code class="docutils literal notranslate"><span class="pre">IgnoreRootNsFilter.process_target_zone()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.processor.filter.ExcludeRootNsChanges"><code class="docutils literal notranslate"><span class="pre">ExcludeRootNsChanges</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.processor.filter.ExcludeRootNsChanges.__init__"><code class="docutils literal notranslate"><span class="pre">ExcludeRootNsChanges.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.filter.ExcludeRootNsChanges.process_plan"><code class="docutils literal notranslate"><span class="pre">ExcludeRootNsChanges.process_plan()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#octodns.processor.filter.ZoneNameFilter"><code class="docutils literal notranslate"><span class="pre">ZoneNameFilter</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.processor.filter.ZoneNameFilter.__init__"><code class="docutils literal notranslate"><span class="pre">ZoneNameFilter.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.processor.filter.ZoneNameFilter._process"><code class="docutils literal notranslate"><span class="pre">ZoneNameFilter._process()</span></code></a></li>
 </ul>
 </li>
 </ul>

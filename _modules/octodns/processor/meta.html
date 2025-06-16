@@ -340,8 +340,11 @@
     <span class="n">UTC</span> <span class="o">=</span> <span class="n">timezone</span><span class="p">(</span><span class="n">timedelta</span><span class="p">())</span>
 
 
+<div class="viewcode-block" id="_keys">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.meta.html#octodns.processor.meta._keys">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">_keys</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span><span class="p">)</span></div>
+
 
 
 <div class="viewcode-block" id="MetaProcessor">
@@ -477,6 +480,8 @@
         <span class="k">return</span> <span class="n">desired</span><span class="p">,</span> <span class="n">existing</span></div>
 
 
+<div class="viewcode-block" id="MetaProcessor._is_up_to_date_meta">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.meta.html#octodns.processor.meta.MetaProcessor._is_up_to_date_meta">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_is_up_to_date_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">change</span><span class="p">,</span> <span class="n">target_id</span><span class="p">):</span>
         <span class="c1"># always something so we can see if its type and name</span>
         <span class="n">record</span> <span class="o">=</span> <span class="n">change</span><span class="o">.</span><span class="n">record</span>
@@ -488,7 +493,8 @@
             <span class="ow">and</span> <span class="n">existing</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
             <span class="c1"># don&#39;t care about the values here, just the fields/keys</span>
             <span class="ow">and</span> <span class="n">_keys</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">target_id</span><span class="p">))</span> <span class="o">==</span> <span class="n">_keys</span><span class="p">(</span><span class="n">existing</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="p">)</span></div>
+
 
 <div class="viewcode-block" id="MetaProcessor.process_plan">
 <a class="viewcode-back" href="../../../modules/processor/octodns.processor.meta.html#octodns.processor.meta.MetaProcessor.process_plan">[docs]</a>

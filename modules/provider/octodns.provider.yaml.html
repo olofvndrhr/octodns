@@ -332,34 +332,6 @@
           <section id="module-octodns.provider.yaml">
 <span id="octodns-provider-yaml"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.provider.yaml</span></code><a class="headerlink" href="#module-octodns.provider.yaml" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="octodns.provider.yaml.SplitYamlProvider">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.yaml.</span></span><span class="sig-name descname"><span class="pre">SplitYamlProvider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#SplitYamlProvider"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.SplitYamlProvider" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#octodns.provider.yaml.YamlProvider" title="octodns.provider.yaml.YamlProvider"><code class="xref py py-class docutils literal notranslate"><span class="pre">YamlProvider</span></code></a></p>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 2.0: </span>Use YamlProvider with the split_extension parameter instead.</p>
-</div>
-<p>When migrating the following configuration options would result in the same
-behavior as SplitYamlProvider</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">config</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.provider.yaml.YamlProvider</span>
-<span class="w">  </span><span class="c1"># extension is configured as split_extension</span>
-<span class="w">  </span><span class="nt">split_extension</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span>
-<span class="w">  </span><span class="nt">split_catchall</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">disable_zonefile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</pre></div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>TO BE REMOVED: 2.0</p>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.yaml.SplitYamlProvider.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#SplitYamlProvider.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.SplitYamlProvider.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.yaml.</span></span><span class="sig-name descname"><span class="pre">YamlProvider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enforce_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'natural'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">populate_should_replace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">supports_root_ns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_catchall</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disable_zonefile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#YamlProvider"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.YamlProvider" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="octodns.provider.base.html#octodns.provider.base.BaseProvider" title="octodns.provider.base.BaseProvider"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseProvider</span></code></a></p>
@@ -517,13 +489,8 @@ targets:
 and internally (with the custom overrides) with
 <cite>–config-file=internal.yaml</cite></p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.CATCHALL_RECORD_NAMES">
-<span class="sig-name descname"><span class="pre">CATCHALL_RECORD_NAMES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('*',</span> <span class="pre">'')</span></em><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.CATCHALL_RECORD_NAMES" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.SUPPORTS">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SUPPORTS</span></span><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.SUPPORTS" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.SUPPORTS_GEO">
+<span class="sig-name descname"><span class="pre">SUPPORTS_GEO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_GEO" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -532,13 +499,13 @@ and internally (with the custom overrides) with
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.SUPPORTS_DYNAMIC_SUBNETS">
-<span class="sig-name descname"><span class="pre">SUPPORTS_DYNAMIC_SUBNETS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_DYNAMIC_SUBNETS" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.SUPPORTS_POOL_VALUE_STATUS">
+<span class="sig-name descname"><span class="pre">SUPPORTS_POOL_VALUE_STATUS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_POOL_VALUE_STATUS" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.SUPPORTS_GEO">
-<span class="sig-name descname"><span class="pre">SUPPORTS_GEO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_GEO" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.SUPPORTS_DYNAMIC_SUBNETS">
+<span class="sig-name descname"><span class="pre">SUPPORTS_DYNAMIC_SUBNETS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_DYNAMIC_SUBNETS" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -547,8 +514,28 @@ and internally (with the custom overrides) with
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.SUPPORTS_POOL_VALUE_STATUS">
-<span class="sig-name descname"><span class="pre">SUPPORTS_POOL_VALUE_STATUS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_POOL_VALUE_STATUS" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.CATCHALL_RECORD_NAMES">
+<span class="sig-name descname"><span class="pre">CATCHALL_RECORD_NAMES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('*',</span> <span class="pre">'')</span></em><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.CATCHALL_RECORD_NAMES" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enforce_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'natural'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">populate_should_replace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">supports_root_ns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_catchall</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disable_zonefile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#YamlProvider.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#YamlProvider.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.copy" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.SUPPORTS">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SUPPORTS</span></span><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.SUPPORTS" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.supports">
+<span class="sig-name descname"><span class="pre">supports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#YamlProvider.supports"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.supports" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -561,18 +548,23 @@ The class bool is a subclass of the class int, and cannot be subclassed.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enforce_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'natural'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">populate_should_replace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">supports_root_ns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_catchall</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disable_zonefile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#YamlProvider.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#YamlProvider.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.copy" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.list_zones">
 <span class="sig-name descname"><span class="pre">list_zones</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#YamlProvider.list_zones"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.list_zones" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider._split_sources">
+<span class="sig-name descname"><span class="pre">_split_sources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#YamlProvider._split_sources"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.YamlProvider._split_sources" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider._zone_sources">
+<span class="sig-name descname"><span class="pre">_zone_sources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#YamlProvider._zone_sources"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.YamlProvider._zone_sources" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider._populate_from_file">
+<span class="sig-name descname"><span class="pre">_populate_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lenient</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#YamlProvider._populate_from_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.YamlProvider._populate_from_file" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -590,8 +582,36 @@ trailing . or missing escapes for ;.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider.supports">
-<span class="sig-name descname"><span class="pre">supports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#YamlProvider.supports"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.YamlProvider.supports" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.provider.yaml.YamlProvider._apply">
+<span class="sig-name descname"><span class="pre">_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plan</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#YamlProvider._apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.YamlProvider._apply" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.provider.yaml.SplitYamlProvider">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.yaml.</span></span><span class="sig-name descname"><span class="pre">SplitYamlProvider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#SplitYamlProvider"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.SplitYamlProvider" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#octodns.provider.yaml.YamlProvider" title="octodns.provider.yaml.YamlProvider"><code class="xref py py-class docutils literal notranslate"><span class="pre">YamlProvider</span></code></a></p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2.0: </span>Use YamlProvider with the split_extension parameter instead.</p>
+</div>
+<p>When migrating the following configuration options would result in the same
+behavior as SplitYamlProvider</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.provider.yaml.YamlProvider</span>
+<span class="w">  </span><span class="c1"># extension is configured as split_extension</span>
+<span class="w">  </span><span class="nt">split_extension</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span>
+<span class="w">  </span><span class="nt">split_catchall</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">disable_zonefile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TO BE REMOVED: 2.0</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.provider.yaml.SplitYamlProvider.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/yaml.html#SplitYamlProvider.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.yaml.SplitYamlProvider.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -654,24 +674,28 @@ trailing . or missing escapes for ;.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.provider.yaml</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.provider.yaml.SplitYamlProvider"><code class="docutils literal notranslate"><span class="pre">SplitYamlProvider</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.provider.yaml.SplitYamlProvider.__init__"><code class="docutils literal notranslate"><span class="pre">SplitYamlProvider.__init__()</span></code></a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider"><code class="docutils literal notranslate"><span class="pre">YamlProvider</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.CATCHALL_RECORD_NAMES"><code class="docutils literal notranslate"><span class="pre">YamlProvider.CATCHALL_RECORD_NAMES</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.SUPPORTS"><code class="docutils literal notranslate"><span class="pre">YamlProvider.SUPPORTS</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_DYNAMIC"><code class="docutils literal notranslate"><span class="pre">YamlProvider.SUPPORTS_DYNAMIC</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_DYNAMIC_SUBNETS"><code class="docutils literal notranslate"><span class="pre">YamlProvider.SUPPORTS_DYNAMIC_SUBNETS</span></code></a></li>
 <li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_GEO"><code class="docutils literal notranslate"><span class="pre">YamlProvider.SUPPORTS_GEO</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_MULTIVALUE_PTR"><code class="docutils literal notranslate"><span class="pre">YamlProvider.SUPPORTS_MULTIVALUE_PTR</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_DYNAMIC"><code class="docutils literal notranslate"><span class="pre">YamlProvider.SUPPORTS_DYNAMIC</span></code></a></li>
 <li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_POOL_VALUE_STATUS"><code class="docutils literal notranslate"><span class="pre">YamlProvider.SUPPORTS_POOL_VALUE_STATUS</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_ROOT_NS"><code class="docutils literal notranslate"><span class="pre">YamlProvider.SUPPORTS_ROOT_NS</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_DYNAMIC_SUBNETS"><code class="docutils literal notranslate"><span class="pre">YamlProvider.SUPPORTS_DYNAMIC_SUBNETS</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_MULTIVALUE_PTR"><code class="docutils literal notranslate"><span class="pre">YamlProvider.SUPPORTS_MULTIVALUE_PTR</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.CATCHALL_RECORD_NAMES"><code class="docutils literal notranslate"><span class="pre">YamlProvider.CATCHALL_RECORD_NAMES</span></code></a></li>
 <li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.__init__"><code class="docutils literal notranslate"><span class="pre">YamlProvider.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.copy"><code class="docutils literal notranslate"><span class="pre">YamlProvider.copy()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.list_zones"><code class="docutils literal notranslate"><span class="pre">YamlProvider.list_zones()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.populate"><code class="docutils literal notranslate"><span class="pre">YamlProvider.populate()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.SUPPORTS"><code class="docutils literal notranslate"><span class="pre">YamlProvider.SUPPORTS</span></code></a></li>
 <li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.supports"><code class="docutils literal notranslate"><span class="pre">YamlProvider.supports()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.SUPPORTS_ROOT_NS"><code class="docutils literal notranslate"><span class="pre">YamlProvider.SUPPORTS_ROOT_NS</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.list_zones"><code class="docutils literal notranslate"><span class="pre">YamlProvider.list_zones()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider._split_sources"><code class="docutils literal notranslate"><span class="pre">YamlProvider._split_sources()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider._zone_sources"><code class="docutils literal notranslate"><span class="pre">YamlProvider._zone_sources()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider._populate_from_file"><code class="docutils literal notranslate"><span class="pre">YamlProvider._populate_from_file()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider.populate"><code class="docutils literal notranslate"><span class="pre">YamlProvider.populate()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.provider.yaml.YamlProvider._apply"><code class="docutils literal notranslate"><span class="pre">YamlProvider._apply()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.provider.yaml.SplitYamlProvider"><code class="docutils literal notranslate"><span class="pre">SplitYamlProvider</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.provider.yaml.SplitYamlProvider.__init__"><code class="docutils literal notranslate"><span class="pre">SplitYamlProvider.__init__()</span></code></a></li>
 </ul>
 </li>
 </ul>

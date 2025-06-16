@@ -332,12 +332,6 @@
           <section id="module-octodns.record.sshfp">
 <span id="octodns-record-sshfp"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.record.sshfp</span></code><a class="headerlink" href="#module-octodns.record.sshfp" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpRecord">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.sshfp.</span></span><span class="sig-name descname"><span class="pre">SshfpRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/sshfp.html#SshfpRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.sshfp.SshfpRecord" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="octodns.record.base.html#octodns.record.base.ValuesMixin" title="octodns.record.base.ValuesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValuesMixin</span></code></a>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code></a></p>
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="octodns.record.sshfp.SshfpValue">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.sshfp.</span></span><span class="sig-name descname"><span class="pre">SshfpValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/sshfp.html#SshfpValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.sshfp.SshfpValue" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../octodns.equality.html#octodns.equality.EqualityTupleMixin" title="octodns.equality.EqualityTupleMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">EqualityTupleMixin</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
@@ -352,6 +346,21 @@
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpValue.parse_rdata_text">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_rdata_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/sshfp.html#SshfpValue.parse_rdata_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.sshfp.SshfpValue.parse_rdata_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpValue.validate">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/sshfp.html#SshfpValue.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.sshfp.SshfpValue.validate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpValue.process">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/sshfp.html#SshfpValue.process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.sshfp.SshfpValue.process" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="octodns.record.sshfp.SshfpValue.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/sshfp.html#SshfpValue.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.sshfp.SshfpValue.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -362,8 +371,8 @@
 <dd></dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpValue.data">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#octodns.record.sshfp.SshfpValue.data" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpValue.fingerprint_type">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fingerprint_type</span></span><a class="headerlink" href="#octodns.record.sshfp.SshfpValue.fingerprint_type" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -372,18 +381,8 @@
 <dd></dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpValue.fingerprint_type">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fingerprint_type</span></span><a class="headerlink" href="#octodns.record.sshfp.SshfpValue.fingerprint_type" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpValue.parse_rdata_text">
-<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_rdata_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/sshfp.html#SshfpValue.parse_rdata_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.sshfp.SshfpValue.parse_rdata_text" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpValue.process">
-<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/sshfp.html#SshfpValue.process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.sshfp.SshfpValue.process" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpValue.data">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#octodns.record.sshfp.SshfpValue.data" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -392,9 +391,32 @@
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpValue.validate">
-<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/sshfp.html#SshfpValue.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.sshfp.SshfpValue.validate" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpValue._equality_tuple">
+<span class="sig-name descname"><span class="pre">_equality_tuple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/sshfp.html#SshfpValue._equality_tuple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.sshfp.SshfpValue._equality_tuple" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpValue.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/sshfp.html#SshfpValue.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.sshfp.SshfpValue.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpRecord">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.sshfp.</span></span><span class="sig-name descname"><span class="pre">SshfpRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/sshfp.html#SshfpRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.sshfp.SshfpRecord" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.record.base.html#octodns.record.base.ValuesMixin" title="octodns.record.base.ValuesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValuesMixin</span></code></a>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpRecord._type">
+<span class="sig-name descname"><span class="pre">_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'SSHFP'</span></em><a class="headerlink" href="#octodns.record.sshfp.SshfpRecord._type" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.sshfp.SshfpRecord._value_type">
+<span class="sig-name descname"><span class="pre">_value_type</span></span><a class="headerlink" href="#octodns.record.sshfp.SshfpRecord._value_type" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#octodns.record.sshfp.SshfpValue" title="octodns.record.sshfp.SshfpValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">SshfpValue</span></code></a></p>
+</dd></dl>
 
 </dd></dl>
 
@@ -456,19 +478,25 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.record.sshfp</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.record.sshfp.SshfpRecord"><code class="docutils literal notranslate"><span class="pre">SshfpRecord</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue"><code class="docutils literal notranslate"><span class="pre">SshfpValue</span></code></a><ul>
 <li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.VALID_ALGORITHMS"><code class="docutils literal notranslate"><span class="pre">SshfpValue.VALID_ALGORITHMS</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.VALID_FINGERPRINT_TYPES"><code class="docutils literal notranslate"><span class="pre">SshfpValue.VALID_FINGERPRINT_TYPES</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.parse_rdata_text"><code class="docutils literal notranslate"><span class="pre">SshfpValue.parse_rdata_text()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.validate"><code class="docutils literal notranslate"><span class="pre">SshfpValue.validate()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.process"><code class="docutils literal notranslate"><span class="pre">SshfpValue.process()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.__init__"><code class="docutils literal notranslate"><span class="pre">SshfpValue.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.algorithm"><code class="docutils literal notranslate"><span class="pre">SshfpValue.algorithm</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.data"><code class="docutils literal notranslate"><span class="pre">SshfpValue.data</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.fingerprint"><code class="docutils literal notranslate"><span class="pre">SshfpValue.fingerprint</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.fingerprint_type"><code class="docutils literal notranslate"><span class="pre">SshfpValue.fingerprint_type</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.parse_rdata_text"><code class="docutils literal notranslate"><span class="pre">SshfpValue.parse_rdata_text()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.process"><code class="docutils literal notranslate"><span class="pre">SshfpValue.process()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.fingerprint"><code class="docutils literal notranslate"><span class="pre">SshfpValue.fingerprint</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.data"><code class="docutils literal notranslate"><span class="pre">SshfpValue.data</span></code></a></li>
 <li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.rdata_text"><code class="docutils literal notranslate"><span class="pre">SshfpValue.rdata_text</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.validate"><code class="docutils literal notranslate"><span class="pre">SshfpValue.validate()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue._equality_tuple"><code class="docutils literal notranslate"><span class="pre">SshfpValue._equality_tuple()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.sshfp.SshfpValue.__repr__"><code class="docutils literal notranslate"><span class="pre">SshfpValue.__repr__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.record.sshfp.SshfpRecord"><code class="docutils literal notranslate"><span class="pre">SshfpRecord</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.sshfp.SshfpRecord._type"><code class="docutils literal notranslate"><span class="pre">SshfpRecord._type</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.sshfp.SshfpRecord._value_type"><code class="docutils literal notranslate"><span class="pre">SshfpRecord._value_type</span></code></a></li>
 </ul>
 </li>
 </ul>

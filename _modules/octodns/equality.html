@@ -327,8 +327,11 @@
 <div class="viewcode-block" id="EqualityTupleMixin">
 <a class="viewcode-back" href="../../modules/octodns.equality.html#octodns.equality.EqualityTupleMixin">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">EqualityTupleMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="EqualityTupleMixin._equality_tuple">
+<a class="viewcode-back" href="../../modules/octodns.equality.html#octodns.equality.EqualityTupleMixin._equality_tuple">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_equality_tuple</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;_equality_tuple method not implemented&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;_equality_tuple method not implemented&#39;</span><span class="p">)</span></div>
+
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_equality_tuple</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">_equality_tuple</span><span class="p">()</span>

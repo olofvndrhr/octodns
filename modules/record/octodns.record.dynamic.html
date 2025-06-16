@@ -179,7 +179,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -323,7 +323,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -331,6 +331,124 @@
         <article role="main" id="furo-main-content">
           <section id="module-octodns.record.dynamic">
 <span id="octodns-record-dynamic"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.record.dynamic</span></code><a class="headerlink" href="#module-octodns.record.dynamic" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicPool">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.dynamic.</span></span><span class="sig-name descname"><span class="pre">_DynamicPool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicPool"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicPool" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicPool.log">
+<span class="sig-name descname"><span class="pre">log</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Logger</span> <span class="pre">_DynamicPool</span> <span class="pre">(WARNING)&gt;</span></em><a class="headerlink" href="#octodns.record.dynamic._DynamicPool.log" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicPool.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicPool.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicPool.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicPool._data">
+<span class="sig-name descname"><span class="pre">_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicPool._data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicPool._data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicPool.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicPool.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicPool.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicRule">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.dynamic.</span></span><span class="sig-name descname"><span class="pre">_DynamicRule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicRule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicRule" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicRule.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicRule.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicRule.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicRule._data">
+<span class="sig-name descname"><span class="pre">_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicRule._data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicRule._data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicRule.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicRule.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicRule.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.dynamic._Dynamic">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.dynamic.</span></span><span class="sig-name descname"><span class="pre">_Dynamic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pools</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_Dynamic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._Dynamic" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._Dynamic.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pools</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_Dynamic.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._Dynamic.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._Dynamic._data">
+<span class="sig-name descname"><span class="pre">_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_Dynamic._data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._Dynamic._data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._Dynamic.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_Dynamic.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._Dynamic.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicMixin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.dynamic.</span></span><span class="sig-name descname"><span class="pre">_DynamicMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicMixin" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicMixin.geo_re">
+<span class="sig-name descname"><span class="pre">geo_re</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">re.compile('^(?P&lt;continent_code&gt;\\w\\w)(-(?P&lt;country_code&gt;\\w\\w)(-(?P&lt;subdivision_code&gt;\\w\\w))?)?$')</span></em><a class="headerlink" href="#octodns.record.dynamic._DynamicMixin.geo_re" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicMixin._validate_pools">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_validate_pools</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pools</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicMixin._validate_pools"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicMixin._validate_pools" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicMixin._validate_rules">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_validate_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pools</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rules</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicMixin._validate_rules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicMixin._validate_rules" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicMixin.validate">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fqdn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicMixin.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicMixin.validate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicMixin.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicMixin.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicMixin.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicMixin._data">
+<span class="sig-name descname"><span class="pre">_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicMixin._data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicMixin._data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicMixin.changes">
+<span class="sig-name descname"><span class="pre">changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicMixin.changes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicMixin.changes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="octodns.record.dynamic._DynamicMixin.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/dynamic.html#_DynamicMixin.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.dynamic._DynamicMixin.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -376,8 +494,56 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.record.dynamic</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicPool"><code class="docutils literal notranslate"><span class="pre">_DynamicPool</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicPool.log"><code class="docutils literal notranslate"><span class="pre">_DynamicPool.log</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicPool.__init__"><code class="docutils literal notranslate"><span class="pre">_DynamicPool.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicPool._data"><code class="docutils literal notranslate"><span class="pre">_DynamicPool._data()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicPool.__repr__"><code class="docutils literal notranslate"><span class="pre">_DynamicPool.__repr__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicRule"><code class="docutils literal notranslate"><span class="pre">_DynamicRule</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicRule.__init__"><code class="docutils literal notranslate"><span class="pre">_DynamicRule.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicRule._data"><code class="docutils literal notranslate"><span class="pre">_DynamicRule._data()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicRule.__repr__"><code class="docutils literal notranslate"><span class="pre">_DynamicRule.__repr__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.record.dynamic._Dynamic"><code class="docutils literal notranslate"><span class="pre">_Dynamic</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.dynamic._Dynamic.__init__"><code class="docutils literal notranslate"><span class="pre">_Dynamic.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dynamic._Dynamic._data"><code class="docutils literal notranslate"><span class="pre">_Dynamic._data()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dynamic._Dynamic.__repr__"><code class="docutils literal notranslate"><span class="pre">_Dynamic.__repr__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicMixin"><code class="docutils literal notranslate"><span class="pre">_DynamicMixin</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicMixin.geo_re"><code class="docutils literal notranslate"><span class="pre">_DynamicMixin.geo_re</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicMixin._validate_pools"><code class="docutils literal notranslate"><span class="pre">_DynamicMixin._validate_pools()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicMixin._validate_rules"><code class="docutils literal notranslate"><span class="pre">_DynamicMixin._validate_rules()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicMixin.validate"><code class="docutils literal notranslate"><span class="pre">_DynamicMixin.validate()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicMixin.__init__"><code class="docutils literal notranslate"><span class="pre">_DynamicMixin.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicMixin._data"><code class="docutils literal notranslate"><span class="pre">_DynamicMixin._data()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicMixin.changes"><code class="docutils literal notranslate"><span class="pre">_DynamicMixin.changes()</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.dynamic._DynamicMixin.__repr__"><code class="docutils literal notranslate"><span class="pre">_DynamicMixin.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

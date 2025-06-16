@@ -326,10 +326,15 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">octodns.processor.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseProcessor</span>
 
 
+<div class="viewcode-block" id="_no_trailing_dot">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.trailing_dots.html#octodns.processor.trailing_dots._no_trailing_dot">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">_no_trailing_dot</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">prop</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;.&#39;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">prop</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;.&#39;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">values</span><span class="p">)</span></div>
 
 
+
+<div class="viewcode-block" id="_ensure_trailing_dots">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.trailing_dots.html#octodns.processor.trailing_dots._ensure_trailing_dots">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">_ensure_trailing_dots</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
     <span class="n">new</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">new</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
@@ -338,7 +343,8 @@
             <span class="c1"># these will generally be str, but just in case we&#39;ll use the</span>
             <span class="c1"># constructor</span>
             <span class="nb">setattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">prop</span><span class="p">,</span> <span class="n">val</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">new</span>
+    <span class="k">return</span> <span class="n">new</span></div>
+
 
 
 <div class="viewcode-block" id="EnsureTrailingDots">

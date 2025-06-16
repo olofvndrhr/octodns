@@ -332,18 +332,30 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseProcessor</span>
 
 
+<div class="viewcode-block" id="_FilterProcessor">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._FilterProcessor">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">_FilterProcessor</span><span class="p">(</span><span class="n">BaseProcessor</span><span class="p">):</span>
+<div class="viewcode-block" id="_FilterProcessor.__init__">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._FilterProcessor.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">include_target</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">include_target</span> <span class="o">=</span> <span class="n">include_target</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">include_target</span> <span class="o">=</span> <span class="n">include_target</span></div>
 
+
+<div class="viewcode-block" id="_FilterProcessor.process_source_zone">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._FilterProcessor.process_source_zone">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">process_source_zone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="_FilterProcessor.process_target_zone">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._FilterProcessor.process_target_zone">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">process_target_zone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">existing</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">include_target</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="p">(</span><span class="n">existing</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">existing</span>
+        <span class="k">return</span> <span class="n">existing</span></div>
+</div>
+
 
 
 <div class="viewcode-block" id="AllowsMixin">
@@ -380,11 +392,18 @@
 
 
 
+<div class="viewcode-block" id="_TypeBaseFilter">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._TypeBaseFilter">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">_TypeBaseFilter</span><span class="p">(</span><span class="n">_FilterProcessor</span><span class="p">):</span>
+<div class="viewcode-block" id="_TypeBaseFilter.__init__">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._TypeBaseFilter.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">_list</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_list</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">_list</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_list</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">_list</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="_TypeBaseFilter._process">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._TypeBaseFilter._process">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">zone</span><span class="o">.</span><span class="n">records</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">_type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list</span><span class="p">:</span>
@@ -392,7 +411,9 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">zone</span>
+        <span class="k">return</span> <span class="n">zone</span></div>
+</div>
+
 
 
 <div class="viewcode-block" id="TypeAllowlistFilter">
@@ -470,7 +491,11 @@
 
 
 
+<div class="viewcode-block" id="_NameBaseFilter">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._NameBaseFilter">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">_NameBaseFilter</span><span class="p">(</span><span class="n">_FilterProcessor</span><span class="p">):</span>
+<div class="viewcode-block" id="_NameBaseFilter.__init__">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._NameBaseFilter.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">_list</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="n">exact</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
@@ -481,8 +506,11 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">exact</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">exact</span> <span class="o">=</span> <span class="n">exact</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">regex</span> <span class="o">=</span> <span class="n">regex</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">regex</span> <span class="o">=</span> <span class="n">regex</span></div>
 
+
+<div class="viewcode-block" id="_NameBaseFilter._process">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._NameBaseFilter._process">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">zone</span><span class="o">.</span><span class="n">records</span><span class="p">:</span>
             <span class="n">name</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">name</span>
@@ -495,7 +523,9 @@
 
             <span class="bp">self</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">zone</span>
+        <span class="k">return</span> <span class="n">zone</span></div>
+</div>
+
 
 
 <div class="viewcode-block" id="NameAllowlistFilter">
@@ -586,7 +616,11 @@
 
 
 
+<div class="viewcode-block" id="_ValueBaseFilter">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._ValueBaseFilter">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">_ValueBaseFilter</span><span class="p">(</span><span class="n">_FilterProcessor</span><span class="p">):</span>
+<div class="viewcode-block" id="_ValueBaseFilter.__init__">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._ValueBaseFilter.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">_list</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="n">exact</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
@@ -597,8 +631,11 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">exact</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">exact</span> <span class="o">=</span> <span class="n">exact</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">regex</span> <span class="o">=</span> <span class="n">regex</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">regex</span> <span class="o">=</span> <span class="n">regex</span></div>
 
+
+<div class="viewcode-block" id="_ValueBaseFilter._process">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._ValueBaseFilter._process">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">zone</span><span class="o">.</span><span class="n">records</span><span class="p">:</span>
             <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
@@ -620,7 +657,9 @@
 
             <span class="bp">self</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">zone</span>
+        <span class="k">return</span> <span class="n">zone</span></div>
+</div>
+
 
 
 <div class="viewcode-block" id="ValueAllowlistFilter">
@@ -713,7 +752,11 @@
 
 
 
+<div class="viewcode-block" id="_NetworkValueBaseFilter">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._NetworkValueBaseFilter">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">_NetworkValueBaseFilter</span><span class="p">(</span><span class="n">BaseProcessor</span><span class="p">):</span>
+<div class="viewcode-block" id="_NetworkValueBaseFilter.__init__">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._NetworkValueBaseFilter.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">_list</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">networks</span> <span class="o">=</span> <span class="p">[]</span>
@@ -721,8 +764,11 @@
             <span class="k">try</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">networks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ip_network</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
             <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> is not a valid CIDR to use&quot;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> is not a valid CIDR to use&quot;</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="_NetworkValueBaseFilter._process">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter._NetworkValueBaseFilter._process">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">zone</span><span class="o">.</span><span class="n">records</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;AAAA&quot;</span><span class="p">]:</span>
@@ -736,10 +782,12 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">zone</span>
+        <span class="k">return</span> <span class="n">zone</span></div>
+
 
     <span class="n">process_source_zone</span> <span class="o">=</span> <span class="n">_process</span>
-    <span class="n">process_target_zone</span> <span class="o">=</span> <span class="n">_process</span>
+    <span class="n">process_target_zone</span> <span class="o">=</span> <span class="n">_process</span></div>
+
 
 
 <div class="viewcode-block" id="NetworkValueAllowlistFilter">
@@ -837,12 +885,15 @@
 <span class="sd">            - ns1</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+<div class="viewcode-block" id="IgnoreRootNsFilter._process">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter.IgnoreRootNsFilter._process">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">zone</span><span class="o">.</span><span class="n">records</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">_type</span> <span class="o">==</span> <span class="s2">&quot;NS&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">record</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
                 <span class="n">zone</span><span class="o">.</span><span class="n">remove_record</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">zone</span>
+        <span class="k">return</span> <span class="n">zone</span></div>
+
 
     <span class="n">process_source_zone</span> <span class="o">=</span> <span class="n">_process</span>
     <span class="n">process_target_zone</span> <span class="o">=</span> <span class="n">_process</span></div>
@@ -945,6 +996,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">error</span></div>
 
 
+<div class="viewcode-block" id="ZoneNameFilter._process">
+<a class="viewcode-back" href="../../../modules/processor/octodns.processor.filter.html#octodns.processor.filter.ZoneNameFilter._process">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">zone_name_with_dot</span> <span class="o">=</span> <span class="n">zone</span><span class="o">.</span><span class="n">name</span>
         <span class="n">zone_name_without_dot</span> <span class="o">=</span> <span class="n">zone_name_with_dot</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -964,6 +1017,7 @@
                     <span class="n">zone</span><span class="o">.</span><span class="n">remove_record</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">zone</span></div>
+</div>
 
 </pre></div>
         </article>

@@ -332,9 +332,20 @@
           <section id="module-octodns.record.a">
 <span id="octodns-record-a"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.record.a</span></code><a class="headerlink" href="#module-octodns.record.a" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="octodns.record.a.ARecord">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.a.</span></span><span class="sig-name descname"><span class="pre">ARecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/a.html#ARecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.a.ARecord" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_DynamicMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">_GeoMixin</span></code>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code></a></p>
+<dt class="sig sig-object py" id="octodns.record.a.Ipv4Value">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.a.</span></span><span class="sig-name descname"><span class="pre">Ipv4Value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/a.html#Ipv4Value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.a.Ipv4Value" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.record.ip.html#octodns.record.ip._IpValue" title="octodns.record.ip._IpValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">_IpValue</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.a.Ipv4Value._address_type">
+<span class="sig-name descname"><span class="pre">_address_type</span></span><a class="headerlink" href="#octodns.record.a.Ipv4Value._address_type" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/ipaddress.html#ipaddress.IPv4Address" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IPv4Address</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.a.Ipv4Value._address_name">
+<span class="sig-name descname"><span class="pre">_address_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'IPv4'</span></em><a class="headerlink" href="#octodns.record.a.Ipv4Value._address_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py attribute">
@@ -344,9 +355,20 @@
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="octodns.record.a.Ipv4Value">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.a.</span></span><span class="sig-name descname"><span class="pre">Ipv4Value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/a.html#Ipv4Value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.a.Ipv4Value" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_IpValue</span></code></p>
+<dt class="sig sig-object py" id="octodns.record.a.ARecord">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.a.</span></span><span class="sig-name descname"><span class="pre">ARecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/a.html#ARecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.a.ARecord" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="octodns.record.dynamic.html#octodns.record.dynamic._DynamicMixin" title="octodns.record.dynamic._DynamicMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">_DynamicMixin</span></code></a>, <a class="reference internal" href="octodns.record.geo.html#octodns.record.geo._GeoMixin" title="octodns.record.geo._GeoMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">_GeoMixin</span></code></a>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.a.ARecord._type">
+<span class="sig-name descname"><span class="pre">_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'A'</span></em><a class="headerlink" href="#octodns.record.a.ARecord._type" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="octodns.record.a.ARecord._value_type">
+<span class="sig-name descname"><span class="pre">_value_type</span></span><a class="headerlink" href="#octodns.record.a.ARecord._value_type" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#octodns.record.a.Ipv4Value" title="octodns.record.a.Ipv4Value"><code class="xref py py-class docutils literal notranslate"><span class="pre">Ipv4Value</span></code></a></p>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -407,9 +429,17 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.record.a</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.record.a.ARecord"><code class="docutils literal notranslate"><span class="pre">ARecord</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.a.Ipv4Value"><code class="docutils literal notranslate"><span class="pre">Ipv4Value</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.a.Ipv4Value._address_type"><code class="docutils literal notranslate"><span class="pre">Ipv4Value._address_type</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.a.Ipv4Value._address_name"><code class="docutils literal notranslate"><span class="pre">Ipv4Value._address_name</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#octodns.record.a.Ipv4Address"><code class="docutils literal notranslate"><span class="pre">Ipv4Address</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.a.Ipv4Value"><code class="docutils literal notranslate"><span class="pre">Ipv4Value</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.a.ARecord"><code class="docutils literal notranslate"><span class="pre">ARecord</span></code></a><ul>
+<li><a class="reference internal" href="#octodns.record.a.ARecord._type"><code class="docutils literal notranslate"><span class="pre">ARecord._type</span></code></a></li>
+<li><a class="reference internal" href="#octodns.record.a.ARecord._value_type"><code class="docutils literal notranslate"><span class="pre">ARecord._value_type</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
