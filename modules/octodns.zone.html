@@ -179,7 +179,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -323,134 +323,14 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="module-octodns.zone">
-<span id="octodns-zone"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.zone</span></code><a class="headerlink" href="#module-octodns.zone" title="Link to this heading">¶</a></h1>
-<dl class="py exception">
-<dt class="sig sig-object py" id="octodns.zone.DuplicateRecordException">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.zone.</span></span><span class="sig-name descname"><span class="pre">DuplicateRecordException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">existing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#DuplicateRecordException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.DuplicateRecordException" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.zone.DuplicateRecordException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">existing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#DuplicateRecordException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.DuplicateRecordException.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="octodns.zone.InvalidNameError">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.zone.</span></span><span class="sig-name descname"><span class="pre">InvalidNameError</span></span><a class="reference internal" href="../_modules/octodns/zone.html#InvalidNameError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.InvalidNameError" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="octodns.zone.InvalidNodeException">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.zone.</span></span><span class="sig-name descname"><span class="pre">InvalidNodeException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#InvalidNodeException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.InvalidNodeException" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.zone.InvalidNodeException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#InvalidNodeException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.InvalidNodeException.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="octodns.zone.SubzoneRecordException">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.zone.</span></span><span class="sig-name descname"><span class="pre">SubzoneRecordException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#SubzoneRecordException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.SubzoneRecordException" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.zone.SubzoneRecordException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#SubzoneRecordException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.SubzoneRecordException.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.zone.Zone">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.zone.</span></span><span class="sig-name descname"><span class="pre">Zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_zones</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delete_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#Zone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.Zone" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.zone.Zone.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_zones</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delete_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#Zone.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.Zone.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.zone.Zone.add_record">
-<span class="sig-name descname"><span class="pre">add_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lenient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#Zone.add_record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.Zone.add_record" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.zone.Zone.apply">
-<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">changes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#Zone.apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.Zone.apply" title="Link to this definition">¶</a></dt>
-<dd><p>Apply the provided changes to the zone.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.zone.Zone.changes">
-<span class="sig-name descname"><span class="pre">changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">desired</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#Zone.changes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.Zone.changes" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.zone.Zone.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#Zone.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.Zone.copy" title="Link to this definition">¶</a></dt>
-<dd><p>Copy-on-write semantics support. This method will create a shallow
-clone of the zone which will be hydrated the first time <cite>add_record</cite> or
-<cite>remove_record</cite> is called.</p>
-<p>This allows low-cost copies of things to be made in situations where
-changes are unlikely and only incurs the “expense” of actually
-copying the records when required. The actual record copy will not be
-“deep” meaning that records should not be modified directly.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.zone.Zone.hostname_from_fqdn">
-<span class="sig-name descname"><span class="pre">hostname_from_fqdn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fqdn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#Zone.hostname_from_fqdn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.Zone.hostname_from_fqdn" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.zone.Zone.hydrate">
-<span class="sig-name descname"><span class="pre">hydrate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#Zone.hydrate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.Zone.hydrate" title="Link to this definition">¶</a></dt>
-<dd><p>Take a shallow copy Zone and make it a deeper copy holding its own
-reference to records. These records will still be the originals and
-they should not be modified. Changes should be made by calling
-<cite>add_record</cite>, often with <cite>replace=True</cite>, and/or <cite>remove_record</cite>.</p>
-<p>Note: This method does not need to be called under normal circumstances
-as <cite>add_record</cite> and <cite>remove_record</cite> will automatically call it when
-appropriate.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.zone.Zone.log">
-<span class="sig-name descname"><span class="pre">log</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Logger</span> <span class="pre">Zone</span> <span class="pre">(WARNING)&gt;</span></em><a class="headerlink" href="#octodns.zone.Zone.log" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.zone.Zone.owns">
-<span class="sig-name descname"><span class="pre">owns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fqdn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#Zone.owns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.Zone.owns" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.zone.Zone.records">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">records</span></span><a class="headerlink" href="#octodns.zone.Zone.records" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.zone.Zone.remove_record">
-<span class="sig-name descname"><span class="pre">remove_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/zone.html#Zone.remove_record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.zone.Zone.remove_record" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.zone.Zone.root_ns">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">root_ns</span></span><a class="headerlink" href="#octodns.zone.Zone.root_ns" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+          <section id="octodns-zone">
+<h1><code class="docutils literal notranslate"><span class="pre">octodns.zone</span></code><a class="headerlink" href="#octodns-zone" title="Link to this heading">¶</a></h1>
 </section>
 
         </article>
@@ -496,54 +376,8 @@ appropriate.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.zone</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.zone.DuplicateRecordException"><code class="docutils literal notranslate"><span class="pre">DuplicateRecordException</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.zone.DuplicateRecordException.__init__"><code class="docutils literal notranslate"><span class="pre">DuplicateRecordException.__init__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.zone.InvalidNameError"><code class="docutils literal notranslate"><span class="pre">InvalidNameError</span></code></a></li>
-<li><a class="reference internal" href="#octodns.zone.InvalidNodeException"><code class="docutils literal notranslate"><span class="pre">InvalidNodeException</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.zone.InvalidNodeException.__init__"><code class="docutils literal notranslate"><span class="pre">InvalidNodeException.__init__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.zone.SubzoneRecordException"><code class="docutils literal notranslate"><span class="pre">SubzoneRecordException</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.zone.SubzoneRecordException.__init__"><code class="docutils literal notranslate"><span class="pre">SubzoneRecordException.__init__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.zone.Zone"><code class="docutils literal notranslate"><span class="pre">Zone</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.zone.Zone.__init__"><code class="docutils literal notranslate"><span class="pre">Zone.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.zone.Zone.add_record"><code class="docutils literal notranslate"><span class="pre">Zone.add_record()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.zone.Zone.apply"><code class="docutils literal notranslate"><span class="pre">Zone.apply()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.zone.Zone.changes"><code class="docutils literal notranslate"><span class="pre">Zone.changes()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.zone.Zone.copy"><code class="docutils literal notranslate"><span class="pre">Zone.copy()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.zone.Zone.hostname_from_fqdn"><code class="docutils literal notranslate"><span class="pre">Zone.hostname_from_fqdn()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.zone.Zone.hydrate"><code class="docutils literal notranslate"><span class="pre">Zone.hydrate()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.zone.Zone.log"><code class="docutils literal notranslate"><span class="pre">Zone.log</span></code></a></li>
-<li><a class="reference internal" href="#octodns.zone.Zone.owns"><code class="docutils literal notranslate"><span class="pre">Zone.owns()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.zone.Zone.records"><code class="docutils literal notranslate"><span class="pre">Zone.records</span></code></a></li>
-<li><a class="reference internal" href="#octodns.zone.Zone.remove_record"><code class="docutils literal notranslate"><span class="pre">Zone.remove_record()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.zone.Zone.root_ns"><code class="docutils literal notranslate"><span class="pre">Zone.root_ns</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

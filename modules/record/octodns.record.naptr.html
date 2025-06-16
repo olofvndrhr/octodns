@@ -179,7 +179,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -323,91 +323,14 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="module-octodns.record.naptr">
-<span id="octodns-record-naptr"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.record.naptr</span></code><a class="headerlink" href="#module-octodns.record.naptr" title="Link to this heading">¶</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.record.naptr.NaptrRecord">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.naptr.</span></span><span class="sig-name descname"><span class="pre">NaptrRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/naptr.html#NaptrRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.naptr.NaptrRecord" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="octodns.record.base.html#octodns.record.base.ValuesMixin" title="octodns.record.base.ValuesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValuesMixin</span></code></a>, <a class="reference internal" href="octodns.record.base.html#octodns.record.base.Record" title="octodns.record.base.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code></a></p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.record.naptr.NaptrValue">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.record.naptr.</span></span><span class="sig-name descname"><span class="pre">NaptrValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/naptr.html#NaptrValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.naptr.NaptrValue" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="../octodns.equality.html#octodns.equality.EqualityTupleMixin" title="octodns.equality.EqualityTupleMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">EqualityTupleMixin</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.record.naptr.NaptrValue.VALID_FLAGS">
-<span class="sig-name descname"><span class="pre">VALID_FLAGS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('S',</span> <span class="pre">'A',</span> <span class="pre">'U',</span> <span class="pre">'P')</span></em><a class="headerlink" href="#octodns.record.naptr.NaptrValue.VALID_FLAGS" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.naptr.NaptrValue.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/naptr.html#NaptrValue.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.naptr.NaptrValue.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.naptr.NaptrValue.data">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#octodns.record.naptr.NaptrValue.data" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.naptr.NaptrValue.flags">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flags</span></span><a class="headerlink" href="#octodns.record.naptr.NaptrValue.flags" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.naptr.NaptrValue.order">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">order</span></span><a class="headerlink" href="#octodns.record.naptr.NaptrValue.order" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.naptr.NaptrValue.parse_rdata_text">
-<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_rdata_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/naptr.html#NaptrValue.parse_rdata_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.naptr.NaptrValue.parse_rdata_text" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.naptr.NaptrValue.preference">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">preference</span></span><a class="headerlink" href="#octodns.record.naptr.NaptrValue.preference" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.naptr.NaptrValue.process">
-<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/naptr.html#NaptrValue.process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.naptr.NaptrValue.process" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.naptr.NaptrValue.rdata_text">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rdata_text</span></span><a class="headerlink" href="#octodns.record.naptr.NaptrValue.rdata_text" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.naptr.NaptrValue.regexp">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">regexp</span></span><a class="headerlink" href="#octodns.record.naptr.NaptrValue.regexp" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.naptr.NaptrValue.replacement">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">replacement</span></span><a class="headerlink" href="#octodns.record.naptr.NaptrValue.replacement" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="octodns.record.naptr.NaptrValue.service">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">service</span></span><a class="headerlink" href="#octodns.record.naptr.NaptrValue.service" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.record.naptr.NaptrValue.validate">
-<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/record/naptr.html#NaptrValue.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.record.naptr.NaptrValue.validate" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+          <section id="octodns-record-naptr">
+<h1><code class="docutils literal notranslate"><span class="pre">octodns.record.naptr</span></code><a class="headerlink" href="#octodns-record-naptr" title="Link to this heading">¶</a></h1>
 </section>
 
         </article>
@@ -453,43 +376,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.record.naptr</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.record.naptr.NaptrRecord"><code class="docutils literal notranslate"><span class="pre">NaptrRecord</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.naptr.NaptrValue"><code class="docutils literal notranslate"><span class="pre">NaptrValue</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.record.naptr.NaptrValue.VALID_FLAGS"><code class="docutils literal notranslate"><span class="pre">NaptrValue.VALID_FLAGS</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.naptr.NaptrValue.__init__"><code class="docutils literal notranslate"><span class="pre">NaptrValue.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.naptr.NaptrValue.data"><code class="docutils literal notranslate"><span class="pre">NaptrValue.data</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.naptr.NaptrValue.flags"><code class="docutils literal notranslate"><span class="pre">NaptrValue.flags</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.naptr.NaptrValue.order"><code class="docutils literal notranslate"><span class="pre">NaptrValue.order</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.naptr.NaptrValue.parse_rdata_text"><code class="docutils literal notranslate"><span class="pre">NaptrValue.parse_rdata_text()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.naptr.NaptrValue.preference"><code class="docutils literal notranslate"><span class="pre">NaptrValue.preference</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.naptr.NaptrValue.process"><code class="docutils literal notranslate"><span class="pre">NaptrValue.process()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.naptr.NaptrValue.rdata_text"><code class="docutils literal notranslate"><span class="pre">NaptrValue.rdata_text</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.naptr.NaptrValue.regexp"><code class="docutils literal notranslate"><span class="pre">NaptrValue.regexp</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.naptr.NaptrValue.replacement"><code class="docutils literal notranslate"><span class="pre">NaptrValue.replacement</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.naptr.NaptrValue.service"><code class="docutils literal notranslate"><span class="pre">NaptrValue.service</span></code></a></li>
-<li><a class="reference internal" href="#octodns.record.naptr.NaptrValue.validate"><code class="docutils literal notranslate"><span class="pre">NaptrValue.validate()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

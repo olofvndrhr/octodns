@@ -179,7 +179,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -323,42 +323,14 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="module-octodns.provider.base">
-<span id="octodns-provider-base"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.provider.base</span></code><a class="headerlink" href="#module-octodns.provider.base" title="Link to this heading">¶</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.provider.base.BaseProvider">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.provider.base.</span></span><span class="sig-name descname"><span class="pre">BaseProvider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_disabled</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delete_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict_supports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/base.html#BaseProvider"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.base.BaseProvider" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="../source/octodns.source.base.html#octodns.source.base.BaseSource" title="octodns.source.base.BaseSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSource</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.base.BaseProvider.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_disabled</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delete_pcent_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict_supports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/base.html#BaseProvider.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.base.BaseProvider.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.base.BaseProvider.apply">
-<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plan</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/base.html#BaseProvider.apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.base.BaseProvider.apply" title="Link to this definition">¶</a></dt>
-<dd><p>Submits actual planned changes to the provider. Returns the number of
-changes made</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.base.BaseProvider.plan">
-<span class="sig-name descname"><span class="pre">plan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">desired</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/base.html#BaseProvider.plan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.base.BaseProvider.plan" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.provider.base.BaseProvider.supports_warn_or_except">
-<span class="sig-name descname"><span class="pre">supports_warn_or_except</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/provider/base.html#BaseProvider.supports_warn_or_except"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.provider.base.BaseProvider.supports_warn_or_except" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+          <section id="octodns-provider-base">
+<h1><code class="docutils literal notranslate"><span class="pre">octodns.provider.base</span></code><a class="headerlink" href="#octodns-provider-base" title="Link to this heading">¶</a></h1>
 </section>
 
         </article>
@@ -404,33 +376,8 @@ changes made</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.provider.base</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.provider.base.BaseProvider"><code class="docutils literal notranslate"><span class="pre">BaseProvider</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.provider.base.BaseProvider.__init__"><code class="docutils literal notranslate"><span class="pre">BaseProvider.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.base.BaseProvider.apply"><code class="docutils literal notranslate"><span class="pre">BaseProvider.apply()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.base.BaseProvider.plan"><code class="docutils literal notranslate"><span class="pre">BaseProvider.plan()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.provider.base.BaseProvider.supports_warn_or_except"><code class="docutils literal notranslate"><span class="pre">BaseProvider.supports_warn_or_except()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

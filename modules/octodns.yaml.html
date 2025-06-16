@@ -179,7 +179,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -323,201 +323,14 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="module-octodns.yaml">
-<span id="octodns-yaml"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.yaml</span></code><a class="headerlink" href="#module-octodns.yaml" title="Link to this heading">¶</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.yaml.ContextLoader">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.yaml.</span></span><span class="sig-name descname"><span class="pre">ContextLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/yaml.html#ContextLoader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.yaml.ContextLoader" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">SafeLoader</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.yaml.ContextLoader.include">
-<span class="sig-name descname"><span class="pre">include</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/yaml.html#ContextLoader.include"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.yaml.ContextLoader.include" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.yaml.ContextLoader.yaml_constructors">
-<span class="sig-name descname"><span class="pre">yaml_constructors</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'!include':</span> <span class="pre">&lt;function</span> <span class="pre">ContextLoader.include&gt;,</span> <span class="pre">'tag:yaml.org,2002:binary':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_binary&gt;,</span> <span class="pre">'tag:yaml.org,2002:bool':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_bool&gt;,</span> <span class="pre">'tag:yaml.org,2002:float':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_float&gt;,</span> <span class="pre">'tag:yaml.org,2002:int':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_int&gt;,</span> <span class="pre">'tag:yaml.org,2002:map':</span> <span class="pre">&lt;function</span> <span class="pre">ContextLoader._construct&gt;,</span> <span class="pre">'tag:yaml.org,2002:null':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_null&gt;,</span> <span class="pre">'tag:yaml.org,2002:omap':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_omap&gt;,</span> <span class="pre">'tag:yaml.org,2002:pairs':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_pairs&gt;,</span> <span class="pre">'tag:yaml.org,2002:seq':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_seq&gt;,</span> <span class="pre">'tag:yaml.org,2002:set':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_set&gt;,</span> <span class="pre">'tag:yaml.org,2002:str':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_str&gt;,</span> <span class="pre">'tag:yaml.org,2002:timestamp':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_timestamp&gt;,</span> <span class="pre">None:</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_undefined&gt;}</span></em><a class="headerlink" href="#octodns.yaml.ContextLoader.yaml_constructors" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="octodns.yaml.InvalidOrder">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.yaml.</span></span><span class="sig-name descname"><span class="pre">InvalidOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order_mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/yaml.html#InvalidOrder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.yaml.InvalidOrder" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.yaml.InvalidOrder.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order_mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/yaml.html#InvalidOrder.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.yaml.InvalidOrder.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.yaml.NaturalSortEnforcingLoader">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.yaml.</span></span><span class="sig-name descname"><span class="pre">NaturalSortEnforcingLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/yaml.html#NaturalSortEnforcingLoader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.yaml.NaturalSortEnforcingLoader" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#octodns.yaml.SortEnforcingLoader" title="octodns.yaml.SortEnforcingLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">SortEnforcingLoader</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.yaml.NaturalSortEnforcingLoader.KEYGEN">
-<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">KEYGEN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">val:</span> <span class="pre">~natsort.utils.SupportsDunderLT</span> <span class="pre">|</span> <span class="pre">~natsort.utils.SupportsDunderGT</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">|</span> <span class="pre">~typing.Any,</span> <span class="pre">*,</span> <span class="pre">key:</span> <span class="pre">~typing.Callable[[~typing.Any],</span> <span class="pre">~natsort.utils.SupportsDunderLT</span> <span class="pre">|</span> <span class="pre">~natsort.utils.SupportsDunderGT</span> <span class="pre">|</span> <span class="pre">None]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">string_func:</span> <span class="pre">~typing.Callable[[str</span> <span class="pre">|</span> <span class="pre">~pathlib.PurePath],</span> <span class="pre">~typing.Tuple[~typing.Any,</span> <span class="pre">...]</span> <span class="pre">|</span> <span class="pre">~typing.Tuple[~typing.Tuple[~typing.Any,</span> <span class="pre">...],</span> <span class="pre">...]]</span> <span class="pre">|</span> <span class="pre">~typing.Callable[[str</span> <span class="pre">|</span> <span class="pre">~pathlib.PurePath],</span> <span class="pre">~typing.Tuple[~typing.Tuple[~typing.Any,</span> <span class="pre">...]</span> <span class="pre">|</span> <span class="pre">~typing.Tuple[~typing.Tuple[~typing.Any,</span> <span class="pre">...],</span> <span class="pre">...],</span> <span class="pre">...]]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">parse_string_factory.&lt;locals&gt;.func&gt;,</span> <span class="pre">bytes_func:</span> <span class="pre">~typing.Callable[[bytes],</span> <span class="pre">~typing.Tuple[bytes]</span> <span class="pre">|</span> <span class="pre">~typing.Tuple[~typing.Tuple[bytes]]]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">parse_bytes_factory.&lt;locals&gt;.&lt;lambda&gt;&gt;,</span> <span class="pre">num_func:</span> <span class="pre">~typing.Callable[[~typing.Any],</span> <span class="pre">~typing.Tuple[~typing.Any,</span> <span class="pre">...]</span> <span class="pre">|</span> <span class="pre">~typing.Tuple[~typing.Tuple[~typing.Any,</span> <span class="pre">...],</span> <span class="pre">...]]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">parse_number_or_none_factory.&lt;locals&gt;.func&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.13)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><span class="pre">SupportsDunderLT</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">SupportsDunderGT</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#octodns.yaml.NaturalSortEnforcingLoader.KEYGEN" title="Link to this definition">¶</a></dt>
-<dd><p>Key to sort strings and numbers naturally.</p>
-<p>It works by splitting the string into components of strings and numbers,
-and then converting the numbers into actual ints or floats.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>val</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.13)"><em>bytes</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em> | </em><em>iterable</em>)</p></li>
-<li><p><strong>key</strong> (<em>callable</em><em> | </em><em>None</em>) – A key to apply to the <em>val</em> before any other operations are performed.</p></li>
-<li><p><strong>string_func</strong> (<em>callable</em>) – If <em>val</em> (or the output of <em>key</em> if given) is of type <em>str</em>, this
-function will be applied to it. The function must return
-a tuple.</p></li>
-<li><p><strong>bytes_func</strong> (<em>callable</em>) – If <em>val</em> (or the output of <em>key</em> if given) is of type <em>bytes</em>, this
-function will be applied to it. The function must return
-a tuple.</p></li>
-<li><p><strong>num_func</strong> (<em>callable</em>) – If <em>val</em> (or the output of <em>key</em> if given) is not of type <em>bytes</em>,
-<em>str</em>, nor is iterable, this function will be applied to it.
-The function must return a tuple.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>out</strong> – The string split into its string and numeric components.
-It <em>always</em> starts with a string, and then alternates
-between numbers and strings (unless it was applied
-recursively, in which case it will return tuples of tuples,
-but the lowest-level tuples will then <em>always</em> start with
-a string etc.).</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)">tuple</a></p>
-</dd>
-</dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_string_factory</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_bytes_factory</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_number_or_none_factory</span></code></p>
-</div>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.yaml.NaturalSortEnforcingLoader.yaml_constructors">
-<span class="sig-name descname"><span class="pre">yaml_constructors</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'!include':</span> <span class="pre">&lt;function</span> <span class="pre">ContextLoader.include&gt;,</span> <span class="pre">'tag:yaml.org,2002:binary':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_binary&gt;,</span> <span class="pre">'tag:yaml.org,2002:bool':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_bool&gt;,</span> <span class="pre">'tag:yaml.org,2002:float':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_float&gt;,</span> <span class="pre">'tag:yaml.org,2002:int':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_int&gt;,</span> <span class="pre">'tag:yaml.org,2002:map':</span> <span class="pre">&lt;function</span> <span class="pre">SortEnforcingLoader._construct&gt;,</span> <span class="pre">'tag:yaml.org,2002:null':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_null&gt;,</span> <span class="pre">'tag:yaml.org,2002:omap':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_omap&gt;,</span> <span class="pre">'tag:yaml.org,2002:pairs':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_pairs&gt;,</span> <span class="pre">'tag:yaml.org,2002:seq':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_seq&gt;,</span> <span class="pre">'tag:yaml.org,2002:set':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_set&gt;,</span> <span class="pre">'tag:yaml.org,2002:str':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_str&gt;,</span> <span class="pre">'tag:yaml.org,2002:timestamp':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_timestamp&gt;,</span> <span class="pre">None:</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_undefined&gt;}</span></em><a class="headerlink" href="#octodns.yaml.NaturalSortEnforcingLoader.yaml_constructors" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.yaml.NaturalSortingDumper">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.yaml.</span></span><span class="sig-name descname"><span class="pre">NaturalSortingDumper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_flow_style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">canonical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_unicode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_break</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">explicit_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">explicit_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/yaml.html#NaturalSortingDumper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.yaml.NaturalSortingDumper" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#octodns.yaml.SortingDumper" title="octodns.yaml.SortingDumper"><code class="xref py py-class docutils literal notranslate"><span class="pre">SortingDumper</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.yaml.NaturalSortingDumper.KEYGEN">
-<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">KEYGEN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">val:</span> <span class="pre">~natsort.utils.SupportsDunderLT</span> <span class="pre">|</span> <span class="pre">~natsort.utils.SupportsDunderGT</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">|</span> <span class="pre">~typing.Any,</span> <span class="pre">*,</span> <span class="pre">key:</span> <span class="pre">~typing.Callable[[~typing.Any],</span> <span class="pre">~natsort.utils.SupportsDunderLT</span> <span class="pre">|</span> <span class="pre">~natsort.utils.SupportsDunderGT</span> <span class="pre">|</span> <span class="pre">None]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">string_func:</span> <span class="pre">~typing.Callable[[str</span> <span class="pre">|</span> <span class="pre">~pathlib.PurePath],</span> <span class="pre">~typing.Tuple[~typing.Any,</span> <span class="pre">...]</span> <span class="pre">|</span> <span class="pre">~typing.Tuple[~typing.Tuple[~typing.Any,</span> <span class="pre">...],</span> <span class="pre">...]]</span> <span class="pre">|</span> <span class="pre">~typing.Callable[[str</span> <span class="pre">|</span> <span class="pre">~pathlib.PurePath],</span> <span class="pre">~typing.Tuple[~typing.Tuple[~typing.Any,</span> <span class="pre">...]</span> <span class="pre">|</span> <span class="pre">~typing.Tuple[~typing.Tuple[~typing.Any,</span> <span class="pre">...],</span> <span class="pre">...],</span> <span class="pre">...]]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">parse_string_factory.&lt;locals&gt;.func&gt;,</span> <span class="pre">bytes_func:</span> <span class="pre">~typing.Callable[[bytes],</span> <span class="pre">~typing.Tuple[bytes]</span> <span class="pre">|</span> <span class="pre">~typing.Tuple[~typing.Tuple[bytes]]]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">parse_bytes_factory.&lt;locals&gt;.&lt;lambda&gt;&gt;,</span> <span class="pre">num_func:</span> <span class="pre">~typing.Callable[[~typing.Any],</span> <span class="pre">~typing.Tuple[~typing.Any,</span> <span class="pre">...]</span> <span class="pre">|</span> <span class="pre">~typing.Tuple[~typing.Tuple[~typing.Any,</span> <span class="pre">...],</span> <span class="pre">...]]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">parse_number_or_none_factory.&lt;locals&gt;.func&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.13)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><span class="pre">SupportsDunderLT</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">SupportsDunderGT</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#octodns.yaml.NaturalSortingDumper.KEYGEN" title="Link to this definition">¶</a></dt>
-<dd><p>Key to sort strings and numbers naturally.</p>
-<p>It works by splitting the string into components of strings and numbers,
-and then converting the numbers into actual ints or floats.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>val</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.13)"><em>bytes</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em> | </em><em>iterable</em>)</p></li>
-<li><p><strong>key</strong> (<em>callable</em><em> | </em><em>None</em>) – A key to apply to the <em>val</em> before any other operations are performed.</p></li>
-<li><p><strong>string_func</strong> (<em>callable</em>) – If <em>val</em> (or the output of <em>key</em> if given) is of type <em>str</em>, this
-function will be applied to it. The function must return
-a tuple.</p></li>
-<li><p><strong>bytes_func</strong> (<em>callable</em>) – If <em>val</em> (or the output of <em>key</em> if given) is of type <em>bytes</em>, this
-function will be applied to it. The function must return
-a tuple.</p></li>
-<li><p><strong>num_func</strong> (<em>callable</em>) – If <em>val</em> (or the output of <em>key</em> if given) is not of type <em>bytes</em>,
-<em>str</em>, nor is iterable, this function will be applied to it.
-The function must return a tuple.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>out</strong> – The string split into its string and numeric components.
-It <em>always</em> starts with a string, and then alternates
-between numbers and strings (unless it was applied
-recursively, in which case it will return tuples of tuples,
-but the lowest-level tuples will then <em>always</em> start with
-a string etc.).</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)">tuple</a></p>
-</dd>
-</dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_string_factory</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_bytes_factory</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_number_or_none_factory</span></code></p>
-</div>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.yaml.SimpleSortEnforcingLoader">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.yaml.</span></span><span class="sig-name descname"><span class="pre">SimpleSortEnforcingLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/yaml.html#SimpleSortEnforcingLoader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.yaml.SimpleSortEnforcingLoader" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#octodns.yaml.SortEnforcingLoader" title="octodns.yaml.SortEnforcingLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">SortEnforcingLoader</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.yaml.SimpleSortEnforcingLoader.KEYGEN">
-<span class="sig-name descname"><span class="pre">KEYGEN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#octodns.yaml.SimpleSortEnforcingLoader.KEYGEN" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.yaml.SimpleSortEnforcingLoader.yaml_constructors">
-<span class="sig-name descname"><span class="pre">yaml_constructors</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'!include':</span> <span class="pre">&lt;function</span> <span class="pre">ContextLoader.include&gt;,</span> <span class="pre">'tag:yaml.org,2002:binary':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_binary&gt;,</span> <span class="pre">'tag:yaml.org,2002:bool':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_bool&gt;,</span> <span class="pre">'tag:yaml.org,2002:float':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_float&gt;,</span> <span class="pre">'tag:yaml.org,2002:int':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_int&gt;,</span> <span class="pre">'tag:yaml.org,2002:map':</span> <span class="pre">&lt;function</span> <span class="pre">SortEnforcingLoader._construct&gt;,</span> <span class="pre">'tag:yaml.org,2002:null':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_null&gt;,</span> <span class="pre">'tag:yaml.org,2002:omap':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_omap&gt;,</span> <span class="pre">'tag:yaml.org,2002:pairs':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_pairs&gt;,</span> <span class="pre">'tag:yaml.org,2002:seq':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_seq&gt;,</span> <span class="pre">'tag:yaml.org,2002:set':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_set&gt;,</span> <span class="pre">'tag:yaml.org,2002:str':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_str&gt;,</span> <span class="pre">'tag:yaml.org,2002:timestamp':</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_yaml_timestamp&gt;,</span> <span class="pre">None:</span> <span class="pre">&lt;function</span> <span class="pre">SafeConstructor.construct_undefined&gt;}</span></em><a class="headerlink" href="#octodns.yaml.SimpleSortEnforcingLoader.yaml_constructors" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.yaml.SimpleSortingDumper">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.yaml.</span></span><span class="sig-name descname"><span class="pre">SimpleSortingDumper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_flow_style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">canonical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_unicode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_break</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">explicit_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">explicit_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/yaml.html#SimpleSortingDumper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.yaml.SimpleSortingDumper" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#octodns.yaml.SortingDumper" title="octodns.yaml.SortingDumper"><code class="xref py py-class docutils literal notranslate"><span class="pre">SortingDumper</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.yaml.SimpleSortingDumper.KEYGEN">
-<span class="sig-name descname"><span class="pre">KEYGEN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#octodns.yaml.SimpleSortingDumper.KEYGEN" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.yaml.SortEnforcingLoader">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.yaml.</span></span><span class="sig-name descname"><span class="pre">SortEnforcingLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/yaml.html#SortEnforcingLoader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.yaml.SortEnforcingLoader" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#octodns.yaml.ContextLoader" title="octodns.yaml.ContextLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContextLoader</span></code></a></p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.yaml.SortingDumper">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.yaml.</span></span><span class="sig-name descname"><span class="pre">SortingDumper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_flow_style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">canonical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_unicode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_break</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">explicit_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">explicit_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/yaml.html#SortingDumper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.yaml.SortingDumper" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">SafeDumper</span></code></p>
-<p>This sorts keys alphanumerically in a “natural” manner where things with
-the number 2 come before the number 12.</p>
-<p>See <a class="reference external" href="https://www.xormedia.com/natural-sort-order-with-zero-padding/">https://www.xormedia.com/natural-sort-order-with-zero-padding/</a> for
-more info</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.yaml.SortingDumper.yaml_multi_representers">
-<span class="sig-name descname"><span class="pre">yaml_multi_representers</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;class</span> <span class="pre">'dict'&gt;:</span> <span class="pre">&lt;function</span> <span class="pre">SortingDumper._representer&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'str'&gt;:</span> <span class="pre">&lt;function</span> <span class="pre">SafeRepresenter.represent_str&gt;}</span></em><a class="headerlink" href="#octodns.yaml.SortingDumper.yaml_multi_representers" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.yaml.SortingDumper.yaml_representers">
-<span class="sig-name descname"><span class="pre">yaml_representers</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;class</span> <span class="pre">'NoneType'&gt;:</span> <span class="pre">&lt;function</span> <span class="pre">SafeRepresenter.represent_none&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'bool'&gt;:</span> <span class="pre">&lt;function</span> <span class="pre">SafeRepresenter.represent_bool&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'bytes'&gt;:</span> <span class="pre">&lt;function</span> <span class="pre">SafeRepresenter.represent_binary&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.date'&gt;:</span> <span class="pre">&lt;function</span> <span class="pre">SafeRepresenter.represent_date&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.datetime'&gt;:</span> <span class="pre">&lt;function</span> <span class="pre">SafeRepresenter.represent_datetime&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'dict'&gt;:</span> <span class="pre">&lt;function</span> <span class="pre">SortingDumper._representer&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'float'&gt;:</span> <span class="pre">&lt;function</span> <span class="pre">SafeRepresenter.represent_float&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'int'&gt;:</span> <span class="pre">&lt;function</span> <span class="pre">SafeRepresenter.represent_int&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'list'&gt;:</span> <span class="pre">&lt;function</span> <span class="pre">SafeRepresenter.represent_list&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'set'&gt;:</span> <span class="pre">&lt;function</span> <span class="pre">SafeRepresenter.represent_set&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'str'&gt;:</span> <span class="pre">&lt;function</span> <span class="pre">SafeRepresenter.represent_str&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'tuple'&gt;:</span> <span class="pre">&lt;function</span> <span class="pre">SafeRepresenter.represent_list&gt;,</span> <span class="pre">None:</span> <span class="pre">&lt;function</span> <span class="pre">SafeRepresenter.represent_undefined&gt;}</span></em><a class="headerlink" href="#octodns.yaml.SortingDumper.yaml_representers" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="octodns.yaml.safe_dump">
-<span class="sig-prename descclassname"><span class="pre">octodns.yaml.</span></span><span class="sig-name descname"><span class="pre">safe_dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'natural'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/yaml.html#safe_dump"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.yaml.safe_dump" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="octodns.yaml.safe_load">
-<span class="sig-prename descclassname"><span class="pre">octodns.yaml.</span></span><span class="sig-name descname"><span class="pre">safe_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enforce_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'natural'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/octodns/yaml.html#safe_load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.yaml.safe_load" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
+          <section id="octodns-yaml">
+<h1><code class="docutils literal notranslate"><span class="pre">octodns.yaml</span></code><a class="headerlink" href="#octodns-yaml" title="Link to this heading">¶</a></h1>
 </section>
 
         </article>
@@ -563,61 +376,8 @@ more info</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.yaml</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.yaml.ContextLoader"><code class="docutils literal notranslate"><span class="pre">ContextLoader</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.yaml.ContextLoader.include"><code class="docutils literal notranslate"><span class="pre">ContextLoader.include()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.yaml.ContextLoader.yaml_constructors"><code class="docutils literal notranslate"><span class="pre">ContextLoader.yaml_constructors</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.yaml.InvalidOrder"><code class="docutils literal notranslate"><span class="pre">InvalidOrder</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.yaml.InvalidOrder.__init__"><code class="docutils literal notranslate"><span class="pre">InvalidOrder.__init__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.yaml.NaturalSortEnforcingLoader"><code class="docutils literal notranslate"><span class="pre">NaturalSortEnforcingLoader</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.yaml.NaturalSortEnforcingLoader.KEYGEN"><code class="docutils literal notranslate"><span class="pre">NaturalSortEnforcingLoader.KEYGEN()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.yaml.NaturalSortEnforcingLoader.yaml_constructors"><code class="docutils literal notranslate"><span class="pre">NaturalSortEnforcingLoader.yaml_constructors</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.yaml.NaturalSortingDumper"><code class="docutils literal notranslate"><span class="pre">NaturalSortingDumper</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.yaml.NaturalSortingDumper.KEYGEN"><code class="docutils literal notranslate"><span class="pre">NaturalSortingDumper.KEYGEN()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.yaml.SimpleSortEnforcingLoader"><code class="docutils literal notranslate"><span class="pre">SimpleSortEnforcingLoader</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.yaml.SimpleSortEnforcingLoader.KEYGEN"><code class="docutils literal notranslate"><span class="pre">SimpleSortEnforcingLoader.KEYGEN()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.yaml.SimpleSortEnforcingLoader.yaml_constructors"><code class="docutils literal notranslate"><span class="pre">SimpleSortEnforcingLoader.yaml_constructors</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.yaml.SimpleSortingDumper"><code class="docutils literal notranslate"><span class="pre">SimpleSortingDumper</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.yaml.SimpleSortingDumper.KEYGEN"><code class="docutils literal notranslate"><span class="pre">SimpleSortingDumper.KEYGEN()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.yaml.SortEnforcingLoader"><code class="docutils literal notranslate"><span class="pre">SortEnforcingLoader</span></code></a></li>
-<li><a class="reference internal" href="#octodns.yaml.SortingDumper"><code class="docutils literal notranslate"><span class="pre">SortingDumper</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.yaml.SortingDumper.yaml_multi_representers"><code class="docutils literal notranslate"><span class="pre">SortingDumper.yaml_multi_representers</span></code></a></li>
-<li><a class="reference internal" href="#octodns.yaml.SortingDumper.yaml_representers"><code class="docutils literal notranslate"><span class="pre">SortingDumper.yaml_representers</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.yaml.safe_dump"><code class="docutils literal notranslate"><span class="pre">safe_dump()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.yaml.safe_load"><code class="docutils literal notranslate"><span class="pre">safe_load()</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

@@ -179,7 +179,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -323,88 +323,14 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="module-octodns.processor.spf">
-<span id="octodns-processor-spf"></span><h1><code class="docutils literal notranslate"><span class="pre">octodns.processor.spf</span></code><a class="headerlink" href="#module-octodns.processor.spf" title="Link to this heading">¶</a></h1>
-<dl class="py exception">
-<dt class="sig sig-object py" id="octodns.processor.spf.SpfDnsLookupException">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.spf.</span></span><span class="sig-name descname"><span class="pre">SpfDnsLookupException</span></span><a class="reference internal" href="../../_modules/octodns/processor/spf.html#SpfDnsLookupException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.spf.SpfDnsLookupException" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="octodns.processor.base.html#octodns.processor.base.ProcessorException" title="octodns.processor.base.ProcessorException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessorException</span></code></a></p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="octodns.processor.spf.SpfDnsLookupProcessor">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.spf.</span></span><span class="sig-name descname"><span class="pre">SpfDnsLookupProcessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/spf.html#SpfDnsLookupProcessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.spf.SpfDnsLookupProcessor" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="octodns.processor.base.html#octodns.processor.base.BaseProcessor" title="octodns.processor.base.BaseProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseProcessor</span></code></a></p>
-<p>Validate that SPF values in TXT records are valid.</p>
-<p class="rubric">Example</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processors</span><span class="p">:</span>
-<span class="nt">spf</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octodns.processor.spf.SpfDnsLookupProcessor</span>
-
-<span class="nt">zones</span><span class="p">:</span>
-<span class="nt">example.com.</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">sources</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
-<span class="w">    </span><span class="nt">processors</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spf</span>
-<span class="w">    </span><span class="nt">targets</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route53</span>
-
-<span class="l l-Scalar l-Scalar-Plain">The validation can be skipped for specific records by setting the lenient</span>
-<span class="l l-Scalar l-Scalar-Plain">flag, e.g.</span>
-
-<span class="nt">_spf</span><span class="p">:</span>
-<span class="nt">octodns</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">lenient</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">ttl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">86400</span>
-<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TXT</span>
-<span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v=spf1 ptr ~all</span>
-</pre></div>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.spf.SpfDnsLookupProcessor.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/spf.html#SpfDnsLookupProcessor.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.spf.SpfDnsLookupProcessor.__init__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="octodns.processor.spf.SpfDnsLookupProcessor.log">
-<span class="sig-name descname"><span class="pre">log</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Logger</span> <span class="pre">SpfDnsLookupProcessor</span> <span class="pre">(WARNING)&gt;</span></em><a class="headerlink" href="#octodns.processor.spf.SpfDnsLookupProcessor.log" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="octodns.processor.spf.SpfDnsLookupProcessor.process_source_zone">
-<span class="sig-name descname"><span class="pre">process_source_zone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/octodns/processor/spf.html#SpfDnsLookupProcessor.process_source_zone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.spf.SpfDnsLookupProcessor.process_source_zone" title="Link to this definition">¶</a></dt>
-<dd><p>Called after all sources have completed populate. Provides an
-opportunity for the processor to modify the desired <cite>Zone</cite> that targets
-will receive.</p>
-<ul class="simple">
-<li><p>Will see <cite>desired</cite> after any modifications done by
-<cite>Provider._process_desired_zone</cite> and processors configured to run
-before this one.</p></li>
-<li><p>May modify <cite>desired</cite> directly.</p></li>
-<li><p>Must return <cite>desired</cite> which will normally be the <cite>desired</cite> param.</p></li>
-<li><p>Must not modify records directly, <cite>record.copy</cite> should be called,
-the results of which can be modified, and then <cite>Zone.add_record</cite> may
-be used with <cite>replace=True</cite>.</p></li>
-<li><p>May call <cite>Zone.remove_record</cite> to remove records from <cite>desired</cite>.</p></li>
-<li><p>Sources may be empty, as will be the case for aliased zones.</p></li>
-</ul>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="octodns.processor.spf.SpfValueException">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">octodns.processor.spf.</span></span><span class="sig-name descname"><span class="pre">SpfValueException</span></span><a class="reference internal" href="../../_modules/octodns/processor/spf.html#SpfValueException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#octodns.processor.spf.SpfValueException" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="octodns.processor.base.html#octodns.processor.base.ProcessorException" title="octodns.processor.base.ProcessorException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessorException</span></code></a></p>
-</dd></dl>
-
+          <section id="octodns-processor-spf">
+<h1><code class="docutils literal notranslate"><span class="pre">octodns.processor.spf</span></code><a class="headerlink" href="#octodns-processor-spf" title="Link to this heading">¶</a></h1>
 </section>
 
         </article>
@@ -450,34 +376,8 @@ be used with <cite>replace=True</cite>.</p></li>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">octodns.processor.spf</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.processor.spf.SpfDnsLookupException"><code class="docutils literal notranslate"><span class="pre">SpfDnsLookupException</span></code></a></li>
-<li><a class="reference internal" href="#octodns.processor.spf.SpfDnsLookupProcessor"><code class="docutils literal notranslate"><span class="pre">SpfDnsLookupProcessor</span></code></a><ul>
-<li><a class="reference internal" href="#octodns.processor.spf.SpfDnsLookupProcessor.__init__"><code class="docutils literal notranslate"><span class="pre">SpfDnsLookupProcessor.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#octodns.processor.spf.SpfDnsLookupProcessor.log"><code class="docutils literal notranslate"><span class="pre">SpfDnsLookupProcessor.log</span></code></a></li>
-<li><a class="reference internal" href="#octodns.processor.spf.SpfDnsLookupProcessor.process_source_zone"><code class="docutils literal notranslate"><span class="pre">SpfDnsLookupProcessor.process_source_zone()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#octodns.processor.spf.SpfValueException"><code class="docutils literal notranslate"><span class="pre">SpfValueException</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
